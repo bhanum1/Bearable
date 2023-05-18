@@ -3,8 +3,8 @@ import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.homeBody}>
-      This is the home page.
+    <div>
+      <h1>This is the Home page.</h1>
     </div>
   )
 }

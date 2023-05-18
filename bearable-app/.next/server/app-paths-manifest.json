@@ -1,5 +1,4 @@
 {
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
-  "/courses/page": "app/courses/page.js"
+  "/courses/linear-algebra/page": "app/courses/linear-algebra/page.js"
 }

@@ -72,6 +72,7 @@
   \***********************************************************************************************************************************************************************************************************************************************************/
 :root {
   --navbar-color: #f1f1f1;
+  --footer-height: 2.5rem;
 }
 
 /* General Font Imports*/
@@ -119,13 +120,12 @@ nav img {
   float: left;
   top: 3px;
 }
+
 nav h1 {
   position: relative;
   left: 50px;
   flex: 2 1;
 }
-
-
 
 .nav_menu-list{
   display: flex;
@@ -133,11 +133,22 @@ nav h1 {
   column-gap: 24px;
 }
 
+/* Page Layout*/
+
+.pageContainer{
+  position: relative;
+  min-height: 100vh;
+}
+
+.contentWrap{
+  padding-bottom: var(--footer-height);
+}
 
 /* Footer */
 Footer{
-  position: -webkit-sticky;
-  position: sticky;
-  z-index: -1000;
+  position: absolute;
+  bottom: 0;
+  height: var(--footer-height);
+  width: 100%;
 }
 

@@ -507,6 +507,14 @@ self.__RSC_MANIFEST={
         ],
         "async": false
       },
+      "previousPathname": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
+        "name": "previousPathname",
+        "chunks": [
+          "webpack:static/chunks/webpack.js"
+        ],
+        "async": false
+      },
       "reset": {
         "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
         "name": "reset",
@@ -526,6 +534,14 @@ self.__RSC_MANIFEST={
       "\"Digest": {
         "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
         "name": "\"Digest",
+        "chunks": [
+          "webpack:static/chunks/webpack.js"
+        ],
+        "async": false
+      },
+      "pathname": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
+        "name": "pathname",
         "chunks": [
           "webpack:static/chunks/webpack.js"
         ],
@@ -971,7 +987,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/courses/page:static/chunks/app/courses/page.js"
+          "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
         ],
         "async": false
       },
@@ -979,7 +995,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/courses/page:static/chunks/app/courses/page.js"
+          "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
         ],
         "async": false
       },
@@ -987,7 +1003,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/courses/page:static/chunks/app/courses/page.js"
+          "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
         ],
         "async": false
       }
@@ -1000,9 +1016,6 @@ self.__RSC_MANIFEST={
     ],
     "/Users/cairo/Developer/Personal/Bearable/bearable-app/app/layout": [
       "static/css/app/layout.css"
-    ],
-    "/Users/cairo/Developer/Personal/Bearable/bearable-app/app/courses/page": [
-      "static/css/app/courses/page.css"
     ],
     "/Users/cairo/Developer/Personal/Bearable/bearable-app/app/courses/linear-algebra/page": [
       "static/css/app/courses/linear-algebra/page.css"
@@ -2017,6 +2030,22 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
+    "/Users/cairo/Developer/Personal/Bearable/bearable-app/node_modules/next/dist/client/components/error-boundary.js#previousPathname": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "previousPathname",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/cairo/Developer/Personal/Bearable/bearable-app/node_modules/next/dist/esm/client/components/error-boundary.js#previousPathname": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "previousPathname",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
     "/Users/cairo/Developer/Personal/Bearable/bearable-app/node_modules/next/dist/client/components/error-boundary.js#reset": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "reset",
@@ -2060,6 +2089,22 @@ self.__RSC_MANIFEST={
     "/Users/cairo/Developer/Personal/Bearable/bearable-app/node_modules/next/dist/esm/client/components/error-boundary.js#\"Digest": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "\"Digest",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/cairo/Developer/Personal/Bearable/bearable-app/node_modules/next/dist/client/components/error-boundary.js#pathname": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "pathname",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/cairo/Developer/Personal/Bearable/bearable-app/node_modules/next/dist/esm/client/components/error-boundary.js#pathname": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "pathname",
       "chunks": [
         "webpack:static/chunks/webpack.js"
       ],
@@ -2710,7 +2755,6 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "static/css/app/page.css",
-        "static/css/app/courses/page.css",
         "static/css/app/courses/linear-algebra/page.css"
       ]
     },
@@ -3116,7 +3160,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/courses/page:static/chunks/app/courses/page.js"
+        "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
       ],
       "async": false
     },
@@ -3124,7 +3168,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/courses/page:static/chunks/app/courses/page.js"
+        "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
       ],
       "async": false
     },
@@ -3132,7 +3176,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/courses/page:static/chunks/app/courses/page.js"
+        "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
       ],
       "async": false
     },
@@ -3140,7 +3184,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/courses/page:static/chunks/app/courses/page.js"
+        "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
       ],
       "async": false
     },
@@ -3148,7 +3192,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/courses/page:static/chunks/app/courses/page.js"
+        "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
       ],
       "async": false
     },
@@ -3156,7 +3200,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/courses/page:static/chunks/app/courses/page.js"
+        "app/courses/test-course/page:static/chunks/app/courses/test-course/page.js"
       ],
       "async": false
     }

@@ -1,25 +1,35 @@
 import { allDocs } from '.contentlayer/generated'
+import { Mdx } from '../../../../components/mdx-components'
+import { FC } from 'react'
+import { notFound } from 'next/navigation'
 
-export const generateStaticParams = async () => allDocs.map((doc) => ({ slug: doc._raw.flattenedPath }))
+export async function generateStaticParams() { 
+  return allDocs.map((doc) => ({ 
+    slug: doc._raw.flattenedPath 
+  }))}
 
-export const generateMetadata = ({ params }) => {
+export function generateMetadata({ params }) {
   const doc = allDocs.find((doc) => doc._raw.flattenedPath === params.slug)
-  if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`)
-  return { title: doc.title }
+  if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`) 
+  // TODO: change throw to notFound() in final version of website
+  
+  return { title: doc.title } // try to keep roughly the same as the file name
 }
 
-const DocLayout = ({ params }) => {
+
+export default function DocLayout({ params }) {
   const doc = allDocs.find((doc) => doc._raw.flattenedPath === params.slug)
   if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`)
+  // TODO: change throw to notFound() in final version of website
 
   return (
     <article>
       <div>
-        <h1> Lesson Title: {doc.title}</h1> {/* Note: Try to keep the title in the markdown the same as the pathname for consistency */}
+        <h1> Lesson Title: {doc.title}</h1> 
       </div>
-      <div dangerouslySetInnerHTML={{ __html: doc.body.html }} />
+      <div>
+      <Mdx code={doc.body.code}/>
+      </div>
     </article>
   )
-}
-
-export default DocLayout
+} 

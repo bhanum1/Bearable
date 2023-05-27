@@ -1,4 +1,4 @@
-// File: /Users/cairo/Developer/Personal/Bearable/bearable-app/app/page.js
+// File: /Users/danielmoore/Desktop/projects/Bearable/bearable-app/app/page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

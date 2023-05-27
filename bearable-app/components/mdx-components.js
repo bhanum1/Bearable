@@ -18,7 +18,7 @@ const components = {
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "border-b mt-10 scroll-m-20 pb-1 text-3xl font-semibold tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ const components = {
   ),
   a: ({ className, ...props }) => (
     <a
-      className={cn("font-medium underline underline-offset-4", className)}
+      className={cn("font-medium underline underline-offset-4 text-blue-500", className)}
       {...props}
     />
   ),
@@ -73,10 +73,10 @@ const components = {
     />
   ),
   ul: ({ className, ...props }) => (
-    <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
+    <ul className={cn("my-2 ml-2 list-disc", className)} {...props} />
   ),
   ol: ({ className, ...props }) => (
-    <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
+    <ol className={cn("my-2 ml-2 list-decimal", className)} {...props} />
   ),
   li: ({ className, ...props }) => (
     <li className={cn("mt-2", className)} {...props} />
@@ -131,7 +131,7 @@ const components = {
   pre: ({ className, ...props }) => (
     <pre
       className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
+        "mb-4 mt-6 overflow-x-auto rounded-lg border py-4 px-[1rem]",
         className
       )}
       {...props}
@@ -140,7 +140,7 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm",
+        "relative rounded px-[0.2rem] font-mono text-sm text-[#be185d] bg-inherit" ,
         className
       )}
       {...props}

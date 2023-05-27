@@ -1,6 +1,5 @@
 import { allDocs } from '.contentlayer/generated'
-import { Mdx } from '../../../../components/mdx-components'
-import { FC } from 'react'
+import { Mdx } from '@/components/mdx-components'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() { 
@@ -21,15 +20,17 @@ export default function DocLayout({ params }) {
   const doc = allDocs.find((doc) => doc._raw.flattenedPath === params.slug)
   if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`)
   // TODO: change throw to notFound() in final version of website
-
+  
   return (
-    <article>
-      <div>
-        <h1> Lesson Title: {doc.title}</h1> 
-      </div>
-      <div>
-      <Mdx code={doc.body.code}/>
-      </div>
-    </article>
+    <div>
+        <div className='flex justify-center'>
+          <h1 className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight"> Lesson Title: {doc.title}</h1> 
+        </div>
+        <article className='flex justify-center '>
+        <div className='max-w-[850px] p-10'>
+          <Mdx code={doc.body.code} />
+        </div>
+      </article>
+    </div>
   )
 } 

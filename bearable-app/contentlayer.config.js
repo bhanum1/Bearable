@@ -3,17 +3,20 @@ import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkMath from 'remark-math'
+import rehypeMathJaxSvg from 'rehype-mathjax'
+import remarkImages from 'remark-images'
+import remarkEmoji from 'remark-emoji'
 
 
 export const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: `**/**/*.md`,
+  filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: { 
       type: 'string', 
-      required: true 
-    },
+      required: true }
   },
   computedFields: {
     url: { 
@@ -24,38 +27,53 @@ export const Doc = defineDocumentType(() => ({
 }))
 
 export default makeSource({ 
-  contentDirPath: '../lecture-content/plugin-test/Docs', 
+  contentDirPath: 'Docs', 
   documentTypes: [Doc],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkMath, remarkImages, remarkEmoji],
     rehypePlugins: [
-      rehypeSlug, 
+      rehypeSlug,
       [
-        rehypePrettyCode, 
+        rehypePrettyCode, // NOTE: Later one if we use the code blocks, we can use a JSON file for the code theme
+        // See rehype pretty code documentation to learn more abou this
         {
-          theme: 'github-dark',
+          theme: 'monokai',
+          keepBackground: true,
           onVisitLine(node) {
+            // prevent lines from collapsing in 'display: gird' mode and allow empty lines to be copy/pasted
             if (node.children.length === 0) {
-              node.children = [{type: 'text', value: ' '}]
+              node.children=[{type: "text", value: ' '}]
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className.push('line--highlighted')
-          }, 
-          onVisitHighlightedWord(node) {
-            node.properties.className = ['word--highlighted']
+            node.properties.classname.push('line--highlighted')
           },
-        },
+          onVisitHighlightedWord(node) {
+            node.properties.classname = ['word--highlighted']
+          }
+        }
       ],
       [
         rehypeAutolinkHeadings,
         {
-          properties: {
+          properties:{
             className: ['subheading-anchor'],
-            arialabel: 'Link to section.',
-          },
+            arialabel: 'Link to section'
+          }
         }
+      ],
+      [
+      rehypeMathJaxSvg, 
+      {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        },
+        svg: {
+          displayAlign: 'center'
+        }
+      }
       ]
-    ],
-  },
+    ]
+  }
 })

@@ -1,0 +1,37 @@
+# Linear Algebra Course Structure
+
+Taught in the following order:
+
+### 1. What is the point of Linear Algebra
+- Explain the basics and why they should care
+### 2. Basic Fundamentals (Vectors, dimensions, matrices etc.)
+- Vectors
+- Vector addition/multiplication
+- What dimensions mean
+- Matrices
+- Matrix operations
+### 3. Vectors
+- Linear combinations
+- Spanning sets
+- Linear independence
+- Orthogonality
+### 4. Matrices
+- Matrix operations continued
+- Determinant
+- Inverse
+- Subspaces
+### 5. Linear Transformations
+- Linearity
+- Injective/bijective/surjective
+### 6. Solving Systems of Equations
+- RREF
+### 7. Types of solutions
+- One solution
+- No solution
+- Infinitely many solutions
+### 8. Vector Spaces
+### 9. Basis
+### 10. Orthogonality
+### 11. Eigenspaces
+### 12. Diagonalization
+### 13. Tying it all together

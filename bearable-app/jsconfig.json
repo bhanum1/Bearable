@@ -2,11 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "contentlayer/generated": ["./contentlayer/generated"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"],
     }
   },
   "include": [
-    ".contentlayer/generated",
-  ]
+    "next-env.d.js",
+    "**/*.js",
+    "**/*.tsx",
+    ".next/types/**/*.js",
+    ".contentlayer/generated"
+  ],
 }

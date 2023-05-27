@@ -1,0 +1,127 @@
+---
+title: MDX test
+
+---
+
+
+# Heading h1
+## Heading h2
+### Heading h3
+#### Heading h4
+##### Heading h5
+###### Heading h6
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu massa tempus purus feugiat dignissim sed sit amet est. Etiam sed dolor mi. Sed tincidunt turpis nisl, in pellentesque risus ornare sed. Suspendisse sit amet elit elementum neque tincidunt finibus. Fusce sed pellentesque orci. Duis nec orci nec eros viverra posuere eu ac diam. Praesent finibus, velit id semper cursus, libero sapien sodales orci, sed porta ex lorem et justo. Donec gravida id dolor non pulvinar. In ultrices nibh vel urna viverra, ac hendrerit ipsum auctor. Suspendisse vulputate nunc at vulputate porta. Curabitur a ipsum non nunc aliquet facilisis. Phasellus ac odio hendrerit lacus pellentesque fringilla ac vitae neque. Phasellus porttitor, justo et dignissim posuere, purus nisl imperdiet metus, id hendrerit augue nibh non leo. Ut tincidunt elit vitae justo cursus sollicitudin. Pellentesque ornare, velit in porttitor porta, orci ligula interdum mi, non pretium mauris est nec lectus.
+
+
+## Text Options
+**Bold Text**
+
+*Italicized Text*
+
+*__Bold Italicized Text__*
+
+~strike through single~
+
+~~strike through double~~
+
+This text has a foot note found at the bottom of the page [^1]
+
+[^1]: This is the corresponding note, I don't know how to custom format this though to change the style and position.
+
+> block quote 
+>
+>> nested block quote
+>
+>>> super nested block quote
+
+## Lists
+- first item 
+    - sub item // fix this
+- second item
+- third item
+
+<br/>
+
+1. first
+    - sub item
+2. second
+    1. sub item // fix this
+3. third
+
+---
+^ this is a forced line
+
+
+## Code
+
+This is a paragraph and ```this is a code block```. Are you able to tell the difference?
+
+use ```<br/>``` for line breaks.
+
+```python
+for i in range(1, 10) # for some reason it wraps the entire thing in a single block? fix this??
+    print(my name jeff)
+```
+
+```javascript
+import { allDocs } from '.contentlayer/generated'
+import { Mdx } from '@/components/mdx-components'
+import { notFound } from 'next/navigation'
+
+export async function generateStaticParams() { 
+  return allDocs.map((doc) => ({ 
+    slug: doc._raw.flattenedPath 
+  }))}
+
+export function generateMetadata({ params }) {
+  const doc = allDocs.find((doc) => doc._raw.flattenedPath === params.slug)
+  if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`) 
+  // TODO: change throw to notFound() in final version of website
+  
+  return { title: doc.title } // try to keep roughly the same as the file name
+}
+```
+
+## Images & Links
+
+[This is an example link](https://youtu.be/dQw4w9WgXcQ)
+
+![test image]("/bearable-logo copy.png") // image is not working
+
+[![](https://c8r-x0.s3.amazonaws.com/lab-components-macbook.jpg)](https://c8r-x0.s3.amazonaws.com/lab-components-macbook.jpg)
+
+When you put text around inline math $x=3$ it should work just
+
+$$ 
+\begin{align*}
+x  & = 3 \\
+f(x) & = \left(\frac{\partial g}{\partial x}\right) + \sum_{i=2}^N x_i
+\end{align*}
+$$
+
+$$
+f(x)=\begin{cases}
+0, x < 0 \\
+0, x \geq 0
+\end{cases}
+$$
+
+$$
+Ax+b=\begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \dots & \frac{\partial f_1}{\partial x_n} \\
+\vdots & \ddots \\
+\vdots & & \ddots \\
+\frac{\partial f_n}{\partial x_1} & & &\frac{\partial f_n }{\partial x_n}
+\end{bmatrix}
+$$
+
+
+
+
+
+|  A | B  | C  | D  | E  |
+|---|---|---|---|---|
+|  1 | 5  | 7  | 9  | 12312  |
+|   |   |  george |   |   |
+|   |   |   |   |   |

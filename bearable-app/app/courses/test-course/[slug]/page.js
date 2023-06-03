@@ -8,8 +8,8 @@ export async function generateStaticParams() {
   }))}
 
 export function generateMetadata({ params }) {
-  const doc = allDocs.find((doc) => doc._raw.flattenedPath === params.slug)
-  if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`) 
+  const doc = allDocs.find((doc) => doc._raw.flattenedPath === `test-course/${params.slug}`)
+  if (!doc) throw new Error(`Doc not found for slug: test-course/${params.slug}`) 
   // TODO: change throw to notFound() in final version of website
   
   return { title: doc.title } // try to keep roughly the same as the file name
@@ -17,8 +17,8 @@ export function generateMetadata({ params }) {
 
 
 export default function DocLayout({ params }) {
-  const doc = allDocs.find((doc) => doc._raw.flattenedPath === params.slug)
-  if (!doc) throw new Error(`Doc not found for slug: ${params.slug}`)
+  const doc = allDocs.find((doc) => doc._raw.flattenedPath === `test-course/${params.slug}`)
+  if (!doc) throw new Error(`Doc not found for slug: test-course/${params.slug}`)
   // TODO: change throw to notFound() in final version of website
   
   return (

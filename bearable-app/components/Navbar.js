@@ -1,4 +1,4 @@
-'use client';
+\'use client';
 
 import Link from "next/link";
 import Image from "next/image";
@@ -15,29 +15,29 @@ export default function Navbar() {
   }
 
   return (
-      <nav className="fixed top-0 w-full h-20 bg-[#b1a764] z-50">
+      <nav className="fixed items-center top-0 w-full h-24 bg-[#F3F1E4] z-50">
         <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
           <Link href='/'>
           <div className="flex items-center">
             <Image 
               src={Logo}
               alt='Logo'
-              width='100'
-              height='100'>
+              width='90'
+              height='90'>
             </Image>
-            <h1 className="text-5xl pl-5">Bearable</h1>
+            <h1 className="text-4xl pl-3 font-Habibi">Bearable</h1>
           </div>
           </Link>
           <div className="hidden sm:flex">
-            <ul className="flex gap-20 pr-10">
+            <ul className="flex gap-16 pr-10">
               <Link href='/'>
-                <li className=" text-xl">Home</li>
+                <li className=" text-2xl">Home</li>
               </Link>
               <Link href='/courses'>
-                <li className=" text-xl">Courses</li>
+                <li className=" text-2xl">Courses</li>
               </Link>
               <Link href='/about'>
-                <li className=" text-xl">About</li>
+                <li className=" text-2xl">About</li>
               </Link>
               <button>
                 <BsFillMoonStarsFill />

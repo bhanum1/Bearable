@@ -1,17 +1,26 @@
 import { defineDocumentType, makeSource } from '@contentlayer/source-files'
+
+// remark imports
 import remarkGfm from 'remark-gfm'
-import rehypeSlug from 'rehype-slug'
-import rehypePrettyCode from 'rehype-pretty-code'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkMath from 'remark-math'
-import rehypeMathJaxSvg from 'rehype-mathjax'
 import remarkImages from 'remark-images'
 import remarkEmoji from 'remark-emoji'
 
+// rehype imports
+import rehypeSlug from 'rehype-slug'
+import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeKatex from 'rehype-katex'
+
+// lib imports
+import { HEADING_LINK_ANCHOR } from './lib/constants'
+
+// other
+import GithubSlugger from 'github-slugger'
 
 export const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `test-course/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: { 
@@ -21,14 +30,89 @@ export const Doc = defineDocumentType(() => ({
   computedFields: {
     url: { 
       type: 'string', 
-      resolve: (doc) => `courses/test-course/${doc._raw.flattenedPath}` 
+      resolve: (doc) => `courses/${doc._raw.flattenedPath}` 
+    },
+    headings: {
+      type: "json",
+      resolve: async (doc) => {
+        const slugger = new GithubSlugger();
+ 
+        // https://stackoverflow.com/a/70802303
+        const regex = /\n\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+ 
+        const headings = Array.from(doc.body.raw.matchAll(regex)).map(
+          // @ts-ignore
+          ({ groups }) => {
+            const flag = groups?.flag;
+            const content = groups?.content;
+            return {
+              heading: flag?.length,
+              text: content,
+              slug: content ? slugger.slug(content) : undefined,
+            };
+          }
+        );
+ 
+        return headings;
+      },
+    },
+  },
+}))
+
+export const LinearAlgebraLesson = defineDocumentType(() => ({
+  name: 'LinearAlgebraLesson',
+  filePathPattern: `linear-algebra/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { 
+      type: 'string', 
+      required: true 
+    },
+    description: {
+      type: 'string', 
+      required: true
+    },
+    authors: {
+      type: 'list', 
+      of: {type: 'string'},
+      required: true
+    }
+  },
+  computedFields: {
+    url: { 
+      type: 'string', 
+      resolve: (doc) => `courses/${doc._raw.flattenedPath}` 
+    },
+    headings: {
+      type: "json",
+      resolve: async (doc) => {
+        const slugger = new GithubSlugger();
+ 
+        // https://stackoverflow.com/a/70802303
+        const regex = /\n\n(?<flag>#{1,6})\s+(?<content>.+)/g;
+ 
+        const headings = Array.from(doc.body.raw.matchAll(regex)).map(
+          // @ts-ignore
+          ({ groups }) => {
+            const flag = groups?.flag;
+            const content = groups?.content;
+            return {
+              heading: flag?.length,
+              text: content,
+              slug: content ? slugger.slug(content) : undefined,
+            };
+          }
+        );
+ 
+        return headings;
+      },
     },
   },
 }))
 
 export default makeSource({ 
-  contentDirPath: 'Docs', 
-  documentTypes: [Doc],
+  contentDirPath: './course-content', 
+  documentTypes: [Doc, LinearAlgebraLesson],
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath, remarkImages, remarkEmoji],
     rehypePlugins: [
@@ -56,23 +140,14 @@ export default makeSource({
       [
         rehypeAutolinkHeadings,
         {
+          behaviour: 'wrap',
           properties:{
-            className: ['subheading-anchor'],
             arialabel: 'Link to section'
           }
         }
       ],
       [
-      rehypeMathJaxSvg, 
-      {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        },
-        svg: {
-          displayAlign: 'center'
-        }
-      }
+      rehypeKatex, 
       ]
     ]
   }

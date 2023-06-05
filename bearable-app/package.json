@@ -1,36 +1,38 @@
 {
-  "name": "bearable-app",
+  "name": "contentlayer-example",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "preinstall": "npx npm-force-resolutions"
+    "lint": "next lint"
   },
   "dependencies": {
     "clsx": "^1.2.1",
     "contentlayer": "^0.3.2",
-    "jsx": "^0.9.89",
-    "minimst": "^0.0.1-security",
-    "next": "^13.4.3",
+    "date-fns": "^2.30.0",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "mdx-bundler": "^9.2.1",
+    "next": "13.4.3",
     "next-contentlayer": "^0.3.2",
-    "npm-check-updates": "^16.10.12",
-    "react": "^18.2.0",
+    "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-pretty-code": "^0.9.5",
+    "rehype-mathjax": "^4.0.2",
+    "rehype-pretty-code": "^0.9.6",
     "rehype-slug": "^5.1.0",
-    "remark": "^14.0.3",
+    "remark-emoji": "^3.1.1",
     "remark-gfm": "^3.0.1",
+    "remark-images": "^3.1.0",
+    "remark-math": "^5.1.1",
     "shiki": "^0.14.2",
     "tailwind-merge": "^1.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "minimist": "^1.2.8",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
   }

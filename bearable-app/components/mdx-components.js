@@ -5,7 +5,6 @@ import Link from 'next/link'
 
 
 import { cn } from "@/lib/utils"
-import { HEADING_LINK_ANCHOR } from "@/lib/constants"
 
 
 const components = {

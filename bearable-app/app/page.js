@@ -9,8 +9,13 @@ export default function Home() {
         <div className="absolute inset-0 overflow-hidden">
             <Image
               src="/bear1.svg"
-              layout="fill"
-              objectFit="cover"
+              className="object-cover"
+              fill={true}
+              style = {
+                {objectFit: "fill" }
+              }
+            // layout="fill"
+            // objectFit="cover"
               quality={100}
               alt="Background Image"
             />

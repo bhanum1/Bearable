@@ -12,9 +12,6 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeKatex from 'rehype-katex'
 
-// lib imports
-import { HEADING_LINK_ANCHOR } from './lib/constants'
-
 // other
 import GithubSlugger from 'github-slugger'
 

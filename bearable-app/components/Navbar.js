@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from '../public/bearable-logo.png';
-import {BsFillMoonStarsFill} from 'react-icons/bs';
-import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai';
+import { BsFillMoonStarsFill } from 'react-icons/bs';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { useState } from 'react';
 
 export default function Navbar() {  

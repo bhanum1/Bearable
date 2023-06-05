@@ -3,29 +3,39 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <div className=' -z-50 absolute w-screen h-screen'>
-          <Image
-            src='/../public/Background.png'
-            alt='Welcome to Bearable'
-            fill={true}
-            style={{objectFit: "cover"}}>
-          </Image>
+    <div> 
+      {/* This is the section with your background image */}
+      <section className=" min-h-screen relative"> 
+        <div className="absolute inset-0 overflow-hidden">
+            <Image
+              src="/bear1.svg"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+              alt="Background Image"
+            />
         </div>
-        <div className='absolute'>
-          <div className='text-center text-4xl px-5 mt-30'>
+
+        {/* Your overlay content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center"
+          style={{ transform: 'translateY(-21.875%)' }}>
+          <Image
+            src="/sun.svg"
+            width={180} // specify the width
+            height={180} // specify the height
+            alt="Image above the content"
+          />
+          <div className='text-center text-4xl pt-12 pb-5 font-Ruda'>
             <h1>Making First Year of Engineering<br></br>More Bearable</h1>
           </div>
-          <div className=' text-center p-5'>
-            <Link href='#' className='bg-[#CC4955] text-[white] rounded-md px-4 py-2'>View Courses</Link> 
+          <div className=' text-center text-lg'>
+            <Link href='/courses' className='bg-[#CC4955] text-[white] rounded-md px-5 py-3'>View Courses</Link> 
           </div>
         </div>
-      </div>
+      </section>
 
-      <div>
-        <h2>About Us</h2>
-      </div>
-    </main>
+      {/* This is the section after the image */}
+    </div>
+
   )
 }

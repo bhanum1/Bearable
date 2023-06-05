@@ -1,5 +1,6 @@
 import { allLinearAlgebraLessons } from '.contentlayer/generated'
 import { Mdx } from '@/components/mdx-components'
+import HeadingToc from '@/components/heading-toc'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() { 
@@ -26,6 +27,9 @@ export default function LessonLayout({ params }) {
     <div>
         <div className='flex justify-center'>
           <h1 className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight"> Lesson Title: {lesson.title}</h1> 
+        </div>
+        <div className='fixed right-10'>
+          <HeadingToc headings={lesson.headings}/>
         </div>
         <div className='flex justify-center'>
             <ul className='ml-8 flex'> 

@@ -1,19 +1,22 @@
 import * as React from "react"
 import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
+import Link from 'next/link'
+
 
 import { cn } from "@/lib/utils"
+import { HEADING_LINK_ANCHOR } from "@/lib/constants"
 
 
 const components = {
   h1: ({ className, ...props }) => (
-    <h1
-      className={cn(
-        "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
-        className
-      )}
-      {...props}
-    />
+      <h1
+        className={cn(
+          "mt-2 scroll-m-20 text-4xl font-bold tracking-tight before:content-none",
+          className,
+        )}
+        {...props}
+      />
   ),
   h2: ({ className, ...props }) => (
     <h2
@@ -60,12 +63,26 @@ const components = {
       {...props}
     />
   ),
-  a: ({ className, ...props }) => (
-    <a
-      className={cn("font-medium underline underline-offset-4 text-blue-500", className)}
-      {...props}
-    />
-  ),
+  a: ({ className, href, ...props }) => {
+    if (href.startsWith("http") || href.includes('fn')) {
+      return (
+        <a
+          className={"font-medium underline underline-offset-4 text-blue-500"}
+          href={href}
+          target="_blank"
+          rel="noopener"
+          {...props}
+        />
+      );
+    }
+    return (
+      <a
+        href={href}
+        className={cn(`before:content-['#'] before:absolute before:-ml-[1em] before:text-opacity-0 before:text-white hover:before:text-[#bb434e]/100 pl-[1em] -ml-[1em]`)}
+        {...props}
+      />
+    );
+  },
   p: ({ className, ...props }) => (
     <p
       className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}

@@ -5,7 +5,12 @@ module.exports = {
     "./components/**/*.{js, ts, jsx, tsx, mdx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'Habibi': ['Habibi','serif'],
+        'Ruda': ['Ruda', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }

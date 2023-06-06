@@ -15,7 +15,7 @@ export default function Navbar() {
   }
 
   return (
-      <nav className="fixed items-center top-0 w-full h-24 bg-[#F3F1E4] z-50">
+      <nav className="absolute items-center top-0 w-full h-24 bg-[#F3F1E4] z-50">
         <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
           <Link href='/'>
           <div className="flex items-center">
@@ -50,8 +50,8 @@ export default function Navbar() {
         </div>
         <div className={
           menuOpen
-          ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-white p-10 ease-in duration-500"
-          : "fixed left-[-100%] top-0 p-10 ease-in duration-500"
+          ? "absolute left-0 top-0 w-[65%] sm:hidden h-screen bg-white p-10 ease-in duration-500"
+          : "absolute left-[-100%] top-0 p-10 ease-in duration-500"
         }>
         <div className="flex w-full ite,s-center justify-end">
           <div onClick={handleNav} className="cursor-pointer">

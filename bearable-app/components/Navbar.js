@@ -15,29 +15,30 @@ export default function Navbar() {
   }
 
   return (
-      <nav className="absolute items-center top-0 w-full h-24 bg-[#F3F1E4] z-50">
+    <header>
+      <nav className="absolute items-center top-0 w-full h-[64px] bg-[#F3F1E4] z-50">
         <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
           <Link href='/'>
           <div className="flex items-center">
             <Image 
               src={Logo}
               alt='Logo'
-              width='90'
-              height='90'>
+              width='64'
+              height='64'>
             </Image>
-            <h1 className="text-4xl pl-3 font-Habibi">Bearable</h1>
+            <h1 className="text-3xl pl-1 font-Habibi">Bearable</h1>
           </div>
           </Link>
           <div className="hidden sm:flex">
             <ul className="flex gap-16 pr-10">
               <Link href='/'>
-                <li className=" text-2xl">Home</li>
+                <li className=" text-xl">Home</li>
               </Link>
               <Link href='/courses'>
-                <li className=" text-2xl">Courses</li>
+                <li className=" text-xl">Courses</li>
               </Link>
               <Link href='/about'>
-                <li className=" text-2xl">About</li>
+                <li className=" text-xl">About</li>
               </Link>
               <button>
                 <BsFillMoonStarsFill />
@@ -76,5 +77,6 @@ export default function Navbar() {
         </div>
         </div>
       </nav>
+      </header>
     );
 };

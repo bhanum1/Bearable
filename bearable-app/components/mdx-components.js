@@ -77,7 +77,7 @@ const components = {
     return (
       <a
         href={href}
-        className={cn(`before:content-['#'] before:absolute before:-ml-[1em] before:text-opacity-0 before:text-white hover:before:text-[#bb434e]/100 pl-[1em] -ml-[1em]`)}
+        className={cn(`before:content-['#'] before:absolute before:-ml-[1em] before:text-opacity-0 before:text-white hover:before:text-[#bb434e]/100 transition-opacity duration-300 pl-[1em] -ml-[1em]`)}
         {...props}
       />
     );

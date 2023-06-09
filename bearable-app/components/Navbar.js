@@ -15,7 +15,7 @@ export default function Navbar() {
   }
 
   return (
-    <header id='top'>
+    <header>
       <nav className="absolute items-center top-0 w-full h-[64px] bg-[#F3F1E4] z-50">
         <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
           <Link href='/'>

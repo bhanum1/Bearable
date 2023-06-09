@@ -1,32 +1,14 @@
-import Link from 'next/link'
 import { allLinearAlgebraLessons } from '.contentlayer/generated'
+import CourseTOC from '@/components/CourseTOC'
 
-function LessonCard(lesson) {
-
-  return (
-    <li>
-        <Link href={lesson.url}>
-            <h2 className='text-3xl font-bold'>{lesson.title}</h2>
-        </Link>
-        <ul className='ml-8 flex'> 
-            Authors: {lesson.authors.map((author) => (
-                <li className='ml-3' key={author}> {author}</li>
-            ))}
-        </ul>
-        <p className='ml-20'>{lesson.description}</p>
-    </li>
-  )
-}
+const overview = "Start your journey into the world of Linear Algebra! This course goes in-depth on the key topics covered with MAT188, the first year engineering linear algebra course."
 
 export default function LessonList() {
   return (
-    <div>
-      <h1 className='text-4xl font-bold mb-10'>List of Lessons:</h1>
-      <ul>
-      {allLinearAlgebraLessons.map((lesson, idx) => (
-        <LessonCard key={idx} {...lesson} />
-      ))}
-      </ul>
+    <div className='max-w-3xl mx-auto'>
+      <div className='flex justify-center'>
+        <CourseTOC lessons={allLinearAlgebraLessons} course="Linear Algebra" logo={'/matrix-icon.png'} overview={overview} />
+      </div>
     </div>
   )
 }

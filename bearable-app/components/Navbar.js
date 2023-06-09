@@ -32,13 +32,13 @@ export default function Navbar() {
           <div className="hidden sm:flex">
             <ul className="flex gap-16 pr-10">
               <Link href='/'>
-                <li className=" text-xl">Home</li>
+                <li className=" text-xl text-black hover:underline hover:underline-offset-[20px] hover:text-[#bb434e] transition-all duration-200">Home</li>
               </Link>
               <Link href='/courses'>
-                <li className=" text-xl">Courses</li>
+                <li className=" text-xl  text-black hover:underline hover:underline-offset-[20px] hover:text-[#bb434e] transition-all duration-200">Courses</li>
               </Link>
               <Link href='/about'>
-                <li className=" text-xl">About</li>
+                <li className=" text-xl  text-black hover:underline hover:underline-offset-[20px] hover:text-[#bb434e] transition-all duration-200">About</li>
               </Link>
               <button>
                 <BsFillMoonStarsFill />

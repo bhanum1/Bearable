@@ -1,0 +1,104 @@
+---
+title: 2. The Basics
+description: Vectors, matrices, and basic operations
+authors: [Bhanu, Cairo]
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossOrigin="anonymous"/>
+
+## Where to Start?
+
+As we covered before, linear algebra is not only really important, but also quite difficult. So to begin, we're going to cover all the basic concepts you'll need to succeed.
+This includes vectors, matrices, and basic operations you can do with them.
+
+## Vectors
+
+You may have heard of vectors before in physics class, or maybe from [_Despicable Me_](https://www.youtube.com/watch?v=nw9QoYL_8tI), as a quantity that has both direction and magnitude.
+
+However, vectors are more than just the basic ones used in physics, that only represent 2 quantities. As we know, linear algebra is all about going into higher dimensions, and so the definition of a vector in linear algebra is simply a structure that contains values in some number of dimensions (typically greater than 1). They are represented in either of the following ways:
+
+$$
+\begin{bmatrix}
+0 \\
+1 \\
+0 \\
+\end{bmatrix} 
+\quad
+\begin{bmatrix}
+0 & 1 & 0\\
+\end{bmatrix}
+$$
+
+These are examples of 3 dimensional vectors, as they have 3 numbers in them. We'll get more into dimensions later, but for now just understand that vectors can be in any number of dimensions.
+
+In linear algebra we use vectors to hold large amounts of information, like if we need to decide the color of something. RGB values are a 3 dimensional vector used to describe a color based on how red, green, and blue it is.
+
+## Dimensions
+In linear algebra we talk about dimensions frequently, so its important you understand exactly what it means. A dimension is essentially something we can store information about. For example, the velocit vectors you learned in physics have 2 dimensions. It only had a width and a height. However, digital representation of color is a 3 dimensional quality, as it tells you how red, green, and blue something is.
+
+If a vector has 2 dimensions, we say it is a vector in $$ \mathbb{R^2} $$ (pronounced "R two"), if it has 4 dimensions it's in $$\mathbb{R^4}$$ and so on.
+
+Dimensions will matter much more later on, but for now that's all you need to know about them. For some quick examples, vector v is in $$\mathbb{R^6}$$ and vector u is in $$\mathbb{R^3}$$.
+
+$$
+v = 
+\begin{bmatrix}
+3 & 2 & 3 & 8 & 3 & 12\\
+\end{bmatrix} 
+\quad
+u=
+\begin{bmatrix}
+2 & 2 & 7 \\
+\end{bmatrix} 
+$$
+
+
+
+## Matrices
+
+Matrices are the next step up from vectors, and they can get confusing really fast. A matrix (singular form of matrices) is a set of numbers arranged in a certain way to make them useful.
+
+They look like this:
+$$
+\begin{bmatrix}
+1 & 0\\
+0 & 1 \\
+\end{bmatrix} 
+$$
+
+
+A matrix can have any positive number of rows and columns, and is referred to as an nxm matrix, where n is number of rows and m is number of columns.
+So here is a 3x2 matrix, A, and a 2x5 matrix, B:
+
+$$
+A = 
+\begin{bmatrix}
+9 & 0 \\
+2 & 1 \\
+0 & 0 \\
+\end{bmatrix} 
+\quad
+B=
+\begin{bmatrix}
+1 & 0\\
+0 & 1 \\
+\end{bmatrix} 
+$$
+
+Vectors are also techincally matrices, but with only 1 row or column. C is a 3x1 matrix, or a column vector in $$\mathbb{R^3}$$ and D is a 1x2 matrix, or a row vector in $$\mathbb{R^2}$$
+
+$$
+C = 
+\begin{bmatrix}
+4\\
+2\\
+0\\
+\end{bmatrix} 
+\quad
+D=
+\begin{bmatrix}
+6 & 9\\
+\end{bmatrix} 
+$$
+
+Representing what matrices mean is a little bit harder. Matrices are essentially maps, that take you from one vector to another. Consider a case where you need to predict the color of a leaf based on the size and weight. You have a vector in $$\mathbb{R^2}$$ representing the size and weight, and you want a vector in $$\mathbb{R^3}$$ with the RGB values of the color. So you have to go from a $$\mathbb{R^2}$$ vector to a $$\mathbb{R^3}$$ vector, and to do this you need some sort of map, or system of equations, that describes how to get there. This is what matrices are for, and in fact a 3x2 matrix is what you need. We'll see how to do this math later on this lesson, but for now understand that:
+__Matrices are "linear maps" that take you from one vector to another, regardless of dimension.__

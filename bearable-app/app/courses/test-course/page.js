@@ -1,25 +1,15 @@
 import Link from 'next/link'
 import { allDocs } from '.contentlayer/generated'
+import CourseTOC from '@/components/CourseTOC'
 
-function DocCard(doc) {
-  return (
-    <li>
-        <Link href={doc.url}>
-        {doc.title}
-        </Link>
-    </li>
-  )
-}
+const overview = "This is where it all begins! A hands-on introduction to all of the essential tools you'll need to build real, working websites. You'll learn what web developers actually do – the foundations you'll need for later courses."
 
 export default function LessonList() {
   return (
-    <div>
-      <h1>List of Markdown Files:</h1>
-      <ul>
-      {allDocs.map((doc, idx) => (
-        <DocCard key={idx} {...doc} />
-      ))}
-      </ul>
+    <div className='max-w-3xl mx-auto'>
+      <div className='flex justify-center'>
+        <CourseTOC lessons={allDocs} course="Test Course" logo={'/bearable-logo.png'} overview={overview} />
+      </div>
     </div>
   )
 }

@@ -22,7 +22,17 @@ export const Doc = defineDocumentType(() => ({
   fields: {
     title: { 
       type: 'string', 
-      required: true }
+      required: true 
+    },
+    description: {
+      type: 'string', 
+      required: true
+    },
+    authors: {
+      type: 'list', 
+      of: {type: 'string'},
+      required: true
+    }
   },
   computedFields: {
     url: { 

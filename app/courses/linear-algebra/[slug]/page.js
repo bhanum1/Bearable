@@ -1,6 +1,5 @@
 import { allLinearAlgebraLessons } from '.contentlayer/generated'
 import { LessonCheck, LessonParams, LessonLayout } from '@/components/LessonLayout'
-import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() { 
   return LessonParams(allLinearAlgebraLessons)}

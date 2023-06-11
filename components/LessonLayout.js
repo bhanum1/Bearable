@@ -13,8 +13,8 @@ export function LessonParams(lessons) {
   }))}
 
 export function LessonCheck( slug, lessons, course) {
-  const lesson = lessons.find((lesson) => lesson._raw.flattenedPath === `${course}/${slug}`)
-  if (!lesson) throw new Error(`Lesson not found for slug: ${course}/${slug}`) 
+  const lesson = lessons.find((lesson) => lesson._raw.flattenedPath === `${course}//${slug}`)
+  if (!lesson) throw new Error(`Lesson not found for slug: ${course}//${slug}`) 
   // TODO: change throw to notFound() in final version of website
   
   return lesson

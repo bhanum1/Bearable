@@ -102,3 +102,44 @@ $$
 
 Representing what matrices mean is a little bit harder. Matrices are essentially maps, that take you from one vector to another. Consider a case where you need to predict the color of a leaf based on the size and weight. You have a vector in $$\mathbb{R^2}$$ representing the size and weight, and you want a vector in $$\mathbb{R^3}$$ with the RGB values of the color. So you have to go from a $$\mathbb{R^2}$$ vector to a $$\mathbb{R^3}$$ vector, and to do this you need some sort of map, or system of equations, that describes how to get there. This is what matrices are for, and in fact a 3x2 matrix is what you need. We'll see how to do this math later on this lesson, but for now understand that:
 __Matrices are "linear maps" that take you from one vector to another, regardless of dimension.__
+
+## Vector Operations
+
+We can do math with vectors similar to how you can do math with numbers. First, we can add two vectors of the same dimension together by adding each number to its corresponding one, like this:
+
+$$
+\begin{bmatrix}
+2\\
+3\\
+\end{bmatrix} 
++
+\begin{bmatrix}
+-4\\
+2\\
+\end{bmatrix} 
+=
+\begin{bmatrix}
+-2\\
+5\\
+\end{bmatrix}
+$$
+
+Subtraction works the exact same way, but multiplication is different, because there is 2 different kinds. __You cannot usually multiply 2 vectors togehter__
+
+Scalar multiplication, which is when you multiply a normal number by a vector, is quite simple and is done elementwise like addition:
+
+$$
+4 * 
+\begin{bmatrix}
+-1\\
+2\\
+4\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-4\\
+8\\
+16\\
+\end{bmatrix} 
+$$
+

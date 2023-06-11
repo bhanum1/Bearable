@@ -6,7 +6,7 @@ import { LessonCard } from './CourseTOC'
 import { course_title } from '@/lib/utils'
 
 
-import { MdToc } from 'react-icons/Md'
+import { MdToc } from 'react-icons/md'
 import { RiBookFill } from 'react-icons/ri'
 
 

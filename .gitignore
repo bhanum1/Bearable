@@ -2,6 +2,7 @@
 
 # dependencies
 bearable-app/node_modules/
+node_modules/
 /.pnp
 .pnp.js
 
@@ -10,6 +11,7 @@ bearable-app/node_modules/
 
 # next.js
 bearable-app/.next/
+.next/
 /out/
 
 # production
@@ -36,3 +38,4 @@ next-env.d.ts
 
 # content layer
 bearable-app/.contentlayer
+.contentlayer

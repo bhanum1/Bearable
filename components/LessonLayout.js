@@ -3,18 +3,16 @@ import HeadingToc from '@/components/HeadingToc'
 import InlineLessonToc from './InlineLessonToc'
 import '@/app/katex.css'
 import { BsFileArrowUpFill } from 'react-icons/bs'
-
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 export function LessonParams(lessons) { 
-  return lessons.map((lesson) => ({ 
-    slug: lesson._raw.flattenedPath.replace(/%2F/g, '/') 
+  return lessons.map((lesson) => ({
+    slug: lesson._raw.flattenedPath 
   }))}
 
 export function LessonCheck( slug, lessons, course) {
-  const lesson = lessons.find((lesson) => lesson._raw.flattenedPath === `${slug}`)
-  if (!lesson) throw new Error(`Lesson not found for slug: ${slug}`) 
+  const lesson = lessons.find((lesson) => lesson._raw.flattenedPath === `${slug.replace(/%2F/g, "/")}`)
+  if (!lesson) throw new Error(`Lesson not found for slug: ${slug.replace(/%2F/g, "/")}`) 
   // TODO: change throw to notFound() in final version of website
   
   return lesson

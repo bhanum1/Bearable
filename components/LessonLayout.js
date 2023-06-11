@@ -7,7 +7,7 @@ import { notFound } from 'next/navigation'
 
 export function LessonParams(lessons) { 
   return lessons.map((lesson) => ({
-    slug: lesson._raw.flattenedPath 
+    slug: lesson._raw.flattenedPath.split(' ').shift()
   }))}
 
 export function LessonCheck( slug, lessons, course) {

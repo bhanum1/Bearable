@@ -102,3 +102,136 @@ $$
 
 Representing what matrices mean is a little bit harder. Matrices are essentially maps, that take you from one vector to another. Consider a case where you need to predict the color of a leaf based on the size and weight. You have a vector in $$\mathbb{R^2}$$ representing the size and weight, and you want a vector in $$\mathbb{R^3}$$ with the RGB values of the color. So you have to go from a $$\mathbb{R^2}$$ vector to a $$\mathbb{R^3}$$ vector, and to do this you need some sort of map, or system of equations, that describes how to get there. This is what matrices are for, and in fact a 3x2 matrix is what you need. We'll see how to do this math later on this lesson, but for now understand that:
 __Matrices are "linear maps" that take you from one vector to another, regardless of dimension.__
+
+## Vector Operations
+
+We can do math with vectors similar to how you can do math with numbers. First, we can add two vectors of the same dimension together by adding each number to its corresponding one, like this:
+
+$$
+\begin{bmatrix}
+2\\
+3\\
+\end{bmatrix} 
++
+\begin{bmatrix}
+-4\\
+2\\
+\end{bmatrix} 
+=
+\begin{bmatrix}
+-2\\
+5\\
+\end{bmatrix}
+$$
+
+Subtraction works the exact same way, but multiplication is different, because there are 3 different kinds. __You cannot always multiply 2 vectors together.__
+
+Scalar multiplication, which is when you multiply a normal number by a vector, is quite simple and is done elementwise like addition:
+
+$$
+4 * 
+\begin{bmatrix}
+-1\\
+2\\
+4\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-4\\
+8\\
+16\\
+\end{bmatrix} 
+$$
+
+You cant divide with vectors, but you can multiply by a fraction or a decimal:
+$$
+\frac{3}{4} * 
+\begin{bmatrix}
+-4\\
+3\\
+8\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-3\\
+\frac{9}{4}\\
+6\\
+\end{bmatrix} 
+$$
+
+This matters because its just as important as normal addition or multiplication, and we'll use it in literally everything in linear algebra.
+
+Now we need to discuss the other 2 kinds of vector multiplication, the __dot product__ and the __cross product__.
+
+### Dot Product
+The dot product is an operation that can be done on 2 vectors with the same dimension, by multiplying each corresponding element together and summing the results.
+
+For example:
+$$
+\begin{bmatrix}
+-1\\
+2\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+-3\\
+-1\\
+\end{bmatrix} 
+=
+$$
+
+$$
+(-1 \cdot -3) + (2 \cdot -1) = 
+$$
+
+$$
+3 - 2 = 1
+$$
+
+The dot product cannot be done with vectors of different sizes as not all numbers will match up. The dot product also __returns a scalar, even though we are multiplying 2 vectors.__
+
+### Cross Product
+
+## Matrix Operations
+
+Matrices can be multiplied by scalars just like vectors, elementwise:
+
+$$
+\frac{1}{3} * 
+\begin{bmatrix}
+-6 & 3\\
+2 & 9\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+-2 & 1\\
+\frac{2}{3} & 3\\
+\end{bmatrix} 
+$$
+
+But they cant always be multiplied, their dimensions have to agree.
+
+To understand this, we need to understand how to multiply matrices.
+
+### Matrix multiplication
+Lets start with 2 'square' matrices of the same size. A square matrix is a matrix with the same number of rows as columns.
+
+$$
+\begin{bmatrix}
+-1 & 0\\
+1 & 2\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+3 & 2\\
+0 & -5\\
+\end{bmatrix} 
+$$
+
+This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the dot product of a row and a column.
+### Matrix times vector
+
+
+## Why does this matter
+
+## Practice

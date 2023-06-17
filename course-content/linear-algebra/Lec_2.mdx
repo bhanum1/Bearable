@@ -124,7 +124,7 @@ $$
 \end{bmatrix}
 $$
 
-Subtraction works the exact same way, but multiplication is different, because there is 2 different kinds. __You cannot usually multiply 2 vectors togehter__
+Subtraction works the exact same way, but multiplication is different, because there are 3 different kinds. __You cannot always multiply 2 vectors together.__
 
 Scalar multiplication, which is when you multiply a normal number by a vector, is quite simple and is done elementwise like addition:
 
@@ -143,7 +143,7 @@ $$
 \end{bmatrix} 
 $$
 
-You cant divide a vector by a scalar, but you can multiply by a fraction or a decimal:
+You cant divide with vectors, but you can multiply by a fraction or a decimal:
 $$
 \frac{3}{4} * 
 \begin{bmatrix}
@@ -159,9 +159,13 @@ $$
 \end{bmatrix} 
 $$
 
-We'll get into the other kind of multiplication later on when we discuss matrix operations.
+This matters because its just as important as normal addition or multiplication, and we'll use it in literally everything in linear algebra.
 
-As for why this matters, this is just as important as normal addition, because we'll use it in literally everything in linear algebra.
+Now we need to discuss the other 2 kinds of vector multiplication, the __dot product__ and the __cross product__.
+
+### Dot Product
+
+### Cross Product
 
 ## Matrix Operations
 
@@ -181,3 +185,27 @@ $$
 $$
 
 But they cant always be multiplied, their dimensions have to agree.
+
+To understand this, we need to understand how to multiply matrices, so lets start with 2 'square' matrices of the same size. A square matrix is a matrix with the same number of rows as columns.
+
+$$
+\begin{bmatrix}
+-1 & 0\\
+1 & 2\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+3 & 2\\
+0 & -5\\
+\end{bmatrix} 
+=
+$$
+
+### Matrix multiplication
+
+### Matrix times vector
+
+
+## Why does this matter
+
+## Practice

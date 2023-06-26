@@ -36,7 +36,7 @@ const computedFields = {
           const flag = groups?.flag;
           const content = groups?.content;
           return {
-            heading: flag?.length,
+            number: flag?.length,
             text: content,
             slug: content ? slugger.slug(content) : undefined,
           };

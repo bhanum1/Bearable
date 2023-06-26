@@ -36,7 +36,7 @@ export default function InlineLessonToc({ lessons, course }) {
 
       <aside className={ 
         `${isCollapsed ? ' bg-white shadow scale-100' : 'scale-0'} 
-            fixed mt-[40px] left-[45px] w-[300px] p-4 rounded-xl transition-all duration-300 origin-top-left`
+            fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
       }>
           <div className='p-8 px-4 pt-4 pb-4 border-b'>
                     <Link href={`/courses/${course}`} 

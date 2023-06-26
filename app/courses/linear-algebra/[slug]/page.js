@@ -12,7 +12,7 @@ export function generateMetadata({ params }) {
 export default function Layout({ params }) {
   return (
     <div>
-       <LessonLayout lessons={allLinearAlgebraLessons} course="linear-algebra" slug={params.slug}/>
+       <LessonLayout lessons={allLinearAlgebraLessons} course="linear-algebra" slug={params.slug} colour="#4B768F"/>
     </div>
   )
 } 

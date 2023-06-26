@@ -18,15 +18,17 @@ export function LessonCheck( slug, lessons, course) {
   return lesson
 }
 
-export function LessonLayout({ slug, lessons, course }) {
+export function LessonLayout({ slug, lessons, course, colour }) {
     const lesson = LessonCheck(slug, lessons, course)
   // TODO: change throw to notFound() in final version of website
+
+  // GRADIENT: bg-gradient-to-r from-emerald-500 from-50% to-sky-500
 
   return (
     <div>
       
       {/* Title Bar */}
-      <div className='sticky top-0 pl-40 bg-gradient-to-r from-emerald-500 from-50% to-sky-500 text-white h-[64px] shadow-xl'>
+      <div className={`sticky top-0 pl-[7rem] bg-[#4B768F] text-white h-[64px] shadow-xl`}>
         <div className='flex justify-left'>
           <h1 className="scroll-m-20 text-3xl font-bold tracking-tight">
             <a href="#top">

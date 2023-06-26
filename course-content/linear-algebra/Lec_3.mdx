@@ -1,13 +1,130 @@
 ---
 title: 3. Systems of Equations
 description: Represent equations with matrices and solutions with vectors. Solving SoE, number of solutions, etc.
-authors: [Bhanu]
+authors: [Bhanu, Cairo]
 ---
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossOrigin="anonymous"/>
 
 ## System of Equations
 
 ## Matrix Representation
+
+In the last lesson, we explained that matrcies represent maps from one vector to another regardless of dimension. While this is true, there are many other ways that matrcies can be interpreted, such as the case with systems of linear equations.
+
+$$
+
+$$
+
+In high school you may remeber learning two different ways to find the Point of Intersection between two functions, **Subsitiution** and **Elimination**.
+The motivation behind represeting systems of linear equations is rooted by the goal finding of intersetions between these functions as typically they provide unique solutions to complex problems. In high school, we were only ever concerned with finding the point of intersection between two functions and these functions typically only have two variables, but what if wanted to find an inserction between 3, 4 or even 1000 functions. And what if these functions all had 1000 variables? The matrix representation provides use with means of simplifying this information to be more consumable. Later in the lesson we will discuss how to solve for these points of intersection using a *fancier* form of Elimination.
+
+There are two main ways we represent systems of equations in matrcies, coeffcient matrcies and augemented matrcies.
+
+### Coeffcient Matrix
+
+Lets say we're given the following three linear equations:
+
+$$
+\begin{align}
+3x_1 + 4x_2 - 7x_3 \\
+6x_1 - 1x_2 + 3x_3 \\
+5x_1 - 8x_2 + 9x_3 \\
+\end{align}
+$$
+
+> Keep in mind each $$x_i$$ is a different variable (like as $$x, y, z$$). Using subscripts in this way allows us to suggest there can be infinitly many variables.
+
+A **Coeffcient Matrix** takes the coeffcients on each variable and lines them up column-wise and lines each equation up row-wise.
+
+$$
+\begin{align*}
+
+& \hspace{1em} \begin{matrix} x_1 & x_2 & x_3 \end{matrix} \\
+
+\begin{align*}
+3x_1 + 4x_2 - 7x_3 \\
+6x_1 - 1x_2 + 3x_3 \\
+5x_1 - 8x_2 + 9x_3 \\
+\end{align*}
+
+\hspace{0.5cm} \longrightarrow \hspace{0.5cm}
+
+\begin{matrix}
+\text{Eq: } 1 \\
+\text{Eq: } 2 \\
+\text{Eq: } 3 
+\end{matrix}
+
+& \begin{bmatrix}
+3 & 4 & -7 \\
+6 & -1 & 3 \\
+5 & -8 & 9
+\end{bmatrix}
+
+\end{align*}
+$$
+
+### Augemented Matrix
+
+An augmented matrix is the same as the coeffecient matrix however, the key difference is the augment matrix has a sectioned column dedicated towards a scalar quantity included each linear equation, typically denoted as the vector $$\vec{b}$$.
+
+For example, instead consider the following system of linear equations:
+
+$$
+\begin{align*}
+3x_1 + 4x_2 - 7x_3 & = 8\\
+6x_1 - 1x_2 + 3x_3  & = -2\\
+5x_1 - 8x_2 + 9x_3 & = 4 \\
+\end{align*}
+$$
+
+The augemented matrix representation would then be of the following form:
+
+$$
+\left[\begin{array}{ccc|c}  
+ 3 & 4 & -7 & 8 \\  
+ 6 & -1 & 3 & -2 \\
+ 5 & -8 & 9 & 4
+\end{array}\right]
+$$
+
+### The Matrix Equation
+
+Putting together the concepts of the coeffcient and augemented matricies, we often will see a short had representation of linear equation representation in the form of the matrix equation:
+
+$$
+A\vec{x}=\vec{b}
+$$
+
+$$
+\begin{align*}
+A: & \hspace{1cm} \text{Coeffcient Matrix} & \hspace{1cm}
+\begin{bmatrix} 
+a_{x_1, 1} & a_{x_1, 2} & \dots & a_{x_1, 3} \\
+a_{x_2, 1} & a_{x_2, 2} & \dots & a_{x_2, 3} \\
+\vdots & \vdots & \vdots \\
+a_{x_n, 1} & a_{x_n, 2} & \dots & a_{x_n, 3}
+\end{bmatrix}\\
+
+\vec{x}: & \hspace{1cm} \text{Column Vector of all Variables} & \hspace{1cm}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}\\
+
+\vec{b}: & \hspace{1cm} \text{Column Vector of all Scalars} & \hspace{1cm}
+\begin{bmatrix}
+b_1 \\
+b_2 \\
+\vdots \\
+b_n
+\end{bmatrix}
+
+\end{align*}
+$$
+
+Representing systems of linear equations allows us to refer to the system of linear equations, and its solutions without having to draw out the entire matrix every time. We will see later that the matrix representation, partificullay in the augemented form is useful for working torwards the solutions to the system.
 
 ## Solving a System of Equations
 

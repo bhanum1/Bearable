@@ -5,6 +5,8 @@ import '@/app/katex.css'
 import { BsFileArrowUpFill } from 'react-icons/bs'
 import { notFound } from 'next/navigation'
 
+import TitleBar from './lesson-title-bar'
+
 export function LessonParams(lessons) { 
   return lessons.map((lesson) => ({
     slug: lesson.slugAsParams
@@ -26,40 +28,15 @@ export function LessonLayout({ slug, lessons, course, colour }) {
 
   return (
     <div>
-      
-      {/* Title Bar */}
-      <div className={`sticky top-0 pl-[7rem] bg-[#4B768F] text-white h-[64px] shadow-xl`}>
-        <div className='flex justify-left'>
-          <h1 className="scroll-m-20 text-3xl font-bold tracking-tight">
-            <a href="#top">
-            {lesson.title}
-            </a>
-          </h1> 
-        </div>
-        <div className='flex justify-left'>
-            <ul className='flex'> 
-                Written By: {lesson.authors.map((author) => (
-                    <li className='ml-3' key={author}> {author}</li>
-                ))}
-            </ul>
-        </div>
-      </div>
-
       {/* Lesson Contents and Components */}
-      <div>
-        <div>
-          <HeadingToc headings={lesson.headings} />
-        </div>
-        <div>
-          <div className='relative'>
-            <InlineLessonToc lessons={lessons} course={course} />
+        <HeadingToc headings={lesson.headings} />
+        <InlineLessonToc lessons={lessons} course={course} />
+        <article className='flex justifiy-stretch lg:pr-[350px] pr-[60px] ml-[70px]'>
+          <div className='max-w-[920px] px-10 mt-3'>
+            <TitleBar title={lesson.title} description={lesson.description} authors={lesson.authors} date={lesson.date}/> 
+            <Mdx code={lesson.body.code} />
           </div>
-          <article className='flex justifiy-stretch lg:pr-[350px] pr-[60px] ml-[70px]'>
-            <div className='max-w-[920px] px-10 mt-3'> 
-              <Mdx code={lesson.body.code} />
-            </div>
-          </article>
-        </div>
+        </article>
         <button className='fixed group right-8 bottom-[100px] hover:text-[#bb434e] transition-all'>
           <a href='#top'>
             <BsFileArrowUpFill size={50}/>
@@ -68,7 +45,6 @@ export function LessonLayout({ slug, lessons, course, colour }) {
             Scroll to Top
           </span>
         </button>
-      </div>
     </div>
   )
 }

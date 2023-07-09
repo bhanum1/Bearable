@@ -27,7 +27,7 @@ export default function Navbar() {
               width='64'
               height='64'>
             </Image>
-            <h1 className="text-3xl pl-1 font-Habibi">Bearable</h1>
+            <h1 className="text-3xl pl-1 font-Habibi font-extrabold">Bearable</h1>
           </div>
           </Link>
           <div className="hidden sm:flex">

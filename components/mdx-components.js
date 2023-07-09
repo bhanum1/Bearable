@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import Link from 'next/link'
 
+import TitleBar from "./lesson-title-bar"
 
 import { cn } from "@/lib/utils"
 
@@ -163,6 +164,7 @@ const components = {
     />
   ),
   Image,
+  TitleBar,
 }
 
 export function Mdx({ code }) {

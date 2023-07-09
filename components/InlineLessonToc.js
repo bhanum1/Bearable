@@ -25,10 +25,11 @@ export default function InlineLessonToc({ lessons, course }) {
     <div className=''>
 
       {/* Button Sidebar*/}
-      <div className='fixed flex-col justify-center items-center left-0 top-[64px] h-full w-[60px]'> 
-        <button className='mt-[60px] relative group flex items-center justify-center h-[60px] w-[60px] hover:text-[#bb434e] transition-all duration-300' onClick = {CollapseHandler}>
+      <div className='fixed flex justify-center left-0 top-[0px] h-full w-[110px]'> 
+        <button className='mt-[60px] group flex items-center justify-center h-[60px] w-[60px] hover:text-[#bb434e] transition-all duration-300' onClick = {CollapseHandler}>
           <MdToc size={40}/>
-          <span className='fixed ml-7 p-2 w-auto min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 group-hover:scale-100 origin-left'>
+          <span className={ `${isCollapsed ? 'scale-0' : 'group-hover:scale-100' }  fixed ml-7 p-2 w-auto min-w-max left-14 rounded-md shadow-md text-white bg-gray-900 text-xs font-bold transition-all duration-100 scale-0 origin-left`
+            }>
             List of Lessons
           </span>
         </button>
@@ -36,13 +37,13 @@ export default function InlineLessonToc({ lessons, course }) {
 
       <aside className={ 
         `${isCollapsed ? ' bg-white shadow scale-100' : 'scale-0'} 
-            fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
+            z-50 fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
       }>
           <div className='p-8 px-4 pt-4 pb-4 border-b'>
                     <Link href={`/courses/${course}`} 
                     className='flex items-center no-underline py-3 px-2 scroll-mt-5 group hover:bg-gray-100 rounded-lg transition ease-in-out  hover:transition-colors'>
                         <RiBookFill size={25}/>
-                        <h3 className='pl-3 text-lg font-medium text-gray-900 hover:underline w-fit'
+                        <h3 className='pl-3 text-lg font-medium text-gray-900 w-fit'
                         id={course}> 
                         {title} 
                         </h3>

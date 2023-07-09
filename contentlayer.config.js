@@ -65,6 +65,10 @@ export const Doc = defineDocumentType(() => ({
       type: 'list', 
       of: {type: 'string'},
       required: true
+    },
+    date: {
+      type: 'date',
+      required: true
     }
   },
   computedFields
@@ -87,6 +91,10 @@ export const LinearAlgebraLesson = defineDocumentType(() => ({
       type: 'list', 
       of: {type: 'string'},
       required: true
+    },
+    date: {
+      type: 'date',
+      required: true
     }
   },
   computedFields
@@ -103,7 +111,7 @@ export default makeSource({
         rehypePrettyCode, // NOTE: Later one if we use the code blocks, we can use a JSON file for the code theme
         // See rehype pretty code documentation to learn more abou this
         {
-          theme: 'monokai',
+          theme: 'min-dark',
           keepBackground: true,
           onVisitLine(node) {
             // prevent lines from collapsing in 'display: gird' mode and allow empty lines to be copy/pasted

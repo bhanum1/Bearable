@@ -106,9 +106,9 @@ date: 2023-07-09
 ## Linear Transformation
 
     Now lets get into how to actually talk about linear transformations. A linear transformation is a set of operations that takes us from a domain in $$\mathbb{R^n}$$ to a domain in $$\mathbb{R^m}$$. This means that it takes us from one dimension to another.
-    If you remember from our section about matrices, this is the same definition we got for an application of matrices. We've finally gotten to that application, and so we now know that linear transformations can be represented as matrices. This is shown by saying "Linear transformation, T, given by the matrix A" where A will be some n x m matrix.
+    If you remember from our section about matrices, this is the same definition we got for an application of matrices. We've finally gotten to that application, and so we now know that linear transformations can be represented as matrices. This is shown by saying "Linear transformation _T_ given by the matrix A" where A will be some n x m matrix.
 
-    Remember that a transformation takes us from one dimension to another, so a transformation represented by and n x m matrix takes us from $$\mathbb{R^m}$$ to $$\mathbb{R^n}$$. This makes sense because if we have a vector in $$\mathbb{R^2}$$ and we multiply it by a 3 x 2 matrix, we end up with a vector in $$\mathbb{R^3}$$:
+    Remember that a transformation takes us from one dimension to another, so a transformation represented by an n x m matrix takes us from $$\mathbb{R^m}$$ to $$\mathbb{R^n}$$. This makes sense because if we have a vector in $$\mathbb{R^2}$$ and we multiply it by a 3 x 2 matrix, we end up with a vector in $$\mathbb{R^3}$$:
     $$
     \begin{align*}
     \begin{bmatrix}
@@ -129,15 +129,109 @@ date: 2023-07-09
     \end{align*}
     $$
     
+    In this example, the linear transformation we are applying would be represented by the 3x2 matrix. This is important to keep in mind: although linear transformations are a new concept and a very fundamental one, at their core they're just about multiplication by a matrix.
+
 ## Linearity
 
+So what does it actually mean for something to be a linear transformation? Well this is where linearity comes in. By definition, all linear transformations must have this property known as linearity, which boils down to 2 simple checks.
+
+For something to be linear, it must have __additivity__ and __homogeniety__. These are big words, but they aren't hard to understand. Here is an example:
+
+Lets take the simplest linear function possible: 
+
+$$
+f(x) = x
+$$
+
+For this to have additivity all it means is that if you take the function of 2 inputs, it has to equal the sum of the function of each input.
+$$
+f(a+b) = f(a) + f(b)
+$$
+
+Let's check with a = 2 and b = 3:
+
+$$
+\begin{align*}
+f(2+3) &= f(5) = 5 \\
+f(2) + f(3) &= 2 + 3 = 5 \\
+f(2+3) &= f(2) + f(3)\\
+\end{align*}
+$$
+
+Now lets check homogeniety. For this, the function of a scalar multiple of an input must equal the scalar multiple of the function value of that input.
+
+$$
+k \cdot f(a) = f(k \cdot a)
+$$
+
+Lets check with a = 2 and k = 5:
+
+$$
+\begin{align*}
+5 \cdot f(2) = 5 \cdot 2 = 10 \\
+f(5 \cdot 2) = f(10) = 10 \\
+5 \cdot f(2) = f(5 \cdot 2) \\
+\end{align*}
+$$
+
+So if an operation holds to these 2 conditions, we say that the operation has linearity and so is a linear transformation. This is the precise definition of a linear transformation.
+
+__IMPORTANT:__ Here is a little bit of a cheat, matrices always have linearity. This is why all linear transformations can be shown as a matrix and vice versa. (All matrices describe some linear transformation.)
 ## Inverse
+Here we will briefly discuss the concept of an inverse and what it means. 
+
+Consider a linear transformation _T_ given by matrix A. If we transform some vector _v_, we get a new vector, lets call it _u_. This can be shown as:
+
+$$
+Av = u
+$$
+
+But now lets say we're given the vector _u_ and we want to know what vector _v_ it corresponds to? This is where inverses come in. This lets us apply the transformation backwards, and go from output to input. So we want to find the function such that:
+
+$$
+v = f(u)
+$$
+
+Lets say matrix B represents the inverse of the linear transformation _T_, denoted by $$ T^{-1} $$. This means that if you apply B to the output, you get the input. Then:
+
+$$
+v = Bu
+$$
+
+So we can also define that matrix B is the inverse of matrix A, because it describes the inverse of the linear transformation given by A. Thus:
+
+$$
+B = A^{-1}
+$$
+
+What does this all mean? It means that (sometimes) if we have a linear transformation taking us from an input to an output, we can find the inverse linear transformation that takes us from the output to the input. This can be done as long as the matrix of the linear transformation is __invertible.__ We will discuss invertibility further later.
 
 ## Injective
 
+Lets return back to linear transformations to begin working our way towards a definition of invertibility. First, we define what it means for a transformation to be injective.
+
+For a transformation to be injective (also knows as "one-to-one" functions), it simply means that each output is mapped to only 1 corresponding input. Visually this can be seen like this: __NEED PICTURE__
+
+An example of an injective function is [y = x^3](https://www.desmos.com/calculator/qtupcw26mk). This has each output mapping to only one input, and a way to see this is with the "horizontal line test". If you were to pass a horizontal line from the top to the bottom of the function, nowhere does it hit 2 points simultaneously (try it on the link).
+
+Injective functions are not necessarily invertible because not all outputs have a corresponding input. Thus the inverse would not be defined at some points. This can be seen with the function [$$ e^{x} $$](https://www.desmos.com/calculator/bzlf5smk5h), which doesn't have any inputs corresponding to the negative numbers.
+
+(Note you can kind of make injective functions invertible by just redefining the output space to ignore the area the function doesn't map to, but I don't believe this is too important to understand for now.)
 ## Surjective
 
+Surjective functions (also known as "onto" functions) are the second type of function we will discuss. For a surjective function, all inputs are mapped to an output, with no outputs left unmatched to. However, an output can have multiple inputs matching to it. Visually this can be seen as this: __NEED IMAGE__.
+
+An example of a surjective function is [$$ y = x^{3} - x $$](https://www.desmos.com/calculator/5yvibjqwmc), which does not pass the horizontal line test, but does match to all possible real numbers as outputs.
+
+Surjective functions are not necessarily invertible because an output can have multiple inputs mapping to it, which would make the inverse impossible to determine at those points, because you would get 2 answers.
+
 ## Bijective
+
+Finally, a bijective function is simple one that is both injective and surjective. This means that all the outputs must have a corresponding input, and multiple inputs cannot map to the same output. This can be seen visually like this: __NEED IMAGE__.
+
+An example of a bijective function is [y = 2x](https://www.desmos.com/calculator/lqvf6j2fje). This function has all the outputs mapped to an input, because the range is all real numbers, so it is surjective. In addition, it passes the horizontal line test because no output has 2 (or more) corresponding inputs, so it is injective.
+
+This means the function is bijective. Now, by definition, which we will not prove here, bijective functions are invertible. But this should make logical sense, because all it means to be bijective is that all the outputs: 1. Can be mapped to an input and 2. Can't be mapped to multiple inputs. This just means that we can be sure that if a function is bijective and we are given an output, we can determine the input it came from, which is exactly what an inverse is.
 
 ## Invertibility
 

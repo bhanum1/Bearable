@@ -235,7 +235,26 @@ This means the function is bijective. Now, by definition, which we will not prov
 
 ## Invertibility
 
+Finally let's combine all of this together. And don't worry we will explain why invertibility matters in the next section, just stick with us for now.
+
+So if a function is bijective, that means that every input it has maps to exactly one output. That means if you knew the output, you could trace it back to the input, as seen here:
+
+How do you trace it back? Well you do the opposite of what you did to go from input to output, and this opposite is what we call the __inverse__. 
+
+Not all functions are invertible, as we discussed throughout this chapter, but thankfully for us it is very easy to see if a linear transformation is invertible given its matrix. All we have to do is take it to its RREF form. If the RREF form of a matrix is the identity matrix, then the matrix (and the linear transformation associated with the matrix) is invertible. We won't do the proof here, but you can read it elsewhere if you're curious.
+
+Here is an example of an invertible matrix:
+
+__DO RREF HERE__
+
 ## Why You Should Care
+
+Finally we can talk about why all of this matters. Well, we use linear transformations for all sorts of things, but let's discuss it in the context of data transfer. When you send data (a vector) from one computer to another, you might want to encode it so people can't read it, like if you're transferring a credit card number. Well to do this, you can simply transform the vector by multiplying it by a matrix. However, you want this transformation to be invertible, so that the person receiving the new data can unscramble it to find the original message. This is where you'd need an invertible linear transformation.
+
+Additionally, all of this information is mostly a foundation for us to get into the later parts of linear algebra, which will be all about using matrices and their inverses to compute calculations that are so complex, calculators can't even do them. 
+
+To put it briefly, inverses are vital because this gives us a vital tool we need in our toolkit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
+
 
 ## Practice
 

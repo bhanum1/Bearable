@@ -22,7 +22,7 @@ export default function InlineLessonToc({ lessons, course }) {
 
 
     return(
-    <div className=''>
+    <div>
 
       {/* Button Sidebar*/}
       <div className='fixed flex justify-center left-0 top-[0px] h-full w-[110px]'> 

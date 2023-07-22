@@ -1,17 +1,290 @@
 ---
 title: 5. Determinants
 description: Determinants and their properties and uses.
-authors: [Bhanu]
-date: 2023-07-09
+authors: [Cairo]
+date: 2023-07-17
 ---
 
 ## What is a Determinant
+In an earlier lesson, we mentioned the use of finding the **Determinant** to find the **Cross Product** of two vectors. You may have noticed that in order to this, we had to represent the vectors within a matrix containing the unit vectors. This is because the **Determinant** is an inheriet property of **Square Matricies**.
+
+**_Determinant_**
+    - A scalar propery of square matricies determined as a function of the values inside the matrix
+    - Represents certain characterisics about the matrix and its linear map
+      - A matrix is **_invertable_** **if and only if** the determinant is **nonzero**
+      - Represents a factor by which a linear transformation increases or decreases a given area
+    - Typically denoted as $$ \text{det}(A) $$, $$\text{det} A$$ or $$|A|$$
+
+We will discuss more about what **invertability** is how determinants play a role within it but for now, think of determinants as a property of a matrix that can tell us certain information about its **Linear Map**.
 
 ## 2x2 Determinant
+The determinant of a 2x2 matrix is the simpliest to calculate. It follows the following format:
+
+$$
+\text{det}\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+
+= 
+
+ad - bc
+$$
+
+Here's a quick example:
+
+$$
+\text{det}\begin{bmatrix}
+2 & -7 \\
+9 & 5
+\end{bmatrix}
+
+= 
+
+(2)(5) - (-7)(9)
+
+=
+73
+$$
+
 
 ## Higher Dimension Determinants
+Finding the determinant for higher dimensional matricies is not as simple as the 2x2 matrix case, however you will see how these rules and strategies can also be applied to the 2x2 case to show there the formula comes from.
+
+### Sarrus's Rule
+When explaining how to take the **Cross product** of two vectors, we used a method called **Sarrus's Rule**. It is important to note that while this rule is very helpful at streamlining the process of finding the determinant of a given matrix, it **CANNOT** be generalized for all higher order matricies as there are certain situations in which this method falls short. Despite this it is a very useful tool when dealing with 3x3 matricies which can be a espcically useful for Physics problems considering we are generally working in a 3D space.
+
+The reason we are explaining this first is because it can be a helpful and easy tool for when we attempt to give a deeper understanding behind the determinant calculation.
+
+ Here we'll re-explain the steps, however we will do so in the context of a normal matrix:
+
+$$
+\begin{bmatrix}
+3 & 2 & 1 \\
+1 & 2 & -3\\
+4 & -5 & 6
+\end{bmatrix}
+$$
+
+
+1. Repeat, the first and second columns on the right side of the matrix. Starting from the top row, draw diagonal lines from left to right and take the product of these values and take the sum of the products. 
+
+$$
+\begin{bmatrix}
+\textcolor{blue}{3} & \textcolor{blue}{2} & \textcolor{blue}{1} \\
+1 & \textcolor{blue}{2} & \textcolor{blue}{-3} \\
+4 & -5 & \textcolor{blue}{6}
+\end{bmatrix}
+
+\begin{matrix}
+3 & 2 \\
+\textcolor{blue}{1} & 2 \\
+\textcolor{blue}{4} & \textcolor{blue}{-5}
+\end{matrix}
+$$
+$$
+(3\cdot 2 \cdot 6) + (2 \cdot -3 \cdot 4) + (1 \cdot 1 \cdot -5) = 36 - 24 - 5 =\boxed{7}
+$$
+
+2. This time, starting from the bottom row, draw diagonal lines, this time from right to left and take the product of the numbers. This time, all products have a negative value (ie. multiply the product by $$-1$$).
+$$
+\begin{bmatrix}
+3 & 2 & \textcolor{red}{1} \\
+1 & \textcolor{red}{2} & \textcolor{red}{-3} \\
+\textcolor{red}{4} & \textcolor{red}{-5} & \textcolor{red}{6}
+\end{bmatrix} 
+
+\begin{matrix}
+\textcolor{red}{3} & \textcolor{red}{2} \\
+\textcolor{red}{1} & 2 \\
+4 & -5
+\end{matrix}
+$$
+
+$$
+ -(3 \cdot -3 \cdot -5) - (2 \cdot 1 \cdot 6) - (1 \cdot 2 \cdot 4) = -45 - 12 - 8 = \boxed{-65}
+$$
+
+3. Sum the outputs of Step 1 and Step 2
+$$
+(7) + (-65) = \boxed{-58}
+$$
+
+### Basis Behind the Determinant
+We need to get a better understanding of how a determinant is calculated in order to build up a method that can relabley calculate the determinant for any size matrix. For now we're gonna attempt to bring a more inuitive understanding to the determinant and were some of the tool to calculate it come from before going into the exact steps.
+
+To start off, we'll set up another 3x3 matrix and generalize the formula found using **Sarrus's Rule**.
+
+$$
+\text{det}\begin{bmatrix}
+    
+    \textcolor{red}{a} & \textcolor{blue}{b} & \textcolor{orange}{c} \\
+    \textcolor{red}{d} & \textcolor{blue}{e} & \textcolor{orange}{f} \\
+    \textcolor{red}{g} & \textcolor{blue}{h} & \textcolor{orange}{i}
+\end{bmatrix}
+
+=
+
+\begin{matrix}
+     \quad\quad \textcolor{red}{a}\textcolor{blue}{e}\textcolor{orange}{i} - \textcolor{red}{a}\textcolor{orange}{f}\textcolor{blue}{h} \\
+   + \quad \textcolor{blue}{b}\textcolor{orange}{f}\textcolor{red}{g} - \textcolor{blue}{b}\textcolor{red}{d}\textcolor{orange}{i} \\
+   + \quad \textcolor{orange}{c}\textcolor{red}{d}\textcolor{blue}{h} - \textcolor{orange}{c}\textcolor{blue}{e}\textcolor{red}{g}
+\end{matrix}
+$$
+
+You may have noticed in the explanation for **Sarrus's Rule** that by the nature of the diagonal lines, each product can only have one value from each column  and row in the matrix. This is the basis for the determinant, **it is the sum of the signed products of all possible combonations of column and row values within the square matrix**. 
+
+#### How many Products are there?
+One of the questions you might have is, **How do we know how many product there are?** Let's take it step by step. If we pick an option in the first column, there is $$ (n-1) $$ options to choose from since the next options in the product have to be in a different column. Once an option is picked, there will subsequently be $$ (n-2) $$ options in the third column and so on. The total number of combonations will be the product of all of these possible options or $$n(n-1)(n-2) $$. This forms the formula for a factorial meaning the total number of combonations is $$ n! $$ for any matrix.
+
+#### Which Products are Negative?
+With so many possible combonations, the next question you may ask is, **How do we know whether the product is positive or negative?** A lot of textbooks explain this with waaaaaay too much math jargon than is necessary so here we will attempt to simplify it.
+
+1. First let's take the product $$\textcolor{blue}{b}\textcolor{orange}{f}\textcolor{red}{g}$$ from earlier and represent each value by the column number it comes from. 
+
+$$ 
+\textcolor{blue}{b}\textcolor{orange}{f}\textcolor{red}{g} 
+
+\hspace{0.5cm}\text{ turns into }\hspace{0.5cm}
+
+[\textcolor{blue}{2},\textcolor{orange}{3},\textcolor{red}{1}]
+$$
+
+2. Next, count how many times you need to swap numbers such that they are in **ascending order**. In this case, how many swaps (also called permutations) to make the set become $$[\textcolor{red}{1},\textcolor{blue}{2},\textcolor{orange}{3}]$$.
+
+$$
+[\textcolor{blue}{2},\textcolor{orange}{3},\textcolor{red}{1}]
+$$
+
+$$
+\begin{align}
+[\textcolor{red}{1},\textcolor{orange}{3},\textcolor{blue}{2}] \\
+[\textcolor{red}{1},\textcolor{blue}{2},\textcolor{orange}{3}]
+\end{align}
+$$
+
+3. If the number of swaps is **even**, then the product is **positive**. If the number of swaps is **odd**, then the product is **negative**.
+
+$$
+\textcolor{blue}{b}\textcolor{orange}{f}\textcolor{red}{g} \rightarrow [\textcolor{blue}{2},\textcolor{orange}{3},\textcolor{red}{1}]  \rightarrow \text{2 swaps} \rightarrow \text{Positive} + \\
+\textcolor{blue}{b}\textcolor{red}{d}\textcolor{orange}{i} \rightarrow [\textcolor{blue}{2},\textcolor{red}{1},\textcolor{orange}{3}] \rightarrow \text{1 swap} \rightarrow \text{Negative} -
+$$
+
+### Method of Laplace Exapansion & Minors
+The purpose of the above section was to give you a background understanding for the methods of calculating the determinant. But how do we do in practice for higher dimensional matricies? It would take a really long time to find all the possible combonations and then also do the permutations to determine the sign of the product. Luckly just like **Sarrus's Rule** for 3x3 matricies, there are also strategies for higher dimensional matrecies as well.
+
+**Minors** are the determinants of submatricies that result when one column and one row are "elimnated" from the originial matrix. The submatracies are typically denoted as $$A_{ij} $$ where $$ i $$ is the row being elimated and  $$ j $$ is the column being elimanted.
+This may be a little bit confusing so we'll explain with an example:
+
+Consider the following example matrix:
+
+$$
+\begin{bmatrix}
+a & b & c \\
+d & e & f \\ 
+g & h & i
+\end{bmatrix}
+$$
+
+Now, lets say we were to "eliminate" the first row and first column, aka we're just gonna ignore these sections for now.
+
+The matrix $$A_{11}$$ is the matrix formed from the remaining values that haven't been eliminated. In this case the matrix is:
+
+$$
+\begin{bmatrix}
+\textcolor{grey}{\sout{a}} & \textcolor{grey}{\sout{b}} & \textcolor{grey}{\sout{c}} \\
+\textcolor{grey}{\sout{d}} & e & f \\ 
+\textcolor{grey}{\sout{g}} & h & i
+\end{bmatrix}
+
+\longrightarrow
+
+\begin{bmatrix}
+e & f \\
+h & i
+\end{bmatrix}
+$$
+
+In order to find the **Minor** of of the submatrix $$A_{12}$$ we can use **Sarrus's Rule** since this is a 3x3 matrix.
+
+$$
+\text{det}(A_{12}) 
+
+=
+
+\text{det}\begin{bmatrix}
+e & f \\
+h & i
+\end{bmatrix}
+
+=
+ei - fh
+$$
+
+Now you may be wondering up to this point, "How does finding the minor help us find the determinant?". Well let's take a look at the 
+minor and compare it to the determinant of the entire matrix that we found using **Saurrus's Rule** earlier.
+
+$$
+\begin{matrix}
+     \quad\quad \textcolor{red}{a}ei - \textcolor{red}{a}fh \\
+   + \quad \textcolor{blue}{b}\textcolor{orange}{f}\textcolor{red}{g} - \textcolor{blue}{b}\textcolor{red}{d}\textcolor{orange}{i} \\
+   + \quad \textcolor{orange}{c}\textcolor{red}{d}\textcolor{blue}{h} - \textcolor{orange}{c}\textcolor{blue}{e}\textcolor{red}{g}
+\end{matrix}
+$$
+
+You can see that the minor shows up in the products of the determinant. It turns out, if we compute the minors accross the first row of the matrix, the pattern continues. 
+
+This allows us to simplify the equation of the determinant to the following:
+
+$$
+\text{det}(A) = a\cdot\text{det}(A_{11}) - b\cdot\text{det}(A_{12}) + c\cdot\text{det}(A_{13}) 
+$$
+
+or more generally:
+
+$$
+\text{det}(A) = x_{11}\cdot\text{det}(A_{11}) - x_{12}\cdot\text{det}(A_{12}) + x_{13}\cdot\text{det}(A_{13}) 
+$$
+
+> The coeffcients are the value at the position $$x_{ij}$$ where is the row number and j is the column number. 
+
+We aren't going to prove it here but, it turns out that this simplification works for any size matrix and for any column or row elimination as long as either the column or row is kept constant amoung the minors. For example, here the the representation along the second column:
+
+$$
+\text{det}(A) =- x_{12}\cdot\text{det}(A_{12}) + x_{22}\cdot\text{det}(A_{22}) - x_{32}\cdot\text{det}(A_{32}) 
+$$
+
+You may have noticed that the signs of each of these terms seems to fluctuate. Just like how we have to consider the signed products of of the unique combonations of columns and rows, we have to accomodate the signs of the **Minors** as well, however the rule is much simipler. **If the sum of the minor indecies $$i + j$$ is odd, the minor is negative**. For example, the minor $$\text{det}(A_{12})  $$ is negative because $$1+2=3$$, is an odd number.
+
+The take away from all of this is, we can use the minors of **ANY nxn matrix** in order to calculate its determinant. We'll go into a quick example showing how to use this technique on a 4x4 matrix. Keep in mind though that doing this process by hand is very time consuming for larger and larger matrcies and for practical cases these are typically calculated by computers.
+
+#### Example Determinant of a 4x4 Matrix
+
+/* I cannot be asked to do this rn this is just hella latex */
 
 ## Properties
+One of the things we are interested in is understanding how the determinant of a matrix changes when we apply certain operations to that matrix. Understanding this can give us intuition to how operations on a matrix will change the linear map that the matrix creates, or intuition on how the determinant changes when put into row echelon form.
+
+**All-zero Property**
+  - If all of the elements of a row or column are 0, then the determinant is 0
+
+> This should make sense since if a row or column is equal to all 0, then every unique product would have 0 as a term.
+
+**Reflection Property**
+  - If a matrix is flip such that the rows are changes to columns and vice versa, the determinant will remain unchanged
+
+> This should make sense since all of the numbers in the matrix will have the same relative position, leading to the same unique product combonations
+
+**Proportionality Property**
+   - If all numbers in a row or column are identical to the elements in another row or column, then the determinant is 0
+
+> This should make sense since it would mean that 
+
+**Properties of Switching**
+   - If two rows or columns in a matrix are switched, the resulting matrix will have be equal to the negative determinant of the originial matrix
+   - If $$B$$ is a nxn matrix where two rows of the nxn matrix $$A$$ were switched, then $$\text{det}{B} = -\text{det}(A)$$
+
+/* should probably think about which properties are more important to include */
 
 ## Why You Should Care
 

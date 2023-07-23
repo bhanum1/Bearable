@@ -11,7 +11,7 @@ In an earlier lesson, we mentioned the use of finding the **Determinant** to fin
 **_Determinant_**
     - A scalar propery of square matricies determined as a function of the values inside the matrix
     - Represents certain characterisics about the matrix and its linear map
-      - A matrix is **_invertable_** **if and only if** the determinant is **nonzero**
+      - A matrix is **_invertable_** **if and only if** the determinant is **non-zero**
       - Represents a factor by which a linear transformation increases or decreases a given area
     - Typically denoted as $$ \text{det}(A) $$, $$\text{det} A$$ or $$|A|$$
 
@@ -246,7 +246,7 @@ $$
 \text{det}(A) = x_{11}\cdot\text{det}(A_{11}) - x_{12}\cdot\text{det}(A_{12}) + x_{13}\cdot\text{det}(A_{13}) 
 $$
 
-> The coeffcients are the value at the position $$x_{ij}$$ where is the row number and j is the column number. 
+> The coeffcients are the value at the position $$ x_{ij} $$ where $$ i $$ is the row number and $$ j $$ is the column number. 
 
 We aren't going to prove it here but, it turns out that this simplification works for any size matrix and for any column or row elimination as long as either the column or row is kept constant amoung the minors. For example, here the the representation along the second column:
 
@@ -265,26 +265,129 @@ The take away from all of this is, we can use the minors of **ANY nxn matrix** i
 ## Properties
 One of the things we are interested in is understanding how the determinant of a matrix changes when we apply certain operations to that matrix. Understanding this can give us intuition to how operations on a matrix will change the linear map that the matrix creates, or intuition on how the determinant changes when put into row echelon form.
 
-**All-zero Property**
+ **All-zero Property**
   - If all of the elements of a row or column are 0, then the determinant is 0
-
-> This should make sense since if a row or column is equal to all 0, then every unique product would have 0 as a term.
+  - This should make sense since if a row or column is equal to all 0, then every unique product would have 0 as a term.
 
 **Reflection Property**
   - If a matrix is flip such that the rows are changes to columns and vice versa, the determinant will remain unchanged
-
-> This should make sense since all of the numbers in the matrix will have the same relative position, leading to the same unique product combonations
+  - This should make sense since all of the numbers in the matrix will have the same relative position, leading to the same unique product combonations
 
 **Proportionality Property**
    - If all numbers in a row or column are identical to the elements in another row or column, then the determinant is 0
 
-> This should make sense since it would mean that 
-
 **Properties of Switching**
    - If two rows or columns in a matrix are switched, the resulting matrix will have be equal to the negative determinant of the originial matrix
-   - If $$B$$ is a nxn matrix where two rows of the nxn matrix $$A$$ were switched, then $$\text{det}{B} = -\text{det}(A)$$
+   - If $$B$$ is a nxn matrix where two rows of the nxn matrix $$A$$ were switched, then $$\text{det}(B) = -\text{det}(A)$$
 
-/* should probably think about which properties are more important to include */
+### Row Operation Properties
+
+**Scalar Multiplation**
+  - If all elements in a row or column are multiplied by a non-zero constant, the determinat will also be multiplied by the same constant
+
+**Linear Combonations**
+  - If any linear combinations of the other rows or columns are added to a row or column, then the determinant will remain unchanged.
+$$
+\text{det}\begin{bmatrix}
+a_1 & b_1 & c_1 \\
+a_2 & b_2 & c_2 \\ 
+a_3 & b_3 & c_3
+\end{bmatrix}
+
+=
+
+\text{det}\begin{bmatrix}
+a_1 + xb_1 + yc_1 & b_1 & c_1 \\
+a_2 + xb_2 + yc_2 & b_2 & c_2 \\ 
+a_3 + xb_3 + yc_3 & b_3 & c_3
+\end{bmatrix}
+$$
+
+$$
+\text{det}\begin{bmatrix}
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3 \\ 
+c_1 & c_2 & c_3
+\end{bmatrix}
+
+=
+
+\text{det}\begin{bmatrix}
+a_1 + xb_1 + yc_1 & a_2 + xb_2 + yc_2 & a_3 + xb_3 + yc_3 \\
+b_1 & b_2 & b_3 \\ 
+c_1 & c_2 & c_3
+\end{bmatrix}
+$$
+
+### Special Matrecies
+There properties are very important as they tend to fit a lot of cases and can save a lot of time calcualting determinants. These matricies are typically given as easy mark questions so its important to know them.
+
+**Triangluar Matricies**
+  - If all of the elements above, or all of the elements below the diagonal of a matrix are 0's then the determinant of the matrix is equal to the product of diagonal elements
+$$
+\text{det}\begin{bmatrix}
+a_1 & a_2 & a_3 \\
+0 & b_2 & b_3 \\ 
+0 & 0 & c_3
+\end{bmatrix}
+
+=
+
+\text{det}\begin{bmatrix}
+a_1 & 0 & 0 \\
+b_1 & b_2 & 0 \\ 
+c_1 & c_2 & c_3
+\end{bmatrix}
+
+=
+
+a_1b_2c_3
+$$
+
+**Block Matricies**
+  - If a block matrix contains of block of all zeros, then the determinant is the product of the determinants of the diagonal blocks
+  - This is technically an application of the triangular matrix rule 
+
+$$
+\text{det}\begin{bmatrix}
+a_{11} & a_{12} & b_{13} & b_{14} \\
+a_{21} & a_{22} & b_{23} & b_{24}\\ 
+0 & 0 & c_{33} & c_{34} \\
+0 & 0 & c_{43} & c_{44}
+\end{bmatrix}
+
+= 
+
+\text{det}\begin{bmatrix}
+A & B \\
+0 & C
+\end{bmatrix}
+
+= 
+
+\text{det}(A)\cdot\text{det}(C)
+$$
+
+$$
+\text{det}\begin{bmatrix}
+a_{11} & a_{12} & 0 & 0 \\
+a_{21} & a_{22} & 0 & 0 \\ 
+b_{31} & b_{32} & c_{33} & c_{34} \\
+b_{41} & b_{42} & c_{43} & c_{44}
+\end{bmatrix}
+
+=
+
+\text{det}\begin{bmatrix}
+A & 0 \\
+B & C
+\end{bmatrix}
+
+= 
+
+\text{det}(A)\cdot\text{det}(C)
+$$
+
 
 ## Why You Should Care
 

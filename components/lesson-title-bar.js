@@ -17,7 +17,7 @@ export default function TitleBar({ title, description, authors, date}) {
                     </div>
                     <div>
                         <time dateTime={date}>
-                            {format(parseISO(date), 'LLLL d, yyyy')}
+                            {format(parseISO(date), 'LLLL dd, yyyy')}
                         </time>
                     </div>
                 </div>

@@ -2,18 +2,54 @@
 title: 6. Vector Spaces
 description: Subspaces, image, kernel, dimension, and linear dependence.
 authors: [Bhanu]
-date: 2023-07-09
+date: 2023-07-22
 ---
 
+## Linear Spaces
+    A linear space is a set that is closed under addition or scalar multiplication. What this means is that if you take 2 vectors in some linear space, if you add them together or multiply either by a scalar, the result is still in the space. An example of a linear space is the set of all 2 dimensional vectors. 
+
 ## Subspace
-
-## Image
-
-## Kernel 
-
-## Dimension 
-
+    A subspace is very similar, as it is a set within a linear space that itself is closed under addition or scalar multiplication. This means that by definition, all linear subspaces are also linear spaces. For example, lets look at all vectors in $$\mathbb{R^3}$$. These are all vectors with 3 components, and they constitute a linear space. Now lets look at vectors in $$\mathbb{R^3}$$ that have a 0 as their 3rd component. You can try it yourself, but this set also is closed under addition and scalar multiplication, and so is a linear subspace. In fact, this linear subspace is just all the vectors in $$\mathbb{R^2}$$.
+    
 ## Linear Independence
+
+    Before we get into some more complicated things, lets discuss linear independence, which at its core is quite simple. Linear indepence is a trait a set of vectors can have, which just means that you can't make up a vector by combining the others in the set linearly (adding or scalar multiplication). For example:
+
+    __LINEARLY DEPENDENT SET__
+
+    is not linearly independent because
+
+    __EXAMPLE__.
+
+    However,
+
+    __LINEARLY INDEPENDENT SET__
+
+    is independent, because none of the vectors are linear combinations of the others.
+
+## Span
+
+    A spanning set is a related concept to linear independence and linear spaces. If some linear space, V, can be described entirely as a linear combination of a set of vectors, f, then f is a spanning set of vectors. For example,
+
+    [1,0] , [0,1], [1,1] is a spanning set for $$\mathbb{R^2}$$, because every 2-d vector can be described as a linear combination of these 3 vectors. Finding spanning sets is quite difficult and we will go over how to do this much later in the course. Knwoing whether a set is a spanning set is also going to be taught later.
+
+## Basis Introduction
+
+    A basis of a subspace is very simple to learn, but difficult to master. We will discus bases much more later, but for now just understand that a basis of a linear space is simply a spanning set that is linearly independent.
+
+    This means that any vector in a linear space can be expressed as a linear combination of basis vectors. The general form is:
+
+    v = c1b1 + c2b2 + ... cnbn
+
+    The coefficients ci are known as the coordinates of the vector in basis b. A space can have infinitely many bases, so you can have coordinates in any basis, which we will discuss more later.
+
+
+## Dimension, Image, Kernel, Rank, Nullity
+    We have already discussed dimension, but for a quick refresher it simply represents the degree of the space we are operating in, or how many free variables there are.
+
+    Now we must talk about the image and kernel of a linear transformation. The image of a linear transformation is simply the entire subspace that the transformation maps to. The dimension of this subspace is known as the _rank_.
+
+    This is essentially the "solution space". The kernel is quite different however, and represents the entire area of the domain that a linear transformation maps to the zero vector. All linear transformations must have the 0 vector in their kernel by definition. The dimension of the kernel is known as the __nullity__.
 
 ## Why You Should Care
 

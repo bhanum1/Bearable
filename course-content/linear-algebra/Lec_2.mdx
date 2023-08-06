@@ -432,9 +432,130 @@ $$
 \end{bmatrix} 
 $$
 
-This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the dot product of a row and a column.
+This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the **dot product** of a **row** and a **column**.
+
+$$
+\begin{bmatrix}
+\textcolor{blue}{-1} & \textcolor{blue}{0}\\
+\textcolor{red}{1} & \textcolor{red}{2}\\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+\textcolor{orange}{3} & \textcolor{purple}{2}\\
+\textcolor{orange}{0} & \textcolor{purple}{-5}\\
+\end{bmatrix} 
+
+=
+
+\begin{bmatrix}
+\textcolor{blue}{-1}\cdot \textcolor{orange}{3} + \textcolor{blue}{0} \cdot \textcolor{orange}{0} & \textcolor{blue}{-1}\cdot\textcolor{purple}{2}+ \textcolor{blue}{0}\cdot\textcolor{purple}{-5} \\
+\textcolor{red}{1}\cdot \textcolor{orange}{3} + \textcolor{red}{2}\cdot \textcolor{orange}{0} & \textcolor{red}{1}\cdot \textcolor{purple}{2} + \textcolor{red}{2}\cdot\textcolor{purple}{-5}\\
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+-3 & -2 \\
+3 & -8\\
+\end{bmatrix}
+$$
+
+Matrix multiplcation is not just exclusive to the same size matrcies, as long as the length of the columns and rows match up between two matrcies, its possible to multiply them together. However, the output dimensions of the product may be different from the inputs.
+
+$$
+\begin{bmatrix}
+-1 & 0 & 3\\
+1 & 2 & 4\\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+3 & 2 \\
+0 & -5 \\
+-3 & 1
+\end{bmatrix} 
+
+=
+
+\begin{bmatrix}
+-12 & 1 \\
+-9 & -4 \\
+\end{bmatrix} 
+$$
+
 
 ### Matrix times vector
+Similar to the matrix times matrix multiplcation, we can also multiply vectors and matricies as well, so long as the vector length is equal to the row length.
+
+$$
+\begin{bmatrix}
+-1 & 0\\
+1 & 2\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+3 & 2\\
+0 & -5\\
+\end{bmatrix} 
+$$
+
+This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the **dot product** of a **row** and a **column**.
+
+$$
+\begin{bmatrix}
+\textcolor{blue}{-1} & \textcolor{blue}{0}\\
+\textcolor{red}{1} & \textcolor{red}{2}\\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+\textcolor{orange}{3} \\
+\textcolor{orange}{0} \\
+\end{bmatrix} 
+
+=
+
+\begin{bmatrix}
+\textcolor{blue}{-1}\cdot \textcolor{orange}{3} + \textcolor{blue}{0} \cdot \textcolor{orange}{0} \\
+\textcolor{red}{1}\cdot \textcolor{orange}{3} + \textcolor{red}{2}\cdot \textcolor{orange}{0} \\
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+-3\\
+3 
+\end{bmatrix}
+$$
+
+This does however, reduce the dimensionality of the output as well to being a vector regardless of dimension.
+
+$$
+\begin{bmatrix}
+3 & 2 \\
+0 & -5 \\
+-3 & 1
+\end{bmatrix} 
+
+\cdot
+
+\begin{bmatrix}
+-1 \\
+1 
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+-1 \\
+-5 \\
+4 \\
+\end{bmatrix} 
+$$
 
 
 ## Why does this matter

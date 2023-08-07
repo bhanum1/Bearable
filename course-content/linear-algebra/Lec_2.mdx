@@ -217,7 +217,7 @@ The dot product cannot be done with vectors of different sizes as not all number
 
 /* INSERT IMAGE SHOWING THE RELATIONSHIP */
 
-When calculating cross product, there are many different ways that people decide to represent and characterize cross product, here we'll explore a couple.
+When calculating cross product, there are many different ways that people decide to represent and characterize cross product, here we'll explore a simple method.
 
 #### Matrix Determinant Representation
 
@@ -253,7 +253,7 @@ w_1 & w_2 & w_3
 \end{bmatrix}
 $$
 
-#### Diagonal Lines Method
+#### Diagonal Lines Method (Sarrus's Rule)
 
 1. Set up unit vector matrix
 
@@ -316,7 +316,7 @@ i & j & \textcolor{red}{k} \\
 $$
 
 $$
- (i \cdot -3 \cdot -5) - (j \cdot 1 \cdot 6) - (k \cdot 2 \cdot 4) = \boxed{-15i - 6j - 8k}
+ -(i \cdot -3 \cdot -5) - (j \cdot 1 \cdot 6) - (k \cdot 2 \cdot 4) = \boxed{-15i - 6j - 8k}
 $$
 
 4. Sum the outputs of Step 2 and Step 3
@@ -349,7 +349,7 @@ $$
 \end{bmatrix}
 $$
 
-This method isn't the only way to think about taking a cross product, however it is a realatively intuative way to remember the steps. Please keep in mind that you can take the cross product for any two vectors of the same size, just like the dot product and therefore this method of drawing diagonals works for any subsequently sized matrix.
+This method isn't the only way to think about taking a cross product, however it is a realatively intuative way to remember the steps. Please keep in mind that you can take the cross product for any two vectors of the same size, just like the dot product. The method explaind above however only applies to 3x3 matricies.
 
 ##### Example: Mechanics Cross Product
 
@@ -359,13 +359,13 @@ This cross product has many applications in physics and engineering. One familar
 
  The moment measured in newton-meters, (Nm) is equal to the cross product between the force applied (N) and the distance (m) between the force and the point of rotation.
 
- $$
+$$
 \vec{M} = \vec{F} \times \vec{d}
- $$
+$$
 
  In our given scenario, both the Force and the Distance are three dimensional vectors since this is a 3D real world problem. It then follows that the matrix representation of this cross product would be:
 
- $$
+$$
 \vec{M} = 
 \text{det}
 \begin{bmatrix}
@@ -389,7 +389,7 @@ M_x \\
 M_y \\
 M_z
 \end{bmatrix}
- $$
+$$
 
 #### Cross Product Properties
 
@@ -433,6 +433,7 @@ $$
 $$
 
 This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the dot product of a row and a column.
+
 ### Matrix times vector
 
 

@@ -29,7 +29,7 @@ export default function HeadingToc({headings}) {
               
               <ul>
                 {headings.map((heading) => (
-                  <HeadingItem heading={heading}/>
+                  <HeadingItem key={heading} heading={heading}/>
                 ))}
               </ul>
             ) : null}

@@ -8,6 +8,7 @@ import { course_title } from '@/lib/utils'
 
 import { MdToc } from 'react-icons/md'
 import { RiBookFill } from 'react-icons/ri'
+import {compareDesc, format, parseISO} from 'date-fns'
 
 
 
@@ -19,7 +20,7 @@ export default function InlineLessonToc({ lessons, course }) {
   }
 
   const title = course_title(course)
-
+  const sorted_lessons = lessons.sort((a, b) => compareDesc(new Date(b.date), new Date(a.date)))
 
     return(
     <div>
@@ -36,28 +37,30 @@ export default function InlineLessonToc({ lessons, course }) {
       </div>
 
       <aside className={ 
-        `${isCollapsed ? ' bg-white shadow scale-100' : 'scale-0'} 
+        `${isCollapsed ? 'scale-100' : 'scale-0'} 
             z-50 fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
       }>
-          <div className='p-8 px-4 pt-4 pb-4 border-b'>
-                    <Link href={`/courses/${course}`} 
-                    className='flex items-center no-underline py-3 px-2 scroll-mt-5 group hover:bg-gray-100 rounded-lg transition ease-in-out  hover:transition-colors'>
+          <div className="dark:border-gray-700' bg-white mb-10 rounded-lg shadow-xl dark:bg-gray-800">
+                <div className='border-b p-4 pl-8 dark:border-gray-700'>
+                    <a href={`#${course.toLowerCase().replace(/ /g, "-")}`} 
+                    className='group flex scroll-mt-5 items-center rounded-lg px-2 py-3 no-underline transition ease-in-out hover:bg-gray-100 hover:transition-colors dark:hover:bg-gray-700'>
                         <RiBookFill size={25}/>
-                        <h3 className='pl-3 text-lg font-medium text-gray-900 w-fit'
-                        id={course}> 
+                        <h3 className='w-fit pl-3 text-lg font-medium'
+                        id={course.toLowerCase().replace(/ /g, "-")}> 
                         {title} 
                         </h3>
-                    </Link>
+                    </a>
                 </div>
-                <div className='p-8 py-4 px-4'>
+                <div className='p-8 py-4'>
                     <div className='flex flex-col space-y-3'>
                         <ul>
-                        {lessons.map((lesson, idx) => (
+                        {sorted_lessons.map((lesson, idx) => (
                             <LessonCard key={idx} {...lesson} />
                         ))}
                     </ul>
+                    </div>
                 </div>
-          </div>
+            </div>
       </aside>
     </div>
     )

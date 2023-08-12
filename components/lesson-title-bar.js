@@ -5,8 +5,8 @@ import { AuthorCard } from "./author-card"
 
 export default function TitleBar({ title, description, authors, date}) {
     return(
-        <Card className="mb-10">
-            <CardHeader className="border-b pb-1">
+        <Card className="mb-10 dark:bg-gray-800 border-gray-200">
+            <CardHeader className="border-b border-gray-200 pb-1">
                 <CardTitle className="mt-2 scroll-m-20 text-4xl font-bold tracking-tight before:content-none"> 
                     {title} 
                 </CardTitle>

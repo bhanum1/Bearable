@@ -18,7 +18,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'Habibi': ['Habibi','serif'],
-        'Ruda': ['Ruda', 'sans-serif']
+        'Ruda': ['Ruda', 'sans-serif'],
+        'Poppins': ['Poppins', 'sans-serif']
       },
       colors: {
         border: "hsl(var(--border))",

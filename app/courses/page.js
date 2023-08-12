@@ -1,34 +1,10 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
-import React, {useState, useEffect} from 'react'
+
 
 export default function Courses() {
-    const [screenSize, setScreenSize] = useState(getCurrentDimension());
-
-  	function getCurrentDimension(){
-    	return {
-      		width: window.innerWidth,
-      		height: window.innerHeight
-    	}
-  	}
-  
-  	useEffect(() => {
-    		const updateDimension = () => {
-      			setScreenSize(getCurrentDimension())
-    		}
-    		window.addEventListener('resize', updateDimension);
-    
-		
-    		return(() => {
-        		window.removeEventListener('resize', updateDimension);
-    		})
-  	}, [screenSize])
-    
-
-    
     return (
-        <div>
             <section className=" min-h-screen relative">
                 {/* Background */}
                 <div className="flex ">
@@ -40,82 +16,42 @@ export default function Courses() {
                 <Image
                 src='/Courses-page/long-tree.svg'
                 className="absolute right-0"
-                style={{transform: 'translateY(30%)'}}
-                width={window.innerWidth * 0.72}
-                height={196}
-                quality={100}
-                alt="Background Image"
-                />
-{/* 
-                <Image
-                src='/Courses-page/long-tree.svg'
-                className="fixed right-0"
-                style={{transform: ' translateY(40%)'}}
-                width={923}
-                height={196}
-                quality={100}
-                alt="Background Image"
-                /> */}
-            
-            
-                <Image
-                src='/Courses-page/clouds.svg'
-                className="absolute left-0"
-                style={{transform: 'translateY(10%)'}}
-                width={window.innerWidth * 0.81}
-                height={230} 
+                style={{transform: 'translateY(30%)',  width: '72%', height: 'auto' }}
+                width={0}
+                height={0}
                 quality={100}
                 alt="Background Image"
                 />
 
-                {/* <Image
+                <Image
                 src='/Courses-page/clouds.svg'
-                className="fixed left-0"
-                // style={{transform: }}
-                width={1057}
-                height={230} 
+                className="absolute left-0"
+                style={{transform: 'translateY(10%)', width: '81%', height: 'auto'}}
+                width={0}
+                height={0} 
                 quality={100}
                 alt="Background Image"
-                /> */}
+                />
 
                 <Image
                 src='/Courses-page/tree-right.svg'
                 className="absolute right-0 bottom-0"
-                width={window.innerWidth * 0.22}
-                height={323}
+                style={{width: '22%', height: 'auto' }}
+                width={0}
+                height={0}
                 quality={100}
                 alt="Background Image"
                 />
-
-                {/* <Image
-                src='/Courses-page/tree-right.svg'
-                className="fixed right-0"
-                style={{transform: 'translateY(80%)'}}
-                width={284}
-                height={323}
-                quality={100}
-                alt="Background Image"
-                /> */}
-
 
                 <Image
                 src='/Courses-page/tree-left.svg'
                 className="absolute left-0 bottom-0"
-                width={window.innerWidth * 0.16}
-                height={341}
+                style={{width: '16%', height: 'auto' }}
+                width={0}
+                height={0}
                 quality={100}
                 alt="Background Image"
                 />
-
-                {/* <Image
-                src='/Courses-page/tree-left.svg'
-                className="fixed left-0"
-                style={{transform: ' translateY(80%)'}}
-                width={225}
-                height={341}
-                quality={100}
-                alt="Background Image"
-                /> */}
 
                 <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] absolute left-[11%] bottom-[8%] w-[78%] h-[50%] 
                 flex flex-col text-center overflow-hidden font-Poppins">
@@ -126,25 +62,12 @@ export default function Courses() {
                     </div>
                 </div>
 
-
-
-                {/* <Image
-                src='/Courses-page/bear.svg'
-                className="hover:object-scale-down"
-                style={{transform: 'translateX(50%) translateY(-485%)'}}
-                width={193}
-                height={219}
-                quality={100}
-                alt="Background Image"
-                /> */}
-
-
                 <Image
                 src='/Courses-page/bear.svg'
                 className="absolute bottom-[6%]"
-                style={{transform: 'translateX(50%)'}}
-                width={window.innerWidth * 0.125}
-                height={219}
+                style={{transform: 'translateX(50%)', width: '12.5%', height: 'auto'}}
+                width={0}
+                height={0}
                 quality={100}
                 alt="Background Image"
                 />
@@ -152,16 +75,14 @@ export default function Courses() {
                 <Image
                 src='/Courses-page/sun.svg'
                 className="absolute top-[5%] right-[13.5%]"
-                width={window.innerWidth * 0.054}
-                height={219}
+                style={{width: '5.4%', height: 'auto' }}
+                width={0}
+                height={0}
                 quality={100}
                 alt="Background Image"
                 />
                 </div>
                 
             </section>
-
-
-       </div>
     );
 };

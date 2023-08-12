@@ -33,7 +33,7 @@ export function SiteHeader() {
                   variant: "ghost",
                 })}
               >
-                <Icons.gitHub className="h-5 w-5" />
+                <Icons.gitHub className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
@@ -43,7 +43,7 @@ export function SiteHeader() {
                 size: 'sm',
                 variant: 'ghost'
               })}>
-                <Icons.menu className="h-5 w-5" />
+                <Icons.menu className="h-6 w-6" />
               </div>
             </div>
           </nav>

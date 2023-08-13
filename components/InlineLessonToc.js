@@ -1,14 +1,10 @@
 'use client'
-
-import Link from 'next/link'
 import { useState } from 'react'
-import { LessonCard } from './CourseTOC'
 import { course_title } from '@/lib/utils'
 
 
 import { MdToc } from 'react-icons/md'
-import { RiBookFill } from 'react-icons/ri'
-
+import { LessonTOC } from './CourseTOC';
 
 
 export default function InlineLessonToc({ lessons, course }) {
@@ -19,7 +15,6 @@ export default function InlineLessonToc({ lessons, course }) {
   }
 
   const title = course_title(course)
-
 
     return(
     <div>
@@ -36,28 +31,10 @@ export default function InlineLessonToc({ lessons, course }) {
       </div>
 
       <aside className={ 
-        `${isCollapsed ? ' bg-white shadow scale-100' : 'scale-0'} 
+        `${isCollapsed ? 'scale-100' : 'scale-0'} 
             z-50 fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
       }>
-          <div className='p-8 px-4 pt-4 pb-4 border-b'>
-                    <Link href={`/courses/${course}`} 
-                    className='flex items-center no-underline py-3 px-2 scroll-mt-5 group hover:bg-gray-100 rounded-lg transition ease-in-out  hover:transition-colors'>
-                        <RiBookFill size={25}/>
-                        <h3 className='pl-3 text-lg font-medium text-gray-900 w-fit'
-                        id={course}> 
-                        {title} 
-                        </h3>
-                    </Link>
-                </div>
-                <div className='p-8 py-4 px-4'>
-                    <div className='flex flex-col space-y-3'>
-                        <ul>
-                        {lessons.map((lesson, idx) => (
-                            <LessonCard key={idx} {...lesson} />
-                        ))}
-                    </ul>
-                </div>
-          </div>
+          <LessonTOC course={title} lessons={lessons}/>
       </aside>
     </div>
     )

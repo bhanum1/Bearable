@@ -18,7 +18,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'Habibi': ['Habibi','serif'],
-        'Ruda': ['Ruda', 'sans-serif']
+        'Ruda': ['Ruda', 'sans-serif'],
+        'Poppins': ['Poppins', 'sans-serif']
       },
       colors: {
         border: "hsl(var(--border))",
@@ -53,7 +54,9 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          hover: "hsl(var(--card-hover))"
         },
+        title: "hsl(var(--title))",
       },
       borderRadius: {
         lg: "var(--radius)",

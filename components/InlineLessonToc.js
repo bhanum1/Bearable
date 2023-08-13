@@ -1,15 +1,10 @@
 'use client'
-
-import Link from 'next/link'
 import { useState } from 'react'
-import { LessonCard } from './CourseTOC'
 import { course_title } from '@/lib/utils'
 
 
 import { MdToc } from 'react-icons/md'
-import { RiBookFill } from 'react-icons/ri'
-import {compareDesc, format, parseISO} from 'date-fns'
-
+import { LessonTOC } from './CourseTOC';
 
 
 export default function InlineLessonToc({ lessons, course }) {
@@ -20,7 +15,6 @@ export default function InlineLessonToc({ lessons, course }) {
   }
 
   const title = course_title(course)
-  const sorted_lessons = lessons.sort((a, b) => compareDesc(new Date(b.date), new Date(a.date)))
 
     return(
     <div>
@@ -40,27 +34,7 @@ export default function InlineLessonToc({ lessons, course }) {
         `${isCollapsed ? 'scale-100' : 'scale-0'} 
             z-50 fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
       }>
-          <div className="dark:border-gray-700' bg-white mb-10 rounded-lg shadow-xl dark:bg-gray-800">
-                <div className='border-b p-4 pl-8 dark:border-gray-700'>
-                    <a href={`#${course.toLowerCase().replace(/ /g, "-")}`} 
-                    className='group flex scroll-mt-5 items-center rounded-lg px-2 py-3 no-underline transition ease-in-out hover:bg-gray-100 hover:transition-colors dark:hover:bg-gray-700'>
-                        <RiBookFill size={25}/>
-                        <h3 className='w-fit pl-3 text-lg font-medium'
-                        id={course.toLowerCase().replace(/ /g, "-")}> 
-                        {title} 
-                        </h3>
-                    </a>
-                </div>
-                <div className='p-8 py-4'>
-                    <div className='flex flex-col space-y-3'>
-                        <ul>
-                        {sorted_lessons.map((lesson, idx) => (
-                            <LessonCard key={idx} {...lesson} />
-                        ))}
-                    </ul>
-                    </div>
-                </div>
-            </div>
+          <LessonTOC course={title} lessons={lessons}/>
       </aside>
     </div>
     )

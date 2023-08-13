@@ -285,43 +285,43 @@ $$
 
 $$
 \begin{bmatrix}
-\textcolor{blue}{i} & \textcolor{blue}{j} & \textcolor{blue}{k} \\
-1 & \textcolor{blue}{2} & \textcolor{blue}{-3} \\
+\textcolor{blue}{i} & \textcolor{aqua}{j} & \textcolor{teal}{k} \\
+1 & \textcolor{blue}{2} & \textcolor{aqua}{-3} \\
 4 & -5 & \textcolor{blue}{6}
 \end{bmatrix}
 
 \begin{matrix}
 i & j \\
-\textcolor{blue}{1} & 2 \\
-\textcolor{blue}{4} & \textcolor{blue}{-5}
+\textcolor{teal}{1} & 2 \\
+\textcolor{aqua}{4} & \textcolor{teal}{-5}
 \end{matrix}
 $$
 $$
-(i\cdot 2 \cdot 6) + (j \cdot -3 \cdot 4) + (k \cdot 1 \cdot -5) = \boxed{12i -12j -5k}
+(\textcolor{blue}{i}\cdot \textcolor{blue}{2} \cdot \textcolor{blue}{6}) + (\textcolor{aqua}{j} \cdot \textcolor{aqua}{-3} \cdot \textcolor{aqua}{4}) + (\textcolor{teal}{k} \cdot \textcolor{teal}{1} \cdot \textcolor{teal}{-5}) = \boxed{\textcolor{blue}{12i} -\textcolor{aqua}{12j} - \textcolor{teal}{5k}}
 $$
 
 3. This time, starting from the bottom row, draw diagonal lines, this time from right to left and take the product of the numbers. This time, all products will have a negative value (ie. multiply the product by $$-1$$).
 $$
 \begin{bmatrix}
 i & j & \textcolor{red}{k} \\
-1 & \textcolor{red}{2} & \textcolor{red}{-3} \\
-\textcolor{red}{4} & \textcolor{red}{-5} & \textcolor{red}{6}
+1 & \textcolor{red}{2} & \textcolor{fuchsia}{-3} \\
+\textcolor{red}{4} & \textcolor{fuchsia}{-5} & \textcolor{orange}{6}
 \end{bmatrix} 
 
 \begin{matrix}
-\textcolor{red}{i} & \textcolor{red}{j} \\
-\textcolor{red}{1} & 2 \\
+\textcolor{fuchsia}{i} & \textcolor{orange}{j} \\
+\textcolor{orange}{1} & 2 \\
 4 & -5
 \end{matrix}
 $$
 
 $$
- -(i \cdot -3 \cdot -5) - (j \cdot 1 \cdot 6) - (k \cdot 2 \cdot 4) = \boxed{-15i - 6j - 8k}
+ -(\textcolor{fuchsia}{i} \cdot \textcolor{fuchsia}{-3} \cdot \textcolor{fuchsia}{-5}) - (\textcolor{orange}{j} \cdot \textcolor{orange}{1} \cdot \textcolor{orange}{6}) - (\textcolor{red}{k} \cdot \textcolor{red}{2} \cdot \textcolor{red}{4}) = \boxed{\textcolor{fuchsia}{-15i} - \textcolor{orange}{6j} - \textcolor{red}{8k}}
 $$
 
 4. Sum the outputs of Step 2 and Step 3
 $$
-(12i -12j -5k) + (-15i - 6j - 8k) = \boxed{-3i -18j -13k}
+(\textcolor{blue}{12i} -\textcolor{aqua}{12j} - \textcolor{teal}{5k}) + (\textcolor{fuchsia}{-15i} - \textcolor{orange}{6j} - \textcolor{red}{8k}) = \boxed{-3i -18j -13k}
 $$
 
 5. Convert back into column vector representation
@@ -432,9 +432,130 @@ $$
 \end{bmatrix} 
 $$
 
-This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the dot product of a row and a column.
+This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the **dot product** of a **row** and a **column**.
+
+$$
+\begin{bmatrix}
+\textcolor{blue}{-1} & \textcolor{blue}{0}\\
+\textcolor{red}{1} & \textcolor{red}{2}\\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+\textcolor{orange}{3} & \textcolor{purple}{2}\\
+\textcolor{orange}{0} & \textcolor{purple}{-5}\\
+\end{bmatrix} 
+
+=
+
+\begin{bmatrix}
+\textcolor{blue}{-1}\cdot \textcolor{orange}{3} + \textcolor{blue}{0} \cdot \textcolor{orange}{0} & \textcolor{blue}{-1}\cdot\textcolor{purple}{2}+ \textcolor{blue}{0}\cdot\textcolor{purple}{-5} \\
+\textcolor{red}{1}\cdot \textcolor{orange}{3} + \textcolor{red}{2}\cdot \textcolor{orange}{0} & \textcolor{red}{1}\cdot \textcolor{purple}{2} + \textcolor{red}{2}\cdot\textcolor{purple}{-5}\\
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+-3 & -2 \\
+3 & -8\\
+\end{bmatrix}
+$$
+
+Matrix multiplcation is not just exclusive to the same size matrcies, as long as the length of the columns and rows match up between two matrcies, its possible to multiply them together. However, the output dimensions of the product may be different from the inputs.
+
+$$
+\begin{bmatrix}
+-1 & 0 & 3\\
+1 & 2 & 4\\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+3 & 2 \\
+0 & -5 \\
+-3 & 1
+\end{bmatrix} 
+
+=
+
+\begin{bmatrix}
+-12 & 1 \\
+-9 & -4 \\
+\end{bmatrix} 
+$$
+
 
 ### Matrix times vector
+Similar to the matrix times matrix multiplcation, we can also multiply vectors and matricies as well, so long as the vector length is equal to the row length.
+
+$$
+\begin{bmatrix}
+-1 & 0\\
+1 & 2\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+3 & 2\\
+0 & -5\\
+\end{bmatrix} 
+$$
+
+This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the **dot product** of a **row** and a **column**.
+
+$$
+\begin{bmatrix}
+\textcolor{blue}{-1} & \textcolor{blue}{0}\\
+\textcolor{red}{1} & \textcolor{red}{2}\\
+\end{bmatrix}
+
+\cdot
+
+\begin{bmatrix}
+\textcolor{orange}{3} \\
+\textcolor{orange}{0} \\
+\end{bmatrix} 
+
+=
+
+\begin{bmatrix}
+\textcolor{blue}{-1}\cdot \textcolor{orange}{3} + \textcolor{blue}{0} \cdot \textcolor{orange}{0} \\
+\textcolor{red}{1}\cdot \textcolor{orange}{3} + \textcolor{red}{2}\cdot \textcolor{orange}{0} \\
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+-3\\
+3 
+\end{bmatrix}
+$$
+
+This does however, reduce the dimensionality of the output as well to being a vector regardless of dimension.
+
+$$
+\begin{bmatrix}
+3 & 2 \\
+0 & -5 \\
+-3 & 1
+\end{bmatrix} 
+
+\cdot
+
+\begin{bmatrix}
+-1 \\
+1 
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+-1 \\
+-5 \\
+4 \\
+\end{bmatrix} 
+$$
 
 
 ## Why does this matter

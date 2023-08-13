@@ -6,50 +6,223 @@ date: 2023-07-22
 ---
 
 ## Linear Spaces
-    A linear space is a set that is closed under addition or scalar multiplication. What this means is that if you take 2 vectors in some linear space, if you add them together or multiply either by a scalar, the result is still in the space. An example of a linear space is the set of all 2 dimensional vectors. 
+A linear space is a set that is closed under addition or scalar multiplication. What this means is that if you take 2 vectors in some linear space, if you add them together or multiply either by a scalar, the result is still in the space. An example of a linear space is the set of all 2 dimensional vectors. 
 
 ## Subspace
-    A subspace is very similar, as it is a set within a linear space that itself is closed under addition or scalar multiplication. This means that by definition, all linear subspaces are also linear spaces. For example, lets look at all vectors in $$\mathbb{R^3}$$. These are all vectors with 3 components, and they constitute a linear space. Now lets look at vectors in $$\mathbb{R^3}$$ that have a 0 as their 3rd component. You can try it yourself, but this set also is closed under addition and scalar multiplication, and so is a linear subspace. In fact, this linear subspace is just all the vectors in $$\mathbb{R^2}$$.
-    
+A subspace is very similar, as it is a set within a linear space that itself is closed under addition or scalar multiplication. This means that by definition, all linear subspaces are also linear spaces. For example, lets look at all vectors in $$\mathbb{R^3}$$. These are all vectors with 3 components, and they constitute a linear space. Now lets look at vectors in $$\mathbb{R^3}$$ that have a 0 as their 3rd component. You can try it yourself, but this set also is closed under addition and scalar multiplication, and so is a linear subspace. In fact, this linear subspace is just all the vectors in $$\mathbb{R^2}$$.
+
 ## Linear Independence
 
-    Before we get into some more complicated things, lets discuss linear independence, which at its core is quite simple. Linear indepence is a trait a set of vectors can have, which just means that you can't make up a vector by combining the others in the set linearly (adding or scalar multiplication). For example:
+Before we get into some more complicated things, lets discuss linear independence, which at its core is quite simple. Linear indepence is a trait a set of vectors can have, which just means that you can't make up a vector by combining the others in the set linearly (adding or scalar multiplication). For example:
 
-    __LINEARLY DEPENDENT SET__
+$$
+\begin{align*}
 
-    is not linearly independent because
+& \hspace{1em} \begin{matrix} v_1 & \hspace{0.5em} v_2 & \hspace{0.5em} v_3 \end{matrix} \\
 
-    __EXAMPLE__.
+& \begin{bmatrix}
+1 \\
+0 \\
+-1 \\
+\end{bmatrix}
 
-    However,
+\begin{bmatrix}
+0 \\
+3 \\
+0 \\
+\end{bmatrix}
 
-    __LINEARLY INDEPENDENT SET__
+\begin{bmatrix}
+4 \\
+3 \\
+-4 \\
+\end{bmatrix}
 
-    is independent, because none of the vectors are linear combinations of the others.
+\end{align*}
+$$
+
+is not linearly independent because
+
+$$
+v_3 = 4\cdot v_1 + v_2 
+$$
+
+$$
+\begin{bmatrix}
+4 \\
+3 \\
+-4 \\
+\end{bmatrix}
+
+=
+
+4\cdot\begin{bmatrix}
+1 \\
+0 \\
+-1 \\
+\end{bmatrix}
+
++
+
+\begin{bmatrix}
+0 \\
+3 \\
+0 \\
+\end{bmatrix}
+$$
+
+However,
+$$
+\begin{align*}
+
+& \hspace{0.5em} \begin{matrix} w_1 & \hspace{0.5em} w_2 & \hspace{0.2em} w_3 \end{matrix} \\
+
+& \begin{bmatrix}
+2 \\
+2 \\
+1 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+-4 \\
+6 \\
+5 \\
+\end{bmatrix}
+
+\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+\end{bmatrix}
+
+\end{align*}
+$$
+
+is independent, because none of the vectors are linear combinations of the others. You cannot multiply by a scalar and/or add any of the other vectors together in the set in order to get any of the other vectors. 
+
+**A set of vectors is considered linearly independent of eachother such that:**
+
+$$
+c_1\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+\end{bmatrix}
+
++c_2\begin{bmatrix}
+y_1 \\
+y_2 \\
+y_3 \\
+\end{bmatrix}
+
++c_3\begin{bmatrix}
+z_1 \\
+z_2 \\
+z_3 \\
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+$$
+
+$$
+\text{where,  } c_1, c_2, c_3 =0 \text{ is the only trivial solution.}
+$$
+
+We can then prove this by placing the vectors into an **augemented matrix** and placing the matrix into **RREF**, to find the coeffcient values. We won't show all of the steps of the elimination however, here are the RREF for both of the example sets, to show if they are linearly indepedent.
+
+### Example 1: Linearly Dependent Set
+
+
+$$
+(v_1, v_2, v_3)
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 1 & 0 & 4 & 0 \\  
+ 0 & 3 & 3 & 0 \\
+ -1 & 0 & -4 & 0
+\end{array}\right]
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 1 & 0 & 4 & 0 \\  
+ 0 & 1 & 1 & 0 \\
+ 0 & 0 & 0 & 0
+\end{array}\right]
+
+\rightarrow
+
+\begin{matrix}
+c_1 = -4 \\
+c_2 = -1 \\
+c_3 = \text{free}
+\end{matrix}
+$$
+
+### Example 2: Linearly Independent Set
+$$
+(w_1, w_2, w_3)
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 2 & -4 & 1 & 0 \\  
+ 2 & 6 & 0 & 0 \\
+ 1 & 5 & 0 & 0
+\end{array}\right]
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 1 & 0 & 0 & 0 \\  
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 0
+\end{array}\right]
+
+\rightarrow
+
+\begin{matrix}
+c_1 = 0 \\
+c_2 = 0 \\
+c_3 = 0
+\end{matrix}
+$$
+
+
 
 ## Span
 
-    A spanning set is a related concept to linear independence and linear spaces. If some linear space, V, can be described entirely as a linear combination of a set of vectors, f, then f is a spanning set of vectors. For example,
+A spanning set is a related concept to linear independence and linear spaces. **If some linear space, $$V$$, can be described entirely as a linear combination of a set of vectors, $$f$$, then $$f$$ is a spanning set of vectors**. 
 
-    [1,0] , [0,1], [1,1] is a spanning set for $$\mathbb{R^2}$$, because every 2-d vector can be described as a linear combination of these 3 vectors. Finding spanning sets is quite difficult and we will go over how to do this much later in the course. Knwoing whether a set is a spanning set is also going to be taught later.
+For example, $$[1,0]$$ , $$[0,1]$$, $$[1,1]$$ is a spanning set for $$\mathbb{R^2}$$, because every 2-d vector can be described as a linear combination of these 3 vectors. Finding spanning sets is quite difficult and we will go over how to do this much later in the course. Knowing whether a set is a spanning set is also going to be taught later.
 
 ## Basis Introduction
 
-    A basis of a subspace is very simple to learn, but difficult to master. We will discus bases much more later, but for now just understand that a basis of a linear space is simply a spanning set that is linearly independent.
+A basis of a subspace is very simple to learn, but difficult to master. We will discus bases much more later, but for now just understand that a basis of a linear space is simply a spanning set that is linearly independent.
 
-    This means that any vector in a linear space can be expressed as a linear combination of basis vectors. The general form is:
+This means that any vector in a linear space can be expressed as a linear combination of basis vectors. The general form is:
 
-    v = c1b1 + c2b2 + ... cnbn
+$$
+v = c_1b_1 + c_2b_2 + \dots c_nb_n
+$$
 
-    The coefficients ci are known as the coordinates of the vector in basis b. A space can have infinitely many bases, so you can have coordinates in any basis, which we will discuss more later.
+The coefficients $$c_i$$ are known as the coordinates of the vector in basis $$b$$. A space can have infinitely many bases, so you can have coordinates in any basis, which we will discuss more later.
 
 
 ## Dimension, Image, Kernel, Rank, Nullity
-    We have already discussed dimension, but for a quick refresher it simply represents the degree of the space we are operating in, or how many free variables there are.
+We have already discussed dimension, but for a quick refresher it simply represents the degree of the space we are operating in, or how many free variables there are.
 
-    Now we must talk about the image and kernel of a linear transformation. The image of a linear transformation is simply the entire subspace that the transformation maps to. The dimension of this subspace is known as the _rank_.
+Now we must talk about the image and kernel of a linear transformation. The image of a linear transformation is simply the entire subspace that the transformation maps to. The dimension of this subspace is known as the _rank_.
 
-    This is essentially the "solution space". The kernel is quite different however, and represents the entire area of the domain that a linear transformation maps to the zero vector. All linear transformations must have the 0 vector in their kernel by definition. The dimension of the kernel is known as the __nullity__.
+This is essentially the "solution space". The kernel is quite different however, and represents the entire area of the domain that a linear transformation maps to the zero vector. All linear transformations must have the 0 vector in their kernel by definition. The dimension of the kernel is known as the __nullity__.
 
 ## Why You Should Care
 

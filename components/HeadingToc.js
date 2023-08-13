@@ -23,7 +23,7 @@ export function HeadingItem({ heading }){
 export default function HeadingToc({headings}) {
     return (
         <div className="fixed hidden lg:block right-[70px] 2xl:right-[200px] 2xl:w-[350px] w-[300px] h-full mt-5">
-          <h4 className="text-xl font-bold border-b-2 border-black"> Lesson Outline </h4>
+          <h4 className="text-xl font-bold border-b-2 border-title text-title"> Lesson Outline </h4>
           <div className="pl-5">
             {headings.length > 0 ? (
               

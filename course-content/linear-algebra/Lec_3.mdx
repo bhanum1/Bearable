@@ -7,13 +7,17 @@ date: 2023-07-09
 
 ## System of Equations
 
+One of the things that you'll come to see in engineering is that we tend to describe the flows of various things in and out of system with different equations. 
+
+For example, as a Chemical Engineer, you may be interested in founding out the flow rate of products produced from a reactor given certain flow rates into the reactor. You would then use the equations that model the flow rate in order to determine the values of the flow rate out of the model.
+
+Well when we get to situations where, there say 3 flow rates into the reactor and 5 flow rates out of it, and these equations have 3, 6, 9 components, it becomes a lot easier to represent these equations and solve for the values within a matrix.
+
+**_/insert a simple example similar to a CHE208 type example/_**
+
 ## Matrix Representation
 
 In the last lesson, we explained that matrcies represent maps from one vector to another regardless of dimension. While this is true, there are many other ways that matrcies can be interpreted, such as the case with systems of linear equations.
-
-$$
-
-$$
 
 In high school you may remeber learning two different ways to find the Point of Intersection between two functions, **Subsitiution** and **Elimination**.
 The motivation behind represeting systems of linear equations is rooted by the goal finding of intersetions between these functions as typically they provide unique solutions to complex problems. In high school, we were only ever concerned with finding the point of intersection between two functions and these functions typically only have two variables, but what if wanted to find an inserction between 3, 4 or even 1000 functions. And what if these functions all had 1000 variables? The matrix representation provides use with means of simplifying this information to be more consumable. Later in the lesson we will discuss how to solve for these points of intersection using a *fancier* form of Elimination.
@@ -81,7 +85,7 @@ $$
 The augemented matrix representation would then be of the following form:
 
 $$
-\left[\begin{array}{ccc|c}  
+A=\left[\begin{array}{ccc|c}  
  3 & 4 & -7 & 8 \\  
  6 & -1 & 3 & -2 \\
  5 & -8 & 9 & 4
@@ -100,10 +104,10 @@ $$
 \begin{align*}
 A: & \hspace{1cm} \text{Coeffcient Matrix} & \hspace{1cm}
 \begin{bmatrix} 
-a_{x_1, 1} & a_{x_1, 2} & \dots & a_{x_1, 3} \\
-a_{x_2, 1} & a_{x_2, 2} & \dots & a_{x_2, 3} \\
-\vdots & \vdots & \vdots \\
-a_{x_n, 1} & a_{x_n, 2} & \dots & a_{x_n, 3}
+a_{x_1, 1} & a_{x_2, 1} & \dots & a_{x_n, 1} \\
+a_{x_1, 2} & a_{x_2, 2} & \dots & a_{x_n, 3} \\
+\vdots & \vdots & \vdots & \vdots \\
+a_{x_1, n} & a_{x_2, n} & \dots & a_{x_n, n}
 \end{bmatrix}\\
 
 \vec{x}: & \hspace{1cm} \text{Column Vector of all Variables} & \hspace{1cm}
@@ -129,17 +133,220 @@ Representing systems of linear equations allows us to refer to the system of lin
 
 ## Solving a System of Equations
 
-## # of Solutions
-
 ## Gauss-Jordan Elimination
+**Gauss-Jordan Elimination** is a method of converting a matrix into **Reduced Row-Echelon Form (RREF)**.
+
+### Reduced Row-Echelon Form (RREF)
+A matrix is said to be in **RREF** if it satisfies the following conditions:
+
+**_Reduced Row-Echelon Form (RREF)_**
+    1. For any row containing non-zero entries, the first non-zero entry is a 1
+        - This is typically called a **Leading 1** or a **Pivot**
+    2. If a columns contains a **Leading 1**, all other elements withing that columns are 0
+    3. For any rows containing a **Leading 1**, each row bellow will contain a **leading 1** further to the right
+        - This means that if there is infact a row of all zeros, then this row will appear at the bottom of the matrix
+
+For example the following matrix follows the conditions outlined above:
+
+$$
+M=\left[\begin{array}{ccccc|c}  
+ 1 & -3 & 0 & 0 & 9 & 2 \\  
+ 0 & 1 & 3 & -2 & 9 & 1 \\
+ 0 & 0 & 0 & 1 & 0 & 4 \\
+ 0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right]
+$$
+
+You can think of trying to put the matrix into the form of a staircase with the leading ones at the front of each step. Put a matrix into this form simplifies each equation as much as possible such that it is easier to solve for each of the varliables.
+
+### Elementry Row Operations
+The way in which we convert a regular matrix into the **RREF** form is to apply a series of elementry row operations. These operations include:
+
+- Dividing a row by a non-zero scalar
+  - Ex. $$R_1 \rightarrow R_1/3$$
+$$
+\left[\begin{array}{ccc|c}  
+ 3 & 3 & -6 & 9 \\  
+ 6 & -1 & 3 & -2 \\
+ 5 & -8 & 9 & 4
+\end{array}\right]
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 1 & 1 & -2 & 3 \\  
+ 6 & -1 & 3 & -2 \\
+ 5 & -8 & 9 & 4
+\end{array}\right]
+$$
+- Adding or subtracting a multiple of a row from another row
+    - $$ R_2 \rightarrow R_2 - 2R_1$$
+$$ 
+\left[\begin{array}{ccc|c}  
+ 1 & 1 & -2 & 3 \\  
+ 6 & -1 & 3 & -2 \\
+ 5 & -8 & 9 & 4
+\end{array}\right]
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 1 & 1 & -2 & 3 \\  
+ 0 & -3 & -3 & -8 \\
+ 5 & -8 & 9 & 4
+\end{array}\right]
+$$
+
+- Swapping two rows
+    - $$R_3 \rightarrow R_2$$
+$$ 
+\left[\begin{array}{ccc|c}  
+ 1 & 1 & -2 & 3 \\  
+ 6 & -1 & 3 & -2 \\
+ 5 & -8 & 9 & 4
+\end{array}\right]
+
+\rightarrow
+
+\left[\begin{array}{ccc|c}  
+ 1 & 1 & -2 & 3 \\  
+ 5 & -8 & 9 & 4 \\
+ 0 & -3 & -3 & -8 
+\end{array}\right]
+$$
+
+### Example Elimination
+The first thing we do with a system of equations problem is convert the given equations into augmented matrix form.
+
+$$
+\begin{align*}
+4x_1 - 3x_2 + 1x_3 & = -8 \\
+-2x_1 + 1x_2 - 3x_3 & = -4\\
+1x_1 - 1x_2 - 2x_3 & = -2 \\
+\end{align*}
+
+\qquad\longrightarrow\qquad
+
+ \left[\begin{array}{ccc|c}  
+ 4 & -3 & 1 & -8 \\  
+ -2 & 1 & -3 & -4 \\
+ 1 & -1 & -2 & -2 
+\end{array}\right]
+$$
+
+Now we can perform elementry row operations in order to convert the augmented matrix into **RREF** form. We'll show the changes to the matrix in one column and the elementry row oprations on the right hand side.
+
+$$
+\begin{array}{c|c} 
+
+  \left[\begin{array}{ccc|c}  
+    1 & -1 & -2 & -2 \\  
+    -2 & 1 & -3 & -4 \\
+    4 & -3 & 1 & -8
+  \end{array}\right] & R_1 \leftrightarrow R_3  \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|c}  
+    1 & -1 & -2 & -2 \\  
+    0 & -1 & -7 & -8 \\
+    0 & 1 & 9 & 0
+  \end{array}\right] & 
+  \begin{align*} 
+    R_2 & = R_2 + 2R_1 \\
+    R_3 & = R_3 - 4R_1 
+  \end{align*} \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|c}  
+    1 & 0 & 5 & 6 \\  
+    0 & -1 & -7 & -8 \\
+    0 & 0 & 2 & -8
+  \end{array}\right] & 
+  \begin{align*}
+    R_1 & = R_1 - R_2 \\
+    R_3 & = R_3 + R_1
+  \end{align*} \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|c}  
+    1 & 0 & 5 & 6 \\  
+    0 & 1 & 7 & 8 \\
+    0 & 0 & 1 & -4
+  \end{array}\right] &
+  \begin{align*}
+    R_2 & = -R_2 \\ 
+    R_3 & = R_3/2
+  \end{align*} \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|c}  
+    1 & 0 & 0 & 26 \\  
+    0 & 1 & 0 & 36 \\
+    0 & 0 & 1 & -4
+  \end{array}\right] &
+  \begin{align*}
+    R_1 = R_1 - 5R_3 \\ 
+    R_2 = R_2 -7R_3
+  \end{align*} \\
+\end{array}
+$$
+
+Now, if we conver the matrix back to the equation form we can see we are only left with single values for each of the variables, or our **Solutions** to the system of linear equations.
+
+$$
+\begin{align*}
+1x_1 + 0x_2 + 0x_3 & = 26 \\
+0x_1 + 1x_2 + 0x_3 & = 36\\
+0x_1 + 0x_2 + 1x_3 & = -4 \\
+\end{align*}
+
+\qquad \longrightarrow \qquad
+
+\begin{align*}
+x_1  & = 26 \\
+x_2  & = 36\\
+x_3  & = -4 \\
+\end{align*}
+$$
+
+### Tips for Gauss-Jordan Elimination
+1. The first thing you should do is attempt to have the first leading one in the first row. This can usually be done by either dividing the first first row by the leading coeffecient (first entry) or swapping rows that already have a one in the first entry.
+    - The reason we want to do this is so that we can then use this first row to **SUBTRACT** the first entires out of the subsequent rows, since we know those entries must equal zero
+    - You can see this done in the first and second steps of our example as we subtract $$R_1$$ mutiplied by the respective first entires of $$R_2$$ and $$R_3$$ from these respective rows, thus creating 0's in the first entires
+2. Repeat the process of the first step with all other subsequent rows, such that the leading 1 is always farther to the right
+3. If no other elementry row operations can be performed such that the leading ones are not removed, the matrix is in **RREF**.
+
+## Number of Solutions
+When solving for the solutions of a system of linear equations, we are effectively determining a point(s) of intersetion between all of the equations stored within our matrix. This is easy to think about in the 3D space, where each equation represents a plane. The solutions to the system of equations are the intersection point(s) of these planes. However, this plane analogy works for lower and higher dimensional planes for which we can't visualize.
+
+Since the solutions to the systems of equations are the points of intersection, there are three scenarios possible for these intersecting planes that tell us how many solutions we can have.
+
+[**_Single Solution_**](https://www.geogebra.org/3d/fa3q4bst)
+    - All planes intersect at a single point only
+    - A component variables have a solution with a distincy single value
+    - This means that the **_RREF_** the matrix will have only 1's along the diagonal
+$$
+\left[\begin{array}{ccc|c}  
+ 1 & 0 & 0 & 3 \\  
+ 0 & 1 & 0 & 2 \\
+ 0 & 0 & 1 & 1 
+\end{array}\right]
+$$
+
+[**_Infinite Solutions_**](https://www.geogebra.org/3d/fa3q4bst)
+    - All planes intersect along some line
+    - This means that one or more variables is **"Free"** and can have infinetly many values
+    - This is typically denoted with the following type of **_RREF_**:
+
+[**_No Solutions_**](https://www.geogebra.org/3d/fa3q4bst)
+    - There is no common intersection point or line for all of the planes in the system
+    - Planes may intersect with eachother but not all plants share a common intersection point
+
+## Application: Chemical Engineering Problem
+(solving a CHE208 problem on the quicks)
 
 ## Why Should You Care?
+Solving systems of equations is the first real problem type that we can use linear algebra for. Systems of equations are powerful because they can be used to represent many different prrobelms. If you're selling 2 products and you want to know how many of each you should buy to maximize profit, you need to set up a system of equations. More examples can be found [here](https://www.algebra-class.com/solving-systems-of-equations.html).
 
-    Solving systems of equations is the first real problem type that we can use linear algebra for. Systems of equations are powerful because they can be used to represent many different prrobelms. If you're selling 2 products and you want to know how many of each you should buy to maximize profit, you need to set up a system of equations. More examples can be found [here](https://www.algebra-class.com/solving-systems-of-equations.html).
+The point is, systems of equations are very common in plenty of different types of problems. Thus, being able to solve large systems of equations is very useful to solve these problems. Now, I won't lie, calculators and computers can do these calculations for you. However, understanding the principles behind Gauss-Jordan elimination will be vital once you start learning inverting matrices, and once you start understanding rank and nullity of matrices.
 
-    The point is, systems of equations are very common in plenty of different types of problems. Thus, being able to solve large systems of equations is very useful to solve these problems. Now, I won't lie, calculators and computers can do these calculations for you. However, understanding the principles behind Gauss-Jordan elimination will be vital once you start learning inverting matrices, and once you start understanding rank and nullity of matrices.
-
-    Make sure you master this concept because its not just about solving common problems, but also a good building block as we continue in our linear algebra education.
+Make sure you master this concept because its not just about solving common problems, but also a good building block as we continue in our linear algebra education.
     
      
 ## Practice

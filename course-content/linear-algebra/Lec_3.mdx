@@ -163,7 +163,7 @@ You can think of trying to put the matrix into the form of a staircase with the 
 The way in which we convert a regular matrix into the **RREF** form is to apply a series of elementry row operations. These operations include:
 
 - Dividing a row by a non-zero scalar
-  - Ex. $$R_1 \rightarrow R_1/3$$
+  - $$R_1 = R_1/3$$
 $$
 \left[\begin{array}{ccc|c}  
  3 & 3 & -6 & 9 \\  
@@ -180,7 +180,7 @@ $$
 \end{array}\right]
 $$
 - Adding or subtracting a multiple of a row from another row
-    - $$ R_2 \rightarrow R_2 - 2R_1$$
+    - $$ R_2 = R_2 - 2R_1$$
 $$ 
 \left[\begin{array}{ccc|c}  
  1 & 1 & -2 & 3 \\  
@@ -198,7 +198,7 @@ $$
 $$
 
 - Swapping two rows
-    - $$R_3 \rightarrow R_2$$
+    - $$R_3 = R_2$$
 $$ 
 \left[\begin{array}{ccc|c}  
  1 & 1 & -2 & 3 \\  
@@ -317,6 +317,8 @@ When solving for the solutions of a system of linear equations, we are effective
 
 Since the solutions to the systems of equations are the points of intersection, there are three scenarios possible for these intersecting planes that tell us how many solutions we can have.
 
+> Click the links to have a 3D visual representation of each scenario.
+
 [**_Single Solution_**](https://www.geogebra.org/3d/fa3q4bst)
     - All planes intersect at a single point only
     - A component variables have a solution with a distincy single value
@@ -332,14 +334,49 @@ $$
 [**_Infinite Solutions_**](https://www.geogebra.org/3d/fa3q4bst)
     - All planes intersect along some line
     - This means that one or more variables is **"Free"** and can have infinetly many values
-    - This is typically denoted with the following type of **_RREF_**:
+    - This happens when an entire row has all entries equal to 0 creating the following situation:
+
+$$
+\left[\begin{array}{ccc|c}  
+ 1 & 0 & 4 & 3 \\  
+ 0 & 1 & 3 & 2 \\
+ 0 & 0 & 0 & 0
+\end{array}\right]
+
+\qquad\longrightarrow\qquad
+
+\begin{align*}
+  & x_1  + 4x_3 =  3\\
+  & x_2  + 3x_ 3 = 2\\
+  & x_3 = \text{Free}
+\end{align*}
+
+\qquad\longrightarrow\qquad
+
+\begin{align*}
+  x_1  & = 3 - 4x_3\\
+  x_2  & = 2 - 3x_ 3\\
+  x_3 & = \text{Free}
+\end{align*}
+$$
+
+> In this scenario, both $$x_1$$ and $$x_2$$ are dependent on the value of $$x_3$$. However, $$x_3$$ has no value defined within this matrix. This implies that the solution to the system of equations is valid for any value of $$x_3$$. This is caused by a line intersection as seen in the visualization.
+
 
 [**_No Solutions_**](https://www.geogebra.org/3d/fa3q4bst)
     - There is no common intersection point or line for all of the planes in the system
     - Planes may intersect with eachother but not all plants share a common intersection point
+    - This is represented in an augmented matrix when the coeffcient porition of the row contains all 0 values where the scalar portion is contains a non-zero entry
+  
+$$
+\left[\begin{array}{ccc|c}  
+ 1 & 0 & 4 & 3 \\  
+ 0 & 1 & 3 & 2 \\
+ 0 & 0 & 0 & 1 
+\end{array}\right]
+$$
 
-## Application: Chemical Engineering Problem
-(solving a CHE208 problem on the quicks)
+> The above matrix creates a situation in which $$0x_1 + 0x_2 + 0x_3 = 1$$ or more simply $$0=1$$, as seen in the last row. Since this is not possible, it means there is no point of intersection and therefore there is no solution to this system of equations. This is shown in the visualization where there is no common point which all of the planes intersect.
 
 ## Why Should You Care?
 Solving systems of equations is the first real problem type that we can use linear algebra for. Systems of equations are powerful because they can be used to represent many different prrobelms. If you're selling 2 products and you want to know how many of each you should buy to maximize profit, you need to set up a system of equations. More examples can be found [here](https://www.algebra-class.com/solving-systems-of-equations.html).

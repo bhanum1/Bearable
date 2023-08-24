@@ -6,12 +6,12 @@ date: 2023-07-09
 ---
 
 ## What is a Linear Transformation
-    We are now moving into some more applications of the basic concepts we spent lectures 1-3 learning. Good job on making it this far, stuff gets a little more interesting (and difficult) here.
+We are now moving into some more applications of the basic concepts we spent lectures 1-3 learning. Good job on making it this far, stuff gets a little more interesting (and difficult) here.
 
-    This whole lesson we will be learning linear transformations, which are one of the most important things in all of mathematics. Every single field uses linear transformations, and you've used linear transformations yourself without even realizing it.
+This whole lesson we will be learning linear transformations, which are one of the most important things in all of mathematics. Every single field uses linear transformations, and you've used linear transformations yourself without even realizing it.
 
 ## Linear Combinations & How They Relate
-    Before we jump straight to linear transformations, lets take a baby step to linear combinations first. A linear combination is exactly what it sounds like: a way to combine vectors together linearly (addition/subtraction or multiplication).
+Before we jump straight to linear transformations, lets take a baby step to linear combinations first. A linear combination is exactly what it sounds like: a way to combine vectors together linearly (addition/subtraction or multiplication).
 
 $$
 \begin{align*}
@@ -109,23 +109,24 @@ Now lets get into how to actually talk about linear transformations. A linear tr
 If you remember from our section about matrices, this is the same definition we got for an application of matrices. We've finally gotten to that application, and so we now know that linear transformations can be represented as matrices. This is shown by saying "Linear transformation _T_ given by the matrix A" where A will be some n x m matrix.
 
 Remember that a transformation takes us from one dimension to another, so a transformation represented by an n x m matrix takes us from $$\mathbb{R^m}$$ to $$\mathbb{R^n}$$. This makes sense because if we have a vector in $$\mathbb{R^2}$$ and we multiply it by a 3 x 2 matrix, we end up with a vector in $$\mathbb{R^3}$$:
+
 $$
 \begin{align*}
-\begin{bmatrix}
-1 & 1 \\
-0 & 2 \\
--1 & 1 \\
-\end{bmatrix}
-\begin{bmatrix}
--2 \\
-1 \\
-\end{bmatrix}
-=
-\begin{bmatrix}
--1 \\
-2 \\
-3 \\
-\end{bmatrix}
+  \begin{bmatrix}
+     1 & 1 \\
+     0 & 2 \\
+    -1 & 1 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    -2 \\
+     1 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    -1 \\
+     2 \\
+     3 \\
+  \end{bmatrix}
 \end{align*}
 $$
 
@@ -327,12 +328,14 @@ A^{-1} = \begin{bmatrix}
 $$
 
 ### Conditions of Invertability
+A matrix is considered invertable if it meets the following conditions:
+
 1. Matrix must be square
    - This should make sense since when solving for the inverse, we set it equal to the identify matrix, if the matrix is not square, it cannot have an identity matrix with 1's along the diagonal for all rows
 2. A matrix is invertable if and only if its determinant is not equal to 0 ($$\text{det}(A) \neq 0$$)
     - Determinants can only be solved for in square matricies which furthers the first point
   
-  We touched on determinants briefly when explaining how to take the cross product of two vectors but we'll explain more of what this means in a future lesson.
+We touched on determinants briefly when explaining how to take the cross product of two vectors but we'll explain more of what this means in a future lesson.
 
 ## Why You Should Care
 

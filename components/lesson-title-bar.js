@@ -11,13 +11,13 @@ export default function TitleBar({ title, description, authors, date}) {
                     {title} 
                 </CardTitle>
                 <div className="flex justify-between items-center">
-                    <div>Prepared by: {authors.map( (author, idx) => (
+                    <div> <strong> Prepared by:</strong> {authors.map( (author, idx) => (
                         <AuthorCard key={idx} author={author} />
                     ))}
                     </div>
                     <div>
                         <time dateTime={date}>
-                            {format(parseISO(date), 'LLLL dd, yyyy')}
+                            <strong>{format(parseISO(date), 'LLLL dd, yyyy')}</strong>
                         </time>
                     </div>
                 </div>

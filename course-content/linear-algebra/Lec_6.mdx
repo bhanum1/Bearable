@@ -2,7 +2,7 @@
 title: 6. Vector Spaces
 description: Subspaces, image, kernel, dimension, and linear dependence.
 authors: [Bhanu]
-date: 2023-07-22
+date: 2023-08-13
 ---
 
 ## Linear Spaces
@@ -224,6 +224,16 @@ Now we must talk about the image and kernel of a linear transformation. The imag
 
 This is essentially the "solution space". The kernel is quite different however, and represents the entire area of the domain that a linear transformation maps to the zero vector. All linear transformations must have the 0 vector in their kernel by definition. The dimension of the kernel is known as the __nullity__.
 
+
+
 ## Why You Should Care
+
+This is an absolutely __vital__ lesson, so please make sure you understand it. Linear spaces is where we finally start piecing bits of linear algebra together to start understanding what the subject is really about. We use concepts of vectors, linear combinations, and matrices to start defining regions in space, which we will then spend the rest of the course working with.
+
+We live in a 3-dimensional world, but there are many concepts that cannot be described in only 3 dimensions. Linear spaces help us define bounds for these higher dimensional quantitities, and work with them (relatively) easily. For example, if the weight of a person depends only on their height, we can easily define a space in 2 dimensions, 1 for weight and 1 for height. However, if we find that it also depends on age and body fat percent, now we need to define a region using all 4 dimensions. To do so, we will need to find a linearly independent spanning set, that we can use to fully define the space using linear combinations. We will eventually need to find a basis for this space so we can easily describe the effects of each variable, and then maybe we will want to find the image, to see what the range of possible weights are. 
+
+You can see how problems can very quickly become multidimensional in the real world, and to solve these kinds of problems, we need to be comfortable with working in linear spaces, as we will spend the entire rest of the course understanding and manipulating linear spaces to make solving higher dimension problems easier.
+
+
 
 ## Practice

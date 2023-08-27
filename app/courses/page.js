@@ -5,6 +5,7 @@ import {useState, useEffect, useRef} from "react"
 
 
 export default function Courses() {
+    //Animations
     const [load, setLoad] = useState(0)
      useEffect(()=>{
         setTimeout(()=>{
@@ -12,6 +13,8 @@ export default function Courses() {
         }, 200)
      }, [])
 
+
+    //Gets the Y position of the long-tree svg to place the text's div slighty below it at all times
      const elementRef = useRef(null);
      const [position, setPosition] = useState({ y: 0 });
    
@@ -21,17 +24,22 @@ export default function Courses() {
          setPosition({y});
        }
    
-       handleResize(); // initial call to get position of the element on mount
+       handleResize()
        window.addEventListener("resize", handleResize);
        return () => window.removeEventListener("resize", handleResize);
      }, [elementRef]);
 
-     function updateImagePosition() {
-        const scrollY = window.scrollY || window.pageYOffset;
-      }
-      
-      window.addEventListener('scroll', updateImagePosition);
-      updateImagePosition(); // Initial position update
+
+
+    //Controlling the text's div to stay in the right position regarless of scroll 
+    useEffect(() => {
+        function updateImagePosition() {
+            const scrollY = window.scrollY
+        }
+        
+        window.addEventListener('scroll', updateImagePosition);
+        updateImagePosition();
+    }, []) 
 
 
     const classes = [["absolute right-[-100%] ease-in duration-500", "absolute right-0 ease-in duration-500"],
@@ -94,7 +102,7 @@ export default function Courses() {
 
                 <div className={`bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] absolute left-[11%] w-[78%] h-[50%] flex flex-col text-center overflow-hidden font-Poppins`}
                 style={{transform: "translateY("+(position.y+scrollY)+"px)"}}>
-                    <h1 className="text-[4vw] ">Linear Algebra {(position.y+scrollY) + 'px'}</h1> 
+                    <h1 className="text-[4vw] ">Linear Algebra </h1> 
                     <p className="text-[1vw]">THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA </p>
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-lg" style={{ transform: 'translateY(30%)' }}>
                         <Link href='/courses/linear-algebra' className='bg-[#CC4955] hover:bg-[#a9414a] text-[white] text-[1vw] rounded-md px-[2%] py-[0.3%]'>Start</Link> 

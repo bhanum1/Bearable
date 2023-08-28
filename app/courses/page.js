@@ -29,7 +29,7 @@ export default function Courses() {
    
        setTimeout(()=>{
         handleResize()
-        },1000)
+        },500)
        window.addEventListener("resize", handleResize);
        return () => window.removeEventListener("resize", handleResize);
      }, [elementRef]);

@@ -71,43 +71,43 @@ $$
 
 $$
 \begin{bmatrix}
-\textcolor{blue}{3} & \textcolor{blue}{2} & \textcolor{blue}{1} \\
-1 & \textcolor{blue}{2} & \textcolor{blue}{-3} \\
+\textcolor{blue}{3} & \textcolor{CornflowerBlue}{2} & \textcolor{teal}{1} \\
+1 & \textcolor{blue}{2} & \textcolor{CornflowerBlue}{-3} \\
 4 & -5 & \textcolor{blue}{6}
 \end{bmatrix}
 
 \begin{matrix}
 3 & 2 \\
-\textcolor{blue}{1} & 2 \\
-\textcolor{blue}{4} & \textcolor{blue}{-5}
+\textcolor{teal}{1} & 2 \\
+\textcolor{CornflowerBlue}{4} & \textcolor{teal}{-5}
 \end{matrix}
 $$
 $$
-(3\cdot 2 \cdot 6) + (2 \cdot -3 \cdot 4) + (1 \cdot 1 \cdot -5) = 36 - 24 - 5 =\boxed{7}
+(\textcolor{blue}{3} \cdot \textcolor{blue}{2} \cdot \textcolor{blue}{6}) + (\textcolor{CornflowerBlue}{2} \cdot \textcolor{CornflowerBlue}{-3} \cdot \textcolor{CornflowerBlue}{4}) + (\textcolor{teal}{1} \cdot \textcolor{teal}{1} \cdot \textcolor{teal}{-5}) = \textcolor{blue}{36} - \textcolor{CornflowerBlue}{24} - \textcolor{teal}{5} =\boxed{\textcolor{blue}{7}}
 $$
 
 2. This time, starting from the bottom row, draw diagonal lines, this time from right to left and take the product of the numbers. This time, all products have a negative value (ie. multiply the product by $$-1$$).
 $$
 \begin{bmatrix}
 3 & 2 & \textcolor{red}{1} \\
-1 & \textcolor{red}{2} & \textcolor{red}{-3} \\
-\textcolor{red}{4} & \textcolor{red}{-5} & \textcolor{red}{6}
+1 & \textcolor{red}{2} & \textcolor{fuchsia}{-3} \\
+\textcolor{red}{4} & \textcolor{fuchsia}{-5} & \textcolor{orange}{6}
 \end{bmatrix} 
 
 \begin{matrix}
-\textcolor{red}{3} & \textcolor{red}{2} \\
-\textcolor{red}{1} & 2 \\
+\textcolor{fuchsia}{3} & \textcolor{orange}{2} \\
+\textcolor{orange}{1} & 2 \\
 4 & -5
 \end{matrix}
 $$
 
 $$
- -(3 \cdot -3 \cdot -5) - (2 \cdot 1 \cdot 6) - (1 \cdot 2 \cdot 4) = -45 - 12 - 8 = \boxed{-65}
+ -(\textcolor{fuchsia}{3} \cdot \textcolor{fuchsia}{-3} \cdot \textcolor{fuchsia}{-5}) - (\textcolor{orange}{2} \cdot \textcolor{orange}{1} \cdot \textcolor{orange}{6}) - (\textcolor{red}{1} \cdot \textcolor{red}{2} \cdot \textcolor{red}{4}) = \textcolor{fuchsia}{-45} - \textcolor{orange}{12} - \textcolor{red}{8} = \boxed{\textcolor{red}{-65}}
 $$
 
 3. Sum the outputs of Step 1 and Step 2
 $$
-(7) + (-65) = \boxed{-58}
+(\textcolor{blue}{7}) + (\textcolor{red}{-65}) = \boxed{-58}
 $$
 
 ### Basis Behind the Determinant
@@ -380,17 +380,17 @@ One of the things we are interested in is understanding how the determinant of a
   - This should make sense since if a row or column is equal to all 0, then every unique product would have 0 as a term.
 $$
 \text{det}\begin{bmatrix}
-a_1 & 0 & c_1 \\
-a_2 & 0 & c_2 \\ 
-a_3 & 0 & c_3
+\textcolor{red}{a_1} & 0 & \textcolor{orange}{c_1} \\
+\textcolor{red}{a_2} & 0 & \textcolor{orange}{c_2} \\ 
+\textcolor{red}{a_3} & 0 & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
 \text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
 0 & 0 & 0 \\ 
-c_1 & c_2 & c_3
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 = 
@@ -404,17 +404,17 @@ $$
 
 $$
 \text{det}\begin{bmatrix}
-a_1 & b_1 & c_1 \\
-a_2 & b_2 & c_2 \\ 
-a_3 & b_3 & c_3
+\textcolor{red}{a_1} & \textcolor{blue}{b_1} & \textcolor{orange}{c_1} \\
+\textcolor{red}{a_2} & \textcolor{blue}{b_2} & \textcolor{orange}{c_2} \\ 
+\textcolor{red}{a_3} & \textcolor{blue}{b_3} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
 \text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
-b_1 & b_2 & b_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 $$
 
@@ -423,9 +423,9 @@ $$
 
 $$
 \text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
-b_1 & b_2 & b_3 \\ 
-b_1 & b_2 & b_3
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3}
 \end{bmatrix}
 
 =
@@ -438,17 +438,17 @@ $$
    - If $$B$$ is a nxn matrix where two rows of the nxn matrix $$A$$ were switched, then $$\text{det}(B) = -\text{det}(A)$$
 $$
 \text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
-b_1 & b_2 & b_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 = 
 
 -\text{det}\begin{bmatrix}
-b_1 & b_2 & b_3 \\
-a_1 & a_2 & a_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 $$
 
@@ -458,17 +458,17 @@ $$
   - If all elements in a row or column are multiplied by a non-zero constant, the determinat will also be multiplied by the same constant
 $$
 \text{det}\begin{bmatrix}
-a_1\cdot k & a_2\cdot k & a_3\cdot k \\
-b_1 & b_2 & b_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1}\cdot k & \textcolor{red}{a_2}\cdot k & \textcolor{red}{a_3}\cdot k \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
 k\cdot\text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
-b_1 & b_2 & b_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 
@@ -479,33 +479,33 @@ $$
   - If any linear combinations of the other rows or columns are added to a row or column, then the determinant will remain unchanged.
 $$
 \text{det}\begin{bmatrix}
-a_1 & b_1 & c_1 \\
-a_2 & b_2 & c_2 \\ 
-a_3 & b_3 & c_3
+\textcolor{red}{a_1} & \textcolor{blue}{b_1} & \textcolor{orange}{c_1} \\
+\textcolor{red}{a_2} & \textcolor{blue}{b_2} & \textcolor{orange}{c_2} \\ 
+\textcolor{red}{a_3} & \textcolor{blue}{b_3} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
 \text{det}\begin{bmatrix}
-a_1 + xb_1 + yc_1 & b_1 & c_1 \\
-a_2 + xb_2 + yc_2 & b_2 & c_2 \\ 
-a_3 + xb_3 + yc_3 & b_3 & c_3
+\textcolor{red}{a_1} + x\textcolor{blue}{b_1} + y\textcolor{orange}{c_1} & \textcolor{blue}{b_1} & \textcolor{orange}{c_1} \\
+\textcolor{red}{a_2} + x\textcolor{blue}{b_2} + y\textcolor{orange}{c_2} & \textcolor{blue}{b_2} & \textcolor{orange}{c_2} \\ 
+\textcolor{red}{a_3} + x\textcolor{blue}{b_3} + y\textcolor{orange}{c_3} & \textcolor{blue}{b_3} & \textcolor{orange}{c_3}
 \end{bmatrix}
 $$
 
 $$
 \text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
-b_1 & b_2 & b_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
 \text{det}\begin{bmatrix}
-a_1 + xb_1 + yc_1 & a_2 + xb_2 + yc_2 & a_3 + xb_3 + yc_3 \\
-b_1 & b_2 & b_3 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1} + x\textcolor{blue}{b_1} + y\textcolor{orange}{c_1} & \textcolor{red}{a_2} + x\textcolor{blue}{b_2} + y\textcolor{orange}{c_2} & \textcolor{red}{a_3} + x\textcolor{blue}{b_3} + y\textcolor{orange}{c_3} \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 $$
 
@@ -516,22 +516,22 @@ There properties are very important as they tend to fit a lot of cases and can s
   - If all of the elements above, or all of the elements below the diagonal of a matrix are 0's then the determinant of the matrix is equal to the product of diagonal elements
 $$
 \text{det}\begin{bmatrix}
-a_1 & a_2 & a_3 \\
-0 & b_2 & b_3 \\ 
-0 & 0 & c_3
+\textcolor{red}{a_1} & \textcolor{red}{a_2} & \textcolor{red}{a_3} \\
+0 & \textcolor{blue}{b_2} & \textcolor{blue}{b_3} \\ 
+0 & 0 & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
 \text{det}\begin{bmatrix}
-a_1 & 0 & 0 \\
-b_1 & b_2 & 0 \\ 
-c_1 & c_2 & c_3
+\textcolor{red}{a_1} & 0 & 0 \\
+\textcolor{blue}{b_1} & \textcolor{blue}{b_2} & 0 \\ 
+\textcolor{orange}{c_1} & \textcolor{orange}{c_2} & \textcolor{orange}{c_3}
 \end{bmatrix}
 
 =
 
-a_1b_2c_3
+\textcolor{red}{a_1}\textcolor{blue}{b_2}\textcolor{orange}{c_3}
 $$
 
 **Block Matricies**
@@ -580,6 +580,13 @@ $$
 
 
 ## Why You Should Care
+
+Determinants are sometimes difficult to see the purpose of, and they're definitely less physically applicable than other linear algebra concepts. The main reason for determinants is to be able to solve other more complicated problems, and to understand the nature of solutions. For example, the determinant of a 3x3 matrix is equal to the volume of the shape described by the 3 vectors in space. So we can see that there are geometric implications of the determinant, even if they are hard to see.
+
+The most practical use for the determinant, however, is one we have already seen: the cross product. In order to take a cross product of 2 vectors, which is done to find orthogonal vectors, you need to be able to take the determinant. We also need to be able to take the determinant once we start learning about eigenvalues, much later in the course.
+
+To summarize, determinants have somewhat confusing geomtric or practical applications, but they are still vital for us to learn so we can use them to simplify calculations in other linear algebra concepts.
+
 
 ## Practice
 

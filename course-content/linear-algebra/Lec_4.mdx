@@ -6,12 +6,12 @@ date: 2023-07-09
 ---
 
 ## What is a Linear Transformation
-    We are now moving into some more applications of the basic concepts we spent lectures 1-3 learning. Good job on making it this far, stuff gets a little more interesting (and difficult) here.
+We are now moving into some more applications of the basic concepts we spent lectures 1-3 learning. Good job on making it this far, stuff gets a little more interesting (and difficult) here.
 
-    This whole lesson we will be learning linear transformations, which are one of the most important things in all of mathematics. Every single field uses linear transformations, and you've used linear transformations yourself without even realizing it.
+This whole lesson we will be learning linear transformations, which are one of the most important things in all of mathematics. Every single field uses linear transformations, and you've used linear transformations yourself without even realizing it.
 
 ## Linear Combinations & How They Relate
-    Before we jump straight to linear transformations, lets take a baby step to linear combinations first. A linear combination is exactly what it sounds like: a way to combine vectors together linearly (addition/subtraction or multiplication).
+Before we jump straight to linear transformations, lets take a baby step to linear combinations first. A linear combination is exactly what it sounds like: a way to combine vectors together linearly (addition/subtraction or multiplication).
 
 $$
 \begin{align*}
@@ -109,23 +109,24 @@ Now lets get into how to actually talk about linear transformations. A linear tr
 If you remember from our section about matrices, this is the same definition we got for an application of matrices. We've finally gotten to that application, and so we now know that linear transformations can be represented as matrices. This is shown by saying "Linear transformation _T_ given by the matrix A" where A will be some n x m matrix.
 
 Remember that a transformation takes us from one dimension to another, so a transformation represented by an n x m matrix takes us from $$\mathbb{R^m}$$ to $$\mathbb{R^n}$$. This makes sense because if we have a vector in $$\mathbb{R^2}$$ and we multiply it by a 3 x 2 matrix, we end up with a vector in $$\mathbb{R^3}$$:
+
 $$
 \begin{align*}
-\begin{bmatrix}
-1 & 1 \\
-0 & 2 \\
--1 & 1 \\
-\end{bmatrix}
-\begin{bmatrix}
--2 \\
-1 \\
-\end{bmatrix}
-=
-\begin{bmatrix}
--1 \\
-2 \\
-3 \\
-\end{bmatrix}
+  \begin{bmatrix}
+     1 & 1 \\
+     0 & 2 \\
+    -1 & 1 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    -2 \\
+     1 \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    -1 \\
+     2 \\
+     3 \\
+  \end{bmatrix}
 \end{align*}
 $$
 
@@ -239,13 +240,102 @@ Finally let's combine all of this together. And don't worry we will explain why 
 
 So if a function is bijective, that means that every input it has maps to exactly one output. That means if you knew the output, you could trace it back to the input, as seen here:
 
+**_/insert example of input-output tracing/_**
+
 How do you trace it back? Well you do the opposite of what you did to go from input to output, and this opposite is what we call the __inverse__. 
 
 Not all functions are invertible, as we discussed throughout this chapter, but thankfully for us it is very easy to see if a linear transformation is invertible given its matrix. All we have to do is take it to its RREF form. If the RREF form of a matrix is the identity matrix, then the matrix (and the linear transformation associated with the matrix) is invertible. We won't do the proof here, but you can read it elsewhere if you're curious.
 
 Here is an example of an invertible matrix:
 
-__DO RREF HERE__
+$$
+A=\begin{bmatrix}
+     2 & 0 & -1 \\
+     5 & 1 & 0 \\
+     0 & 1 & 3
+\end{bmatrix}
+$$
+
+In order to find the inverse of this matrix, we can place this matrix and augment it with the identify matrix of the same size, then place the matirx into RREF. The augmented matrix will then be the inverted matirx. 
+$$
+\left[\begin{array}{ccc|ccc}  
+    2 & 0 & -1 & 1 & 0 & 0  \\
+    5 & 1 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 3 & 0 & 0 & 1
+  \end{array}\right]
+$$
+
+Below you will find the steps to find the inverted matrix:
+
+$$
+\begin{array}{c|c} 
+  \left[\begin{array}{ccc|ccc}  
+    1 & 0 & -1/2 & 1/2 & 0 & 0  \\
+    5 & 1 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 3 & 0 & 0 & 1
+  \end{array}\right] & 
+  \begin{align*} 
+    R_1 & = R_1/2
+  \end{align*}  \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|ccc}  
+    1 & 0 & -1/2 & 1/2 & 0 & 0  \\
+    0 & 1 & 5/2 & -5/2 & 1 & 0 \\
+    0 & 1 & 3 & 0 & 0 & 1
+  \end{array}\right] & 
+  \begin{align*} 
+    R_2 & = R_2 - 5R_1
+  \end{align*}  \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|ccc}  
+    1 & 0 & -1/2 & 1/2 & 0 & 0  \\
+    0 & 1 & 5/2 & -5/2 & 1 & 0 \\
+    0 & 0 & 1/2 & 5/2 & -1 & 1
+  \end{array}\right] & 
+  \begin{align*} 
+    R_3 & = R_3 - R_2
+  \end{align*}  \\ \\ \hline \\
+
+  \left[\begin{array}{ccc|ccc}  
+    1 & 0 & -1/2 & 1/2 & 0 & 0  \\
+    0 & 1 & 5/2 & -5/2 & 1 & 0 \\
+    0 & 0 & 1 & 5 & -2 & 2
+  \end{array}\right] & 
+  \begin{align*} 
+    R_3 & = 2R_3
+  \end{align*}  \\ \\ \hline \\
+  
+  \left[\begin{array}{ccc|ccc}  
+    1 & 0 & 0 & 3 & -1 & 1 \\
+    0 & 1 & 0 & 10 & 6 & -5 \\
+    0 & 0 & 1 & 5 & -2 & 2
+  \end{array}\right] & 
+  \begin{align*} 
+    R_1 & = R_1 + \frac{1}{2}R_3 \\
+    R_2 & = R_2 -\frac{5}{2}R_3 \\
+  \end{align*}  \\ \\ \hline \\
+\end{array}
+$$
+
+Now that the matrix is in RREF form, we can determine that the inverse matrix is:
+
+$$
+A^{-1} = \begin{bmatrix}
+    3 & -1 & 1 \\
+    10 & 6 & -5 \\
+    5 & -2 & 2
+\end{bmatrix}
+$$
+
+### Conditions of Invertability
+A matrix is considered invertable if it meets the following conditions:
+
+1. Matrix must be square
+   - This should make sense since when solving for the inverse, we set it equal to the identify matrix, if the matrix is not square, it cannot have an identity matrix with 1's along the diagonal for all rows
+2. A matrix is invertable if and only if its determinant is not equal to 0 ($$\text{det}(A) \neq 0$$)
+    - Determinants can only be solved for in square matricies which furthers the first point
+  
+We touched on determinants briefly when explaining how to take the cross product of two vectors but we'll explain more of what this means in a future lesson.
 
 ## Why You Should Care
 
@@ -253,8 +343,31 @@ Finally we can talk about why all of this matters. Well, we use linear transform
 
 Additionally, all of this information is mostly a foundation for us to get into the later parts of linear algebra, which will be all about using matrices and their inverses to compute calculations that are so complex, calculators can't even do them. 
 
-To put it briefly, inverses are vital because this gives us a vital tool we need in our toolkit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
+To put it briefly, inverses are vital because this gives us a vital tool we need in our kit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
 
 
 ## Practice
+
+$$
+\textrm{Find a linear combination of }
+
+\begin{bmatrix}
+-1 \\
+2\\
+\end{bmatrix}
+
+\textrm{ and }
+
+\begin{bmatrix}
+1 \\
+1 \\
+\end{bmatrix}
+
+\textrm{that makes}
+
+\begin{bmatrix}
+1 \\
+2 \\
+\end{bmatrix}
+$$
 

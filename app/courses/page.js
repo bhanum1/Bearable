@@ -10,7 +10,10 @@ export default function Courses() {
      useEffect(()=>{
         setTimeout(()=>{
             setLoad(1)
-        }, 200)
+        }, 50)
+        setTimeout(()=>{
+            setLoad(2)
+        }, 800)
      }, [])
 
 
@@ -24,7 +27,9 @@ export default function Courses() {
          setPosition({y});
        }
    
-       handleResize()
+       setTimeout(()=>{
+        handleResize()
+        },50)
        window.addEventListener("resize", handleResize);
        return () => window.removeEventListener("resize", handleResize);
      }, [elementRef]);
@@ -32,23 +37,25 @@ export default function Courses() {
 
 
     //Controlling the text's div to stay in the right position regarless of scroll 
+    const scroll = useRef(0)
     useEffect(() => {
         function updateImagePosition() {
-            const scrollY = window.scrollY
+            scroll.current = window.scrollY
         }
         
         window.addEventListener('scroll', updateImagePosition);
+       
         updateImagePosition();
-    }, []) 
+    }, [scroll]) 
 
 
-    const classes = [["absolute right-[-100%] ease-in duration-500", "absolute right-0 ease-in duration-500"],
-                     ["absolute left-[-100%] ease-in duration-500", "absolute left-0 ease-in duration-500"],
-                     ["absolute right-[-100%] bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500"],
-                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-0 ease-in duration-500"],
-                     ["absolute bottom-[-100%] opacity-0 ease-in duration-500", "absolute bottom-[6%] opacity-100 ease-in duration-500"],
-                     ["absolute right-[-100%] ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500"],
-                     ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500"]]
+    const classes = [["absolute right-[-100%] ease-in duration-500", "absolute right-0 ease-in duration-500",  "absolute right-0 ease-in duration-500"],
+                     ["absolute left-[-100%] ease-in duration-500", "absolute left-0 ease-in duration-500", "absolute left-0 ease-in duration-500"],
+                     ["absolute right-[-100%] bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500"],
+                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-0 ease-in duration-500", "absolute left-0 bottom-0 ease-in duration-500"],
+                     ["absolute bottom-[-100%] opacity-0 ease-in duration-500", "absolute bottom-[6%] opacity-100 ease-in duration-500", "absolute bottom-[6%] opacity-100 ease-in duration-500"],
+                     ["absolute right-[-100%] ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500"],
+                     ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins"]]
     
     return (
             <section className=" min-h-screen relative">
@@ -101,8 +108,8 @@ export default function Courses() {
                 />
 
                 <div className={`bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] absolute left-[11%] w-[78%] h-[50%] flex flex-col text-center overflow-hidden font-Poppins`}
-                style={{transform: "translateY("+(position.y+scrollY)+"px)"}}>
-                    <h1 className="text-[4vw] ">Linear Algebra </h1> 
+                style={{transform: "translateY("+(position.y+scroll.current)+"px)"}}>
+                    <h1 className="text-[4vw] ">Linear Algebra</h1> 
                     <p className="text-[1vw]">THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA </p>
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-lg" style={{ transform: 'translateY(30%)' }}>
                         <Link href='/courses/linear-algebra' className='bg-[#CC4955] hover:bg-[#a9414a] text-[white] text-[1vw] rounded-md px-[2%] py-[0.3%]'>Start</Link> 

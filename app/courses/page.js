@@ -73,8 +73,8 @@ export default function Courses() {
                     <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col text-center gap-[10vw] font-Poppins"
                     style={{transform: "translateX(15%)"}}>
                         <Inner title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
-                        <Inner title="y axis" text="cairo"></Inner>
-                        <Inner title="scroll" text="cairo 2"></Inner>
+                        <Inner title="Calculus" text="THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS"></Inner>
+                        <Inner title="Chemistry" text="THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY "></Inner>
                     </div>
 
                     <div className="flex">

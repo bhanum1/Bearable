@@ -56,7 +56,7 @@ export default function About() {
                 {/* main page */}
                 <div className='flex flex-col gap-10 w-screen h-[50%] mb-[5%]'>
                     <div className="bg-[#FEFDF3] rounded-lg pt-[1%] pb-[5%] left-[11%] w-[78%] flex flex-col self-center text-center justify-center">
-                        <h1 className='font-bold'>The Story of Bearnoulli</h1>
+                        <h1 className='font-bold text-[2vw] pt-5'>The Story of Bearnoulli</h1>
                         <div className='flex justify-evenly gap-10'>
                             <Image
                             src='/About-page/c-bear.svg'
@@ -109,7 +109,7 @@ export default function About() {
 
 
                     <div className="bg-[#FEFDF3] rounded-lg left-[11%] w-[78%] flex flex-col self-center text-center font-Poppins">
-                        <h1>The Creators of Bearable</h1>
+                        <h1 className='text-[2vw] pt-10'>The Creators of Bearable</h1>
                         <div className='flex flex-col gap-8'>
                             <div className='flex justify-evenly gap-10 px-14 pt-10'>
                                 <div className='bg-[#5893B6] flex justify-center w-[20%]'>

@@ -14,7 +14,7 @@ This includes vectors, matrices, and basic operations you can do with them.
 
 You may have heard of vectors before in physics class, or maybe from [_Despicable Me_](https://www.youtube.com/watch?v=nw9QoYL_8tI), as a quantity that has both direction and magnitude.
 
-However, vectors are more than just the basic ones used in physics, that only represent 2 quantities. As we know, linear algebra is all about going into higher dimensions, and so the definition of a vector in linear algebra is simply a structure that contains values in some number of dimensions (typically greater than 1). They are represented in either of the following ways:
+However, vectors are more than just the basic ones used in physics, which usually only represent 2 quantities. As we know, linear algebra is all about going into higher dimensions, and so the definition of a vector in linear algebra is simply a structure that contains values in some number of dimensions (typically greater than 1). They are represented in either of the following ways:
 
 $$
 \begin{bmatrix}
@@ -30,12 +30,19 @@ $$
 
 These are examples of 3 dimensional vectors, as they have 3 numbers in them. We'll get more into dimensions later, but for now just understand that vectors can be in any number of dimensions.
 
-In linear algebra we use vectors to hold large amounts of information, like if we need to decide the color of something. RGB values are a 3 dimensional vector used to describe a color based on how red, green, and blue it is.
+In linear algebra we use vectors to hold large amounts of information. For example, if we need to decide the color of something, we use an RGB value, which is a 3 dimensional vector used to describe a color based on how red, green, and blue it is.
+
+$$
+\textrm{RGB value:}
+\begin{bmatrix}
+255 & 189 & 49\\
+\end{bmatrix}
+$$
 
 ## Dimensions
-In linear algebra we talk about dimensions frequently, so its important you understand exactly what it means. A dimension is essentially something we can store information about. For example, the velocit vectors you learned in physics have 2 dimensions. It only had a width and a height. However, digital representation of color is a 3 dimensional quality, as it tells you how red, green, and blue something is.
+In linear algebra we talk about dimensions frequently, so its important you understand exactly what it means. A dimension is essentially an "_area_" that we can store information about. For example, the velocity vectors you learned in physics have 2 dimensions, because they store information on speed in the x-direction and speed in the y-direction. However, as we just saw, digital representation of color is a 3 dimensional quality, as it tells you how red, green, and blue something is.
 
-If a vector has 2 dimensions, we say it is a vector in $$ \mathbb{R^2} $$ (pronounced "R two"), if it has 4 dimensions it's in $$\mathbb{R^4}$$ and so on.
+If a vector has 2 dimensions, we say it is a vector in $$ \mathbb{R^2} $$ (pronounced "R two"), if it has 4 dimensions it's in $$\mathbb{R^4}$$ and a vector in the n-th dimension is in  $$\mathbb{R^n}$$.
 
 Dimensions will matter much more later on, but for now that's all you need to know about them. For some quick examples, vector v is in $$\mathbb{R^6}$$ and vector u is in $$\mathbb{R^3}$$.
 
@@ -66,7 +73,7 @@ $$
 $$
 
 
-A matrix can have any positive number of rows and columns, and is referred to as an nxm matrix, where n is number of rows and m is number of columns.
+A matrix can have any positive number of rows and columns, and is referred to as an $$ n \times m $$ matrix, where n is number of rows and m is number of columns.
 So here is a 3x2 matrix, A, and a 2x5 matrix, B:
 
 $$
@@ -79,8 +86,8 @@ A =
 \quad
 B=
 \begin{bmatrix}
-1 & 0\\
-0 & 1 \\
+1 & 0 & 0 & 1 & -2\\
+2 & -1 & 0 & -3 & \frac{1}{3} \\
 \end{bmatrix} 
 $$
 
@@ -100,8 +107,13 @@ D=
 \end{bmatrix} 
 $$
 
-Representing what matrices mean is a little bit harder. Matrices are essentially maps, that take you from one vector to another. Consider a case where you need to predict the color of a leaf based on the size and weight. You have a vector in $$\mathbb{R^2}$$ representing the size and weight, and you want a vector in $$\mathbb{R^3}$$ with the RGB values of the color. So you have to go from a $$\mathbb{R^2}$$ vector to a $$\mathbb{R^3}$$ vector, and to do this you need some sort of map, or system of equations, that describes how to get there. This is what matrices are for, and in fact a 3x2 matrix is what you need. We'll see how to do this math later on this lesson, but for now understand that:
-__Matrices are "linear maps" that take you from one vector to another, regardless of dimension.__
+Representing what matrices mean is a little bit harder. Matrices are essentially maps that take you from one vector to another. 
+
+Consider a case where you need to predict the color of a leaf based on the size and weight. You have a vector in $$\mathbb{R^2}$$ representing the size and weight, and you want a vector in $$\mathbb{R^3}$$ with the RGB values of the color. So you have to go from a $$\mathbb{R^2}$$ vector to a $$\mathbb{R^3}$$ vector, and to do this you need some sort of map, or system of equations, that describes how to get there. 
+
+This is what matrices are for! And in fact a 3x2 matrix is what you need. We'll see how to do this math later on this lesson, but for now understand that:
+
+__Matrices are "linear maps" that take you from one vector to another, and can change the dimension.__
 
 ## Vector Operations
 
@@ -153,7 +165,7 @@ $$
 \end{bmatrix} 
 $$
 
-You cant divide with vectors, but you can multiply by a fraction or a decimal:
+You can't divide with vectors, but you can multiply by a fraction or a decimal:
 $$
 \frac{3}{4} * 
 \begin{bmatrix}
@@ -213,15 +225,15 @@ The dot product cannot be done with vectors of different sizes as not all number
 
 ### Cross Product
 
-**Cross Product** is another method of multipling scalars. The main difference between **cross product** and **dot product** is that **cross product** outputs a **vectors** as opposed to **dot product** which outputs a **scalar**. The cross product of two vectors represents a vector that is **orthoganal** to both vectors. In otherwords, the cross product of two vectors will be prependicular to both originial vectors. You may remember the *Right Hand Rule* from physics, and this is a direct application. If your index and middle fingers represent the two vectors $$\vec{a}$$ and $$\vec{b}$$ then your thumb represents the vector $$\vec{a}\times\vec{b}.$$
+**Cross Product** is another method of multipling scalars. The main difference between **cross product** and **dot product** is that **cross product** outputs a **vectors** as opposed to **dot product** which outputs a **scalar**. The cross product of two vectors represents a vector that is **orthogonal** to both vectors. In otherwords, the cross product of two vectors will be perpendicular to both originial vectors. You may remember the *Right Hand Rule* from physics, and this is a direct application. If your index and middle fingers represent the two vectors $$\vec{a}$$ and $$\vec{b}$$ then your thumb represents the vector $$\vec{a}\times\vec{b}.$$
 
 /* INSERT IMAGE SHOWING THE RELATIONSHIP */
 
-When calculating cross product, there are many different ways that people decide to represent and characterize cross product, here we'll explore a simple method.
+When calculating cross product, there are many different ways that people decide to represent and characterize cross product, here we'll explore two simple methods.
 
 #### Matrix Determinant Representation
 
-This method involed representing the two cross product vectors in a matrix including the unit vectors and finding its **Determinant**. You don't need to understand what Determinant is right now and we'll discuss it in a later lesson but for now we'll breifly explain a general method of finding the determinant:
+This method involed representing the two cross product vectors in a matrix including the unit vectors and finding its **Determinant**. You don't need to understand what Determinant is right now and we'll discuss it in a later lesson but for now we'll briefly explain a general method of using it to find the cross product:
 
 $$
 \begin{matrix}
@@ -349,7 +361,7 @@ $$
 \end{bmatrix}
 $$
 
-This method isn't the only way to think about taking a cross product, however it is a realatively intuative way to remember the steps. Please keep in mind that you can take the cross product for any two vectors of the same size, just like the dot product. The method explaind above however only applies to 3x3 matricies.
+This method isn't the only way to think about taking a cross product, however it is a realatively intuitive way to remember the steps. Please keep in mind that you can take the cross product for any two vectors of the same size, but the method explained above only applies to 3x3 matricies.
 
 ##### Example: Mechanics Cross Product
 
@@ -391,11 +403,6 @@ M_z
 \end{bmatrix}
 $$
 
-#### Cross Product Properties
-
-like distributive but not assocaitve or communicative ??????
-
-
 ## Matrix Operations
 
 Matrices can be multiplied by scalars just like vectors, elementwise:
@@ -413,9 +420,9 @@ $$
 \end{bmatrix} 
 $$
 
-But they cant always be multiplied, their dimensions have to agree.
+But they cant always be multiplied with other matrices, their dimensions have to agree.
 
-To understand this, we need to understand how to multiply matrices.
+To understand this, we need to learn how to [multiply matrices](https://www.youtube.com/watch?v=OMA2Mwo0aZg).
 
 ### Matrix multiplication
 Lets start with 2 'square' matrices of the same size. A square matrix is a matrix with the same number of rows as columns.
@@ -462,7 +469,7 @@ $$
 \end{bmatrix}
 $$
 
-Matrix multiplcation is not just exclusive to the same size matrcies, as long as the length of the columns and rows match up between two matrcies, its possible to multiply them together. However, the output dimensions of the product may be different from the inputs.
+Matrix multiplcation is not exclusive to matrcies of the same size; as long as the number of columns of the first matrix match with the number of rows of the second matrix, its possible to multiply them together. However, the dimensions of the product will be different from the inputs.
 
 $$
 \begin{bmatrix}
@@ -486,6 +493,7 @@ $$
 \end{bmatrix} 
 $$
 
+Notice that if you multiply an $$ n \times m $$ matrix with an $$ m \times l $$ matrix, the output will have dimensions $$ n \times l $$. I like to think of this as "squishing" the dimensions together, because when you write it out in a line, the middle 2 numbers disappear, or get "squished", and only the outside dimensions remain for the product.
 
 ### Matrix times vector
 Similar to the matrix times matrix multiplcation, we can also multiply vectors and matricies as well, so long as the vector length is equal to the row length.
@@ -497,12 +505,12 @@ $$
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-3 & 2\\
-0 & -5\\
+3 \\
+0 \\
 \end{bmatrix} 
 $$
 
-This multiplication will give us a new 2x2 square matrix, with each entry corresponding to the **dot product** of a **row** and a **column**.
+This multiplication will give us a new 2x1 column vector, with each entry corresponding to the **dot product** of a **row** and a **column**.
 
 $$
 \begin{bmatrix}
@@ -561,9 +569,9 @@ $$
 ## Why does this matter
     Welcome to your first real application focused section! We recognize that classes sometimes fail to teach why a concept is important, so that's what this section is for.
 
-    Linear algebra as a whole is its own type of thinking. You need to be able to think in multiple dimensions and on different axes. This means that normal addition and multiplication aren't enough. To be able to deal with things that have multiple components, like the weather conditions in a particular area for example, we need to be able to put this data in vectors and manipulate it using matrices. So this entire lesson can just be considered learning your fundamental operations of linear algebra: not very fun, but incredibly important for a foundation.
+    Linear algebra as a whole is its own type of thinking. You need to be able to think in multiple dimensions and on different axes. This means that normal addition and multiplication aren't enough. To be able to deal with things that have multiple components, like the weather conditions in a particular area for example, we need to be able to put this data in vectors and manipulate it using matrices. So this entire lesson is just learning the fundamental operations of linear algebra: not very fun, but incredibly important for a foundation.
 
-    Please continue and do some practice problems to strengthen your fundamentals, and remember, you can't do calculus without knowing how to add, so learn how to use vectors before you get to the more interesting parts of this course.
+    Please continue and do some practice problems to strengthen your fundamentals, and remember, you can't do calculus without knowing how to add, so you have to learn how to use vectors before you get to the more interesting parts of this course.
 
 ## Practice
 

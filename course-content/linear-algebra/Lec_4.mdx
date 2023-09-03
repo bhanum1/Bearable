@@ -6,7 +6,8 @@ date: 2023-07-09
 ---
 
 ## What is a Linear Transformation
-We are now moving into some more applications of the basic concepts we spent lectures 1-3 learning. Good job on making it this far, stuff gets a little more interesting (and difficult) here.
+
+We are now moving into some more applications of the basic concepts we spent lectures 1-3 learning. [Good job](https://catoftheday.com) on making it this far, stuff gets a little more interesting (and difficult) here.
 
 This whole lesson we will be learning linear transformations, which are one of the most important things in all of mathematics. Every single field uses linear transformations, and you've used linear transformations yourself without even realizing it.
 
@@ -105,7 +106,7 @@ This is the basic idea of what a linear transformation is, and we will get into 
 
 ## Linear Transformation
 
-Now lets get into how to actually talk about linear transformations. A linear transformation is a set of operations that takes us from a domain in $$\mathbb{R^n}$$ to a domain in $$\mathbb{R^m}$$. This means that it takes us from one dimension to another.
+Now lets get into how to actually talk about linear transformations. A linear transformation is a set of operations that takes us from a domain in $$\mathbb{R^m}$$ to a domain in $$\mathbb{R^n}$$. This means that it takes us from one dimension to another.
 If you remember from our section about matrices, this is the same definition we got for an application of matrices. We've finally gotten to that application, and so we now know that linear transformations can be represented as matrices. This is shown by saying "Linear transformation _T_ given by the matrix A" where A will be some n x m matrix.
 
 Remember that a transformation takes us from one dimension to another, so a transformation represented by an n x m matrix takes us from $$\mathbb{R^m}$$ to $$\mathbb{R^n}$$. This makes sense because if we have a vector in $$\mathbb{R^2}$$ and we multiply it by a 3 x 2 matrix, we end up with a vector in $$\mathbb{R^3}$$:
@@ -159,7 +160,7 @@ f(2+3) &= f(2) + f(3)\\
 \end{align*}
 $$
 
-Now lets check homogeniety. For this, the function of a scalar multiple of an input must equal the scalar multiple of the function value of that input.
+Now lets check homogeneity. For this, the function of a scalar multiple of an input must equal the scalar multiple of the function value of that input.
 
 $$
 k \cdot f(a) = f(k \cdot a)
@@ -193,13 +194,13 @@ $$
 v = f(u)
 $$
 
-Lets say matrix B represents the inverse of the linear transformation _T_, denoted by $$ T^{-1} $$. This means that if you apply B to the output, you get the input. Then:
+Lets say matrix B represents the linear transformation $$ T^{-1} $$, which transforms vector _u_ to vector _v_. This means that if you apply B to the output, you get the input. Then:
 
 $$
 v = Bu
 $$
 
-So we can also define that matrix B is the inverse of matrix A, because it describes the inverse of the linear transformation given by A. Thus:
+So we can also define that matrix B is the inverse of matrix A, because it describes the inverse of the linear transformation given by A, as it reverses the effect. Thus:
 
 $$
 B = A^{-1}
@@ -215,9 +216,9 @@ For a transformation to be injective (also knows as "one-to-one" functions), it 
 
 An example of an injective function is [$$y = x^3$$](https://www.desmos.com/calculator/qtupcw26mk). This has each output mapping to only one input, and a way to see this is with the "horizontal line test". If you were to pass a horizontal line from the top to the bottom of the function, nowhere does it hit 2 points simultaneously (try it on the link).
 
-Injective functions are not necessarily invertible because not all outputs have a corresponding input. Thus the inverse would not be defined at some points. This can be seen with the function [$$ e^{x} $$](https://www.desmos.com/calculator/bzlf5smk5h), which doesn't have any inputs corresponding to the negative numbers.
+Injective functions are not necessarily invertible because not all outputs have a corresponding input. Thus the inverse would not be defined at some points. This can be seen with the function [$$ e^{x} $$](https://www.desmos.com/calculator/bzlf5smk5h), which doesn't have any inputs corresponding to the negative y-values as outputs.
 
-(Note you can kind of make injective functions invertible by just redefining the output space to ignore the area the function doesn't map to, but I don't believe this is too important to understand for now.)
+(Note you can kind of make injective functions invertible by just redefining the output space to ignore the area the function doesn't map to, but we don't believe this is too important to understand for now.)
 ## Surjective
 
 Surjective functions (also known as "onto" functions) are the second type of function we will discuss. For a surjective function, all inputs are mapped to an output, with no outputs left unmatched to. However, an output can have multiple inputs matching to it. Visually this can be seen as this: __NEED IMAGE__.
@@ -238,11 +239,9 @@ This means the function is bijective. Now, by definition, which we will not prov
 
 Finally let's combine all of this together. And don't worry we will explain why invertibility matters in the next section, just stick with us for now.
 
-So if a function is bijective, that means that every input it has maps to exactly one output. That means if you knew the output, you could trace it back to the input, as seen here:
+So if a function is bijective, that means that every input it has maps to exactly one output. That means if you knew the output, you could trace it back to the input.
 
-**_/insert example of input-output tracing/_**
-
-How do you trace it back? Well you do the opposite of what you did to go from input to output, and this opposite is what we call the __inverse__. 
+But how do you trace it back? Well you do the opposite of what you did to go from input to output, and this opposite is what we call the __inverse__. 
 
 Not all functions are invertible, as we discussed throughout this chapter, but thankfully for us it is very easy to see if a linear transformation is invertible given its matrix. All we have to do is take it to its RREF form. If the RREF form of a matrix is the identity matrix, then the matrix (and the linear transformation associated with the matrix) is invertible. We won't do the proof here, but you can read it elsewhere if you're curious.
 

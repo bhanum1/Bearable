@@ -101,22 +101,32 @@ export default function About() {
                             quality={100}
                             alt="Background Image"
                             />
-                           <div className='absolute flex flex-col font-Poppins text-center pt-10 w-[60vw] left-[25%]'>
-                            <h1 className='text-[2vw]'>Learning Made Bearable</h1>
-                            <p className='text-[1vw]'>our mission is to ghjkgdhjakhgjklahgjkHF HDSJKFHSJLKFHLK HDSJKAFHSDJLKFHSJDKHFSJKDHF HFJDKSAHFJK HJKSDHFJKSLA HJKSDAHFJKLAS H JSDAKHFJKLDASHFJSDK HJASKDLFHJSKLAH HJKLASHDJKLF HJKSDAHFJKASL HJSADKHLJK SDHJAKLHFJKL SDHJAKLFHLKJA FJSHDAKHF HJKDSA</p>
+                           <div className='absolute flex flex-col font-Poppins text-center pt-10 w-[60vw] left-[25%] max-sm:pt-3'>
+                            <h1 className='text-[2vw] max-sm:text-[2vw]'>Learning Made Bearable</h1>
+                            <p className='text-[1vw] max-sm:text-[1.5vw]'>our mission is to ghjkgdhjakhgjklahgjkHF HDSJKFHSJLKFHLK HDSJKAFHSDJLKFHSJDKHFSJKDHF HFJDKSAHFJK HJKSDHFJKSLA HJKSDAHFJKLAS H JSDAKHFJKLDASHFJSDK HJASKDLFHJSKLAH HJKLASHDJKLF HJKSDAHFJKASL HJSADKHLJK SDHJAKLHFJKL SDHJAKLFHLKJA FJSHDAKHF HJKDSA</p>
                            </div>
                     </div>
 
 
                     <div className="bg-[#FEFDF3] rounded-lg left-[11%] w-[78%] flex flex-col self-center text-center font-Poppins">
-                        <h1 className='text-[2vw] pt-10'>The Creators of Bearable</h1>
+                        <h1 className='text-[2vw] max-sm:text-[4vw] pt-10'>The Creators of Bearable</h1>
                         <div className='flex flex-col gap-8'>
                             <div className='flex justify-evenly gap-10 px-14 pt-10'>
-                                <div className='bg-[#5893B6] flex justify-center w-[20%]'>
+                                <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%]'>
                                     <Image
                                     src='/About-page/man.svg'
-                                    className=''
+                                    className='max-sm:hidden'
                                     style={{width: '20%', height: 'auto'}}
+                                    width={0}
+                                    height={0} 
+                                    quality={100}
+                                    alt="Background Image"
+                                    />
+
+                                    <Image
+                                    src='/About-page/man.svg'
+                                    className='sm:hidden'
+                                    style={{width: '40%', height: 'auto'}}
                                     width={0}
                                     height={0} 
                                     quality={100}
@@ -124,7 +134,7 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#BC454F] flex justify-center w-[20%]'>
+                                <div className='bg-[#BC454F] flex justify-center w-[20%] max-sm:w-[30%]'>
                                     <Image
                                     src='/About-page/man-2.svg'
                                     className=''
@@ -136,7 +146,7 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#57702D] flex justify-center w-[20%]'>
+                                <div className='bg-[#57702D] flex justify-center w-[20%] max-sm:w-[30%]'>
                                     <Image
                                     src='/About-page/woman.svg'
                                     className=''
@@ -150,7 +160,7 @@ export default function About() {
                             </div>
 
                             <div className='flex justify-evenly gap-10 px-14 pb-10'>
-                                <div className='bg-[#5893B6] flex justify-center w-[20%]'>
+                                <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%]'>
                                     <Image
                                     src='/About-page/man-4.svg'
                                     className=''
@@ -162,7 +172,7 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#BC454F] flex justify-center w-[20%]'>
+                                <div className='bg-[#BC454F] flex justify-center w-[20%] max-sm:w-[30%]'>
                                     <Image
                                     src='/About-page/man-3.svg'
                                     className=''
@@ -174,7 +184,7 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#57702D] flex justify-center w-[20%]'>
+                                <div className='bg-[#57702D] flex justify-center w-[20%] max-sm:w-[30%]'>
                                     <Image
                                     src='/About-page/peanut.svg'
                                     className=''

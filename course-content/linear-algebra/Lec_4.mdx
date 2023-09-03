@@ -327,12 +327,13 @@ A^{-1} = \begin{bmatrix}
 $$
 
 ### Conditions of Invertability
-A matrix is considered invertable if it meets the following conditions:
+A matrix is considered invertible if it meets the following conditions:
 
 1. Matrix must be square
-   - This should make sense since when solving for the inverse, we set it equal to the identify matrix, if the matrix is not square, it cannot have an identity matrix with 1's along the diagonal for all rows
-2. A matrix is invertable if and only if its determinant is not equal to 0 ($$\text{det}(A) \neq 0$$)
-    - Determinants can only be solved for in square matricies which furthers the first point
+   - This should make sense since when solving for the inverse, we augment it with the identity matrix. If the matrix is not square, it cannot have an identity matrix with 1's along the diagonal for all rows
+2. A matrix is invertible if and only if its determinant is not equal to 0 ($$\text{det}(A) \neq 0$$)
+    - Determinants can only be solved for in square matrices which furthers the first point
+    - This is another good way to quickly check for invertibility.
   
 We touched on determinants briefly when explaining how to take the cross product of two vectors but we'll explain more of what this means in a future lesson.
 
@@ -342,7 +343,7 @@ Finally we can talk about why all of this matters. Well, we use linear transform
 
 Additionally, all of this information is mostly a foundation for us to get into the later parts of linear algebra, which will be all about using matrices and their inverses to compute calculations that are so complex, calculators can't even do them. 
 
-To put it briefly, inverses are vital because this gives us a vital tool we need in our kit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
+To put it briefly, inverses are vital because this gives us yet another tool we need in our kit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
 
 
 ## Practice

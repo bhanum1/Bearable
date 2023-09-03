@@ -9,20 +9,20 @@ date: 2023-07-09
 
 One of the things that you'll come to see in engineering is that we tend to describe the flows of various things in and out of system with different equations. 
 
-For example, as a Chemical Engineer, you may be interested in founding out the flow rate of products produced from a reactor given certain flow rates into the reactor. You would then use the equations that model the flow rate in order to determine the values of the flow rate out of the model.
+For example, as a Chemical Engineer, you may be interested in finding out the flow rate of products produced from a reactor given certain flow rates into the reactor. You would then use equations to model this system in order to determine the values of the flow rate out of the model.
 
-Well when we get to situations where, there say 3 flow rates into the reactor and 5 flow rates out of it, and these equations have 3, 6, 9 components, it becomes a lot easier to represent these equations and solve for the values within a matrix.
+Well when we get to situations where there's, say 3 flow rates into the reactor, and 5 flow rates out of it, and these equations have 3, 6, or even 9 components, it becomes a lot easier to represent these equations and solve for the values within a matrix.
 
 **_/insert a simple example similar to a CHE208 type example/_**
 
 ## Matrix Representation
 
-In the last lesson, we explained that matrcies represent maps from one vector to another regardless of dimension. While this is true, there are many other ways that matrcies can be interpreted, such as the case with systems of linear equations.
+In the last lesson, we explained that matrices represent maps from one vector to another regardless of dimension. While this is true, there are many other ways that matrices can be interpreted, such as the case with systems of linear equations.
 
 In high school you may remember learning two different ways to find the Point of Intersection between two functions, **Substitution** and **Elimination**.
-The motivation behind representing systems of linear equations is rooted in the goal finding of intersetions between these functions, as typically they provide unique solutions to complex problems. In high school, we were only ever concerned with finding the point of intersection between two functions and these functions typically only have two variables, but what if wanted to find an inserction between 3, 4 or even 1000 functions. And what if these functions all had 1000 variables? The matrix representation provides us with means of simplifying this information to be more consumable. Later in the lesson we will discuss how to solve for these points of intersection using a *fancier* form of Elimination.
+The motivation behind representing systems of linear equations is rooted in the goal finding of intersections between these functions, as typically they provide unique solutions to complex problems. In high school, we were only ever concerned with finding the point of intersection between two functions and these functions typically only have two variables, but what if wanted to find an inserction between 3, 4 or even 1000 functions. And what if these functions all had 1000 variables? The matrix representation provides us with means of simplifying this information to be more consumable. Later in the lesson we will discuss how to solve for these points of intersection using a *fancier* form of Elimination.
 
-There are two main ways we represent systems of equations in matrcies: coeffcient matrcies and augemented matrcies.
+There are two main ways we represent systems of equations in matrcies: coeffcient matrices and augmented matrices.
 
 ### Coeffcient Matrix
 
@@ -68,9 +68,9 @@ $$
 \end{align*}
 $$
 
-### Augemented Matrix
+### Augmented Matrix
 
-An augmented matrix is the same as the coeffecient matrix however, the key difference is the augment matrix has a sectioned column dedicated towards a scalar quantity included each linear equation, typically denoted as the vector $$\vec{b}$$.
+An augmented matrix is the same as the coeffecient matrix however, the key difference is the augment matrix has a sectioned column dedicated towards a scalar quantity included in each linear equation, representing the solution, typically denoted as the vector $$\vec{b}$$.
 
 For example, instead consider the following system of linear equations:
 
@@ -82,7 +82,7 @@ $$
 \end{align*}
 $$
 
-The augemented matrix representation would then be of the following form:
+The augmented matrix representation would then be of the following form:
 
 $$
 A=\left[\begin{array}{ccc|c}  
@@ -129,12 +129,11 @@ b_n
 \end{align*}
 $$
 
-Representing systems of linear equations allows us to refer to the system of linear equations, and its solutions without having to draw out the entire matrix every time. We will see later that the matrix representation, partificullay in the augemented form is useful for working torwards the solutions to the system.
+Representing systems of linear equations allows us to refer to the system of linear equations, and its solutions without having to write all the equations every time. We will see later that the matrix representation, particularly in the augmented form is useful for working torwards the solutions to the system.
 
-## Solving a System of Equations
 
 ## Gauss-Jordan Elimination
-**Gauss-Jordan Elimination** is a method of converting a matrix into **Reduced Row-Echelon Form (RREF)**.
+**Gauss-Jordan Elimination** is a method of converting a matrix into **Reduced Row-Echelon Form (RREF)**, usually used to solve a system of equations.
 
 ### Reduced Row-Echelon Form (RREF)
 A matrix is said to be in **RREF** if it satisfies the following conditions:
@@ -142,11 +141,11 @@ A matrix is said to be in **RREF** if it satisfies the following conditions:
 **_Reduced Row-Echelon Form (RREF)_**
     1. For any row containing non-zero entries, the first non-zero entry is a 1
         - This is typically called a **Leading 1** or a **Pivot**
-    2. If a columns contains a **Leading 1**, all other elements withing that columns are 0
+    2. If a columns contains a **Leading 1**, all other elements within that columns are 0
     3. For any rows containing a **Leading 1**, each row bellow will contain a **leading 1** further to the right
         - This means that if there is infact a row of all zeros, then this row will appear at the bottom of the matrix
 
-For example the following matrix follows the conditions outlined above:
+For example the following matrix follows the conditions outlined above (check to make sure you can see how all conditions are satisfied):
 
 $$
 M=\left[\begin{array}{ccccc|c}  
@@ -157,10 +156,10 @@ M=\left[\begin{array}{ccccc|c}
 \end{array}\right]
 $$
 
-You can think of trying to put the matrix into the form of a staircase with the leading ones at the front of each step. Put a matrix into this form simplifies each equation as much as possible such that it is easier to solve for each of the varliables.
+You can think of trying to put the matrix into the form of a staircase with the leading ones at the front of each step. Put a matrix into this form simplifies each equation as much as possible such that it is easier to solve for each of the variables.
 
-### Elementry Row Operations
-The way in which we convert a regular matrix into the **RREF** form is to apply a series of elementry row operations. These operations include:
+### Elementary Row Operations
+The way in which we convert a regular matrix into the **RREF** form is to apply a series of elementary row operations. These operations include:
 
 - Dividing a row by a non-zero scalar
   - $$R_1 = R_1/3$$
@@ -216,6 +215,18 @@ $$
 \end{array}\right]
 $$
 
+Check to make sure you understand how all of these were applied, as this is vital.
+
+### Tips for Gauss-Jordan Elimination
+1. The first thing you should do is attempt to have the first leading one in the first row. This can usually be done by either dividing the first row by the leading coeffecient (first entry) or swapping rows that already have a one in the first entry.
+    - The reason we want to do this is so that we can then use this first row to **SUBTRACT** the first entries out of the subsequent rows, since we know those entries must equal zero
+    - You can see this done in the first and second steps of our example as we subtract $$R_1$$ mutiplied by the respective first entries of $$R_2$$ and $$R_3$$ from these respective rows, thus creating 0's in the first column.
+2. Repeat the process of the first step with all other subsequent rows, such that the leading 1 is always farther to the right
+3. If no other elementry row operations can be performed to create any more leading ones, the matrix is in **RREF**.
+
+
+[Here is a guide](https://online.stat.psu.edu/statprogram/reviews/matrix-algebra/gauss-jordan-elimination) in case you're still unsure on the way to do this.
+
 ### Example Elimination
 The first thing we do with a system of equations problem is convert the given equations into augmented matrix form.
 
@@ -235,7 +246,7 @@ $$
 \end{array}\right]
 $$
 
-Now we can perform elementry row operations in order to convert the augmented matrix into **RREF** form. We'll show the changes to the matrix in one column and the elementry row oprations on the right hand side.
+Now we can perform elementary row operations in order to convert the augmented matrix into **RREF** form. We'll show the changes to the matrix on the left and the row oprations on the right.
 
 $$
 \begin{array}{c|c} 
@@ -288,7 +299,7 @@ $$
 \end{array}
 $$
 
-Now, if we conver the matrix back to the equation form we can see we are only left with single values for each of the variables, or our **Solutions** to the system of linear equations.
+Now, if we convert the matrix back to the equation form we can see we are only left with single values for each of the variables, or our **Solutions** to the system of linear equations.
 
 $$
 \begin{align*}
@@ -306,17 +317,12 @@ x_3  & = -4 \\
 \end{align*}
 $$
 
-### Tips for Gauss-Jordan Elimination
-1. The first thing you should do is attempt to have the first leading one in the first row. This can usually be done by either dividing the first first row by the leading coeffecient (first entry) or swapping rows that already have a one in the first entry.
-    - The reason we want to do this is so that we can then use this first row to **SUBTRACT** the first entires out of the subsequent rows, since we know those entries must equal zero
-    - You can see this done in the first and second steps of our example as we subtract $$R_1$$ mutiplied by the respective first entires of $$R_2$$ and $$R_3$$ from these respective rows, thus creating 0's in the first entires
-2. Repeat the process of the first step with all other subsequent rows, such that the leading 1 is always farther to the right
-3. If no other elementry row operations can be performed such that the leading ones are not removed, the matrix is in **RREF**.
+
 
 ## Number of Solutions
-When solving for the solutions of a system of linear equations, we are effectively determining a point(s) of intersetion between all of the equations stored within our matrix. This is easy to think about in the 3D space, where each equation represents a plane. The solutions to the system of equations are the intersection point(s) of these planes. However, this plane analogy works for lower and higher dimensional planes for which we can't visualize.
+When we solve for the solution of a system of linear equations, we are effectively determining a point of intersetion between all of the equations stored within our matrix. In 2 dimensions, this is always a point, but in higher dimensions, it doesn't necessarily need to be. In the 3D space, each equation represents a plane, and so the solutions to the system of equations are the intersection regions of these planes, which can result in many solutions. However, this analogy works for higher dimensions as well, which we can't visualize.
 
-Since the solutions to the systems of equations are the points of intersection, there are three scenarios possible for these intersecting planes that tell us how many solutions we can have.
+Since the solutions to the systems of equations in higher dimensions can be regions, there are three scenarios possible for these intersecting "planes" that tell us how many solutions we can have. Here are some examples using 3 dimensions so we can visualize them.
 
 > Click the links to have a 3D visual representation of each scenario.
 
@@ -333,9 +339,9 @@ $$
 $$
 
 [**_Infinite Solutions_**](https://www.geogebra.org/classic/kwahtdej)
-    - All planes intersect along some line
-    - This means that one or more variables is **"Free"** and can have infinetly many values
-    - This happens when an entire row has all entries equal to 0 creating the following situation:
+    - All planes intersect along some region, which in 3 dimensions would be a line.
+    - This means that one or more variables are **"Free"** and can have infinitely many values
+    - This happens when a row in the RREF form of a coefficient matrix has all of its entries equal to 0 creating the following situation:
 
 $$
 \left[\begin{array}{ccc|c}  
@@ -363,10 +369,23 @@ $$
 
 > In this scenario, both $$x_1$$ and $$x_2$$ are dependent on the value of $$x_3$$. However, $$x_3$$ has no value defined within this matrix. This implies that the solution to the system of equations is valid for any value of $$x_3$$. This is caused by a line intersection as seen in the visualization.
 
+Note that we can replace $$ x_3 $$ with any variable, lets use _t_, to give us a parametrized form of the solutions. This means solutions, denoted _y_ would be represented as 
+
+$$
+y = 
+\begin{bmatrix}
+  3 - 4t\\
+  2 - 3t\\
+  t \\
+\end{bmatrix}
+$$
+
+where _t_ can be anything, showing that there are infinite solutions to this system. If there were multiple free variables, then we would use 2 different placeholder variables to create this parametrized form. This will be very useful to us later when we begin discussing spanning sets.
+
 
 [**_No Solutions_**](https://www.geogebra.org/3d/fa3q4bst)
     - There is no common intersection point or line for all of the planes in the system
-    - Planes may intersect with eachother but not all plants share a common intersection point
+    - Planes may intersect with each other but not all planes share a common intersection point
     - This is represented in an augmented matrix when the coeffcient porition of the row contains all 0 values where the scalar portion is contains a non-zero entry
   
 $$

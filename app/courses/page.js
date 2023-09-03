@@ -70,11 +70,9 @@ export default function Courses() {
 
                     </div>
                     
-                    <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col text-center gap-[10vw] font-Poppins"
+                    <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%] max-sm:h-"
                     style={{transform: "translateX(15%)"}}>
-                        <Inner title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
-                        <Inner title="Calculus" text="THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS THIS IS CALCULUS"></Inner>
-                        <Inner title="Chemistry" text="THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY THIS IS CHEMISTRY "></Inner>
+                        <Inner source='sun.svg' title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
                     </div>
 
                     <div className="flex">

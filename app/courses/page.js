@@ -1,7 +1,6 @@
 'use client'
 import Image from "next/image"
-import Link from "next/link"
-import {useState, useEffect, useRef} from "react"
+import {useState, useEffect} from "react"
 
 import Inner from '@/components/inner-text'
 
@@ -22,8 +21,7 @@ export default function Courses() {
     const classes = [["absolute right-[-100%] ease-in duration-500", "absolute right-0 ease-in duration-500",  "absolute right-0 ease-in duration-500"],
                      ["absolute left-[-100%] ease-in duration-500", "absolute left-0 ease-in duration-500", "absolute left-0 ease-in duration-500"],
                      ["absolute right-[-100%] bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500"],
-                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-0 z-50 ease-in duration-500", "absolute left-0 bottom-0 ease-in duration-500"],
-                     ["absolute bottom-[-100%] opacity-0 ease-in duration-500", "absolute opacity-100 ease-in duration-500", "absolute opacity-100 ease-in duration-500"],
+                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-[-0.1%] z-50 ease-in duration-500", "absolute left-0 bottom-[-0.1%] ease-in duration-500"],
                      ["absolute right-[-100%] ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500"],
                      ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins"]]
     
@@ -34,7 +32,7 @@ export default function Courses() {
 
                     {/* Top */}
                     <div className={`flex border h-[21vw]`}>
-                        <div className={classes[6][load]} style={{transform: 'translateY(20%)'}}>
+                        <div className={classes[5][load]} style={{transform: 'translateY(20%)'}}>
                             Courses
                         </div>
 
@@ -60,7 +58,7 @@ export default function Courses() {
 
                         <Image
                         src='/Courses-page/sun.svg'
-                        className={classes[5][load]}
+                        className={classes[4][load]}
                         style={{width: '5.4%', height: 'auto', transform: 'translateY(25%)'}}
                         width={0}
                         height={0}
@@ -70,11 +68,13 @@ export default function Courses() {
 
                     </div>
                     
-                    <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%] max-sm:h-"
+                    {/* Courses Box */}
+                    <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]"
                     style={{transform: "translateX(15%)"}}>
-                        <Inner source='sun.svg' title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
+                        <Inner source='matrix-icon' title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
                     </div>
 
+                    {/* Bottom Svgs */}
                     <div className="flex">
                         <Image
                         src='/Courses-page/tree-right.svg'
@@ -90,16 +90,6 @@ export default function Courses() {
                         src='/Courses-page/tree-left.svg'
                         className={classes[3][load]}
                         style={{width: '16%', height: 'auto' }}
-                        width={0}
-                        height={0}
-                        quality={100}
-                        alt="Background Image"
-                        />
-
-                        <Image
-                        src='/Courses-page/bear.svg'
-                        className={classes[4][load]}
-                        style={{transform: 'translateX(50%) translateY(-120%)', width: '12.5%', height: 'auto'}}
                         width={0}
                         height={0}
                         quality={100}

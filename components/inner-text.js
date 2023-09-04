@@ -7,7 +7,7 @@ export default function Inner(props){
     return(
         <div className="flex flex-col gap-3">
             <Image
-            src={`/About-page/${props.source}`}
+            src={`/${props.source}.svg`}
             className='self-center pt-10'
             style={{width: '20%', height: 'auto'}}
             width={0}

@@ -111,7 +111,7 @@ $$
 $$
 
 ### Basis Behind the Determinant
-We need to get a better understanding of how a determinant is calculated in order to build up a method that can relabley calculate the determinant for any size matrix. For now we're gonna attempt to bring a more inuitive understanding to the determinant and were some of the tool to calculate it come from before going into the exact steps.
+We need to get a better understanding of how a determinant is calculated in order to build up a method that can relabley calculate the determinant for any size matrix. First we will attempt to bring a more intuitive understanding to the determinant and where some of the tool to calculate it come from before going into the exact steps.
 
 To start off, we'll set up another 3x3 matrix and generalize the formula found using **Sarrus's Rule**.
 
@@ -132,13 +132,13 @@ $$
 \end{matrix}
 $$
 
-You may have noticed in the explanation for **Sarrus's Rule** that by the nature of the diagonal lines, each product can only have one value from each column  and row in the matrix. This is the basis for the determinant, **it is the sum of the signed products of all possible combonations of column and row values within the square matrix**. 
+You may have noticed in the explanation for **Sarrus's Rule** that by the nature of the diagonal lines, each product can only have one value from each column  and row in the matrix. This is the basis for the determinant, **it is the sum of the signed products of all possible combinations of column and row values within the square matrix**. 
 
 #### How many Products are there?
-One of the questions you might have is, **How do we know how many product there are?** Let's take it step by step. If we pick an option in the first column, there is $$ (n-1) $$ options to choose from since the next options in the product have to be in a different column. Once an option is picked, there will subsequently be $$ (n-2) $$ options in the third column and so on. The total number of combonations will be the product of all of these possible options or $$n(n-1)(n-2) $$. This forms the formula for a factorial meaning the total number of combonations is $$ n! $$ for any matrix.
+One of the questions you might have is, **How do we know how many products there are?** Let's take it step by step. If we pick an option in the first column, there is $$ (n-1) $$ options to choose from since the next options in the product have to be in a different column. Once an option is picked, there will subsequently be $$ (n-2) $$ options in the third column and so on. The total number of combonations will be the product of all of these possible options or $$n(n-1)(n-2) $$. This forms the formula for a factorial meaning the total number of combinations is $$ n! $$ for any matrix.
 
 #### Which Products are Negative?
-With so many possible combonations, the next question you may ask is, **How do we know whether the product is positive or negative?** A lot of textbooks explain this with waaaaaay too much math jargon than is necessary so here we will attempt to simplify it.
+With so many possible combinations, the next question you may ask is, **How do we know whether the product is positive or negative?** A lot of textbooks explain this with waaaaaay too much math jargon than is necessary so here we will attempt to simplify it.
 
 1. First let's take the product $$\textcolor{blue}{b}\textcolor{orange}{f}\textcolor{red}{g}$$ from earlier and represent each value by the column number it comes from. 
 
@@ -173,7 +173,7 @@ $$
 ### Method of Laplace Exapansion & Minors
 The purpose of the above section was to give you a background understanding for the methods of calculating the determinant. But how do we do in practice for higher dimensional matricies? It would take a really long time to find all the possible combonations and then also do the permutations to determine the sign of the product. Luckly just like **Sarrus's Rule** for 3x3 matricies, there are also strategies for higher dimensional matrecies as well.
 
-**Minors** are the determinants of submatricies that result when one column and one row are "elimnated" from the originial matrix. The submatracies are typically denoted as $$A_{ij} $$ where $$ i $$ is the row being elimated and  $$ j $$ is the column being elimanted.
+**Minors** are the determinants of submatrices that result when one column and one row are "eliminated" from the original matrix. The submatrices are typically denoted as $$A_{ij} $$ where $$ i $$ is the row being elimated and  $$ j $$ is the column being eliminated.
 This may be a little bit confusing so we'll explain with an example:
 
 Consider the following example matrix:
@@ -222,7 +222,7 @@ ei - fh
 $$
 
 Now you may be wondering up to this point, "How does finding the minor help us find the determinant?". Well let's take a look at the 
-minor and compare it to the determinant of the entire matrix that we found using **Saurrus's Rule** earlier.
+minor and compare it to the determinant of the entire matrix that we found using **Sarrus's Rule** earlier.
 
 $$
 \begin{matrix}
@@ -248,13 +248,13 @@ $$
 
 > The coeffcients are the value at the position $$ x_{ij} $$ where $$ i $$ is the row number and $$ j $$ is the column number. 
 
-We aren't going to prove it here but, it turns out that this simplification works for any size matrix and for any column or row elimination as long as either the column or row is kept constant amoung the minors. For example, here the the representation along the second column:
+We aren't going to prove it here but, it turns out that this simplification works for any size matrix and for any column or row elimination as long as either the column or row is kept constant amoung the minors. For example, here is the representation along the second column:
 
 $$
 \text{det}(A) =- x_{12}\cdot\text{det}(A_{12}) + x_{22}\cdot\text{det}(A_{22}) - x_{32}\cdot\text{det}(A_{32}) 
 $$
 
-You may have noticed that the signs of each of these terms seems to fluctuate. Just like how we have to consider the signed products of of the unique combonations of columns and rows, we have to accomodate the signs of the **Minors** as well, however the rule is much simipler. **If the sum of the minor indecies $$i + j$$ is odd, the minor is negative**. For example, the minor $$\text{det}(A_{12})  $$ is negative because $$1+2=3$$, is an odd number.
+You may have noticed that the signs of each of these terms seems to fluctuate. Just like how we have to consider the signed products of of the unique combonations of columns and rows, we have to accomodate the signs of the **Minors** as well, however the rule is much simipler. **If the sum of the minor indices $$i + j$$ is odd, the minor is negative**. For example, the minor $$\text{det}(A_{12})  $$ is negative because $$1+2=3$$, is an odd number.
 
 The take away from all of this is, we can use the minors of **ANY nxn matrix** in order to calculate its determinant. We'll go into a quick example showing how to use this technique on a 4x4 matrix. Keep in mind though that doing this process by hand is very time consuming for larger and larger matrcies and for practical cases these are typically calculated by computers.
 
@@ -269,8 +269,8 @@ A=\begin{bmatrix}
 \end{bmatrix}
 $$
 
-1. Eliminate along a single row or column to generate $$n$$ number of $$(n-1)\times(n-1)$$ submatricies
-   - In this case, we'll have four 3x3 submatricies
+1. Eliminate along a single row or column to generate $$n$$ number of $$(n-1)\times(n-1)$$ submatrices
+   - In this case, we'll have four 3x3 submatrices
 
 $$
 \begin{bmatrix}
@@ -340,8 +340,8 @@ A_{14} = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-2. Find the **minors** (determinants) of each of the submatricies
-    - Since these are 3x3 matrcies, the fastest way to do this is using **Sarrus's Rule**
+2. Find the **minors** (determinants) of each of the submatrices
+    - Since these are 3x3 matrices, the fastest way to do this is using **Sarrus's Rule**
     - We won't show the rule for each matrix here, but you can refer to the [Sarrus's Rule Section](/courses/linear-algebra/Lec_5#sarruss-rule) above. 
 
 /*  NOTE: FIX THE STYLING OF THE LINK *\
@@ -355,8 +355,8 @@ $$
 \end{align*}
 $$
 
-3. Now, mutilpy the signed **minors** by the elements intersected by the elimated rows.
-   - Remember the **minors** is negative if $$i + j$$ of the respective submatrix is **odd**
+3. Now, multiply the signed **minors** by the elements intersected by the eliminated rows.
+   - Remember the **minors** are negative if $$i + j$$ of the respective submatrix is **odd**
 
 $$
 \begin{align*}

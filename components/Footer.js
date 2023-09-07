@@ -5,7 +5,7 @@ export default function Footer() {
     return(
         <div className="bottom-0 w-full bg-background" id="footer">
             
-            <div>
+            {/* <div>
                     <Image
                 src="/footer-trans.svg"
                 className=''
@@ -15,7 +15,7 @@ export default function Footer() {
                 quality={100}
                 alt="Background Image"
                 />
-            </div>
+            </div> */}
             <div className="">
                 <h1 className='absolute font-Poppins text-[#ECE9D6] text-[2.5vw] pl-[3%] pt-[1%]'>Learning Made Bearable</h1>
                 <div className='flex flex-col gap-20 ' style={{transform: 'translateX(55%)'}}>

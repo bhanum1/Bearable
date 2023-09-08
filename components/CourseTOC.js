@@ -20,7 +20,7 @@ export function LessonCard(lesson) {
 export function LessonTOC({ lessons, course}){
     const sorted_lessons = lessons.sort((a, b) => compareDesc(new Date(b.date), new Date(a.date)))
     return(
-        <div className="dark:border-gray-700' border-title bg-card mb-10 rounded-lg shadow dark:bg-gray-800">
+        <div className="font-Poppins dark:border-gray-700' border-title bg-card mb-10 rounded-lg shadow dark:bg-gray-800">
             <div className='border-b p-4 pl-8 dark:border-gray-700'>
                 <Link href={`courses/${course.toLowerCase().replace(/ /g, "-")}`} 
                 className='group flex scroll-mt-5 items-center rounded-lg px-2 py-3 no-underline transition ease-in-out hover:bg-card-hover hover:transition-colors dark:hover:bg-gray-700'>
@@ -50,20 +50,20 @@ export default function CourseTOC({ lessons, course, overview }) {
         <div>
             <div className='mb-6'>
                 <a href="#top">
-                    <h1 className='mx-auto mt-4 text-center text-3xl font-bold text-title'> {course} </h1>
+                    <h1 className='mx-auto mt-4 text-center text-3xl font-Poppins font-bold text-title'> {course} </h1>
                 </a>
             </div>
-            <div className='mb-6'>
-                <h2 className="mb-1 text-lg font-medium text-gray-800">
+            <div className='mb-6 px-[20px] sm:px-0'>
+                <h2 className="mb-1 text-lg font-medium font-Poppins text-gray-800">
                     Overview
                 </h2>
-                <p className='prose max-w-none text-muted-foreground'>
+                <p className='prose max-w-none font-Poppins text-muted-foreground'>
                     {overview}
                 </p>
             </div>
-
-
-            <LessonTOC course={course} lessons={lessons}/>
+            <div className='px-[20px] sm:px-0'>
+                <LessonTOC course={course} lessons={lessons}/>
+            </div>
         </div>
     )
 }

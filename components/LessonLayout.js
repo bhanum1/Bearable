@@ -30,9 +30,11 @@ export function LessonLayout({ slug, lessons, course, colour }) {
     <div>
       {/* Lesson Contents and Components */}
         <HeadingToc headings={lesson.headings} />
-        <InlineLessonToc lessons={lessons} course={course} />
-        <article className='flex justifiy-stretch lg:pr-[350px] pr-[60px] ml-[70px]'>
-          <div className='max-w-[920px] px-10 mt-3'>
+        <div className='hidden md:block'>
+          <InlineLessonToc lessons={lessons} course={course} />
+        </div>
+        <article className='flex justifiy-stretch lg:pr-[350px] sm:pr-[60px] md:ml-[70px]'>
+          <div className='max-w-[470px] sm:max-w-[920px] px-10 mt-3'>
             <TitleBar title={lesson.title} description={lesson.description} authors={lesson.authors} date={lesson.date}/> 
             <Mdx code={lesson.body.code} />
           </div>

@@ -160,7 +160,7 @@ f(2+3) &= f(2) + f(3)\\
 \end{align*}
 $$
 
-Now lets check homogeniety. For this, the function of a scalar multiple of an input must equal the scalar multiple of the function value of that input.
+Now lets check homogeneity. For this, the function of a scalar multiple of an input must equal the scalar multiple of the function value of that input.
 
 $$
 k \cdot f(a) = f(k \cdot a)
@@ -194,13 +194,13 @@ $$
 v = f(u)
 $$
 
-Lets say matrix B represents the inverse of the linear transformation _T_, denoted by $$ T^{-1} $$. This means that if you apply B to the output, you get the input. Then:
+Lets say matrix B represents the linear transformation $$ T^{-1} $$, which transforms vector _u_ to vector _v_. This means that if you apply B to the output, you get the input. Then:
 
 $$
 v = Bu
 $$
 
-So we can also define that matrix B is the inverse of matrix A, because it describes the inverse of the linear transformation given by A. Thus:
+So we can also define that matrix B is the inverse of matrix A, because it describes the inverse of the linear transformation given by A, as it reverses the effect. Thus:
 
 $$
 B = A^{-1}
@@ -216,9 +216,9 @@ For a transformation to be injective (also knows as "one-to-one" functions), it 
 
 An example of an injective function is [$$y = x^3$$](https://www.desmos.com/calculator/qtupcw26mk). This has each output mapping to only one input, and a way to see this is with the "horizontal line test". If you were to pass a horizontal line from the top to the bottom of the function, nowhere does it hit 2 points simultaneously (try it on the link).
 
-Injective functions are not necessarily invertible because not all outputs have a corresponding input. Thus the inverse would not be defined at some points. This can be seen with the function [$$ e^{x} $$](https://www.desmos.com/calculator/bzlf5smk5h), which doesn't have any inputs corresponding to the negative numbers.
+Injective functions are not necessarily invertible because not all outputs have a corresponding input. Thus the inverse would not be defined at some points. This can be seen with the function [$$ e^{x} $$](https://www.desmos.com/calculator/bzlf5smk5h), which doesn't have any inputs corresponding to the negative y-values as outputs.
 
-(Note you can kind of make injective functions invertible by just redefining the output space to ignore the area the function doesn't map to, but I don't believe this is too important to understand for now.)
+(Note you can kind of make injective functions invertible by just redefining the output space to ignore the area the function doesn't map to, but we don't believe this is too important to understand for now.)
 ## Surjective
 
 Surjective functions (also known as "onto" functions) are the second type of function we will discuss. For a surjective function, all inputs are mapped to an output, with no outputs left unmatched to. However, an output can have multiple inputs matching to it. Visually this can be seen as this: __NEED IMAGE__.
@@ -239,11 +239,9 @@ This means the function is bijective. Now, by definition, which we will not prov
 
 Finally let's combine all of this together. And don't worry we will explain why invertibility matters in the next section, just stick with us for now.
 
-So if a function is bijective, that means that every input it has maps to exactly one output. That means if you knew the output, you could trace it back to the input, as seen here:
+So if a function is bijective, that means that every input it has maps to exactly one output. That means if you knew the output, you could trace it back to the input.
 
-**_/insert example of input-output tracing/_**
-
-How do you trace it back? Well you do the opposite of what you did to go from input to output, and this opposite is what we call the __inverse__. 
+But how do you trace it back? Well you do the opposite of what you did to go from input to output, and this opposite is what we call the __inverse__. 
 
 Not all functions are invertible, as we discussed throughout this chapter, but thankfully for us it is very easy to see if a linear transformation is invertible given its matrix. All we have to do is take it to its RREF form. If the RREF form of a matrix is the identity matrix, then the matrix (and the linear transformation associated with the matrix) is invertible. We won't do the proof here, but you can read it elsewhere if you're curious.
 
@@ -328,13 +326,14 @@ A^{-1} = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-### Conditions of Invertability
-A matrix is considered invertable if it meets the following conditions:
+### Conditions of Invertibility
+A matrix is considered invertible if it meets the following conditions:
 
 1. Matrix must be square
-   - This should make sense since when solving for the inverse, we set it equal to the identify matrix, if the matrix is not square, it cannot have an identity matrix with 1's along the diagonal for all rows
-2. A matrix is invertable if and only if its determinant is not equal to 0 ($$\text{det}(A) \neq 0$$)
-    - Determinants can only be solved for in square matricies which furthers the first point
+   - This should make sense since when solving for the inverse, we augment it with the identity matrix. If the matrix is not square, it cannot have an identity matrix with 1's along the diagonal for all rows
+2. A matrix is invertible if and only if its determinant is not equal to 0 ($$\text{det}(A) \neq 0$$)
+    - Determinants can only be solved for in square matrices which furthers the first point
+    - This is another good way to quickly check for invertibility.
   
 We touched on determinants briefly when explaining how to take the cross product of two vectors but we'll explain more of what this means in a future lesson.
 
@@ -344,7 +343,7 @@ Finally we can talk about why all of this matters. Well, we use linear transform
 
 Additionally, all of this information is mostly a foundation for us to get into the later parts of linear algebra, which will be all about using matrices and their inverses to compute calculations that are so complex, calculators can't even do them. 
 
-To put it briefly, inverses are vital because this gives us a vital tool we need in our kit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
+To put it briefly, inverses are vital because this gives us yet another tool we need in our kit to dive into the second half of linear algebra (which we still won't do yet because there are some loose ends to tie up.)
 
 
 ## Practice

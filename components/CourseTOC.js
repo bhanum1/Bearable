@@ -54,7 +54,7 @@ export default function CourseTOC({ lessons, course, overview }) {
                 </a>
             </div>
             <div className='mb-6 px-[20px] sm:px-0'>
-                <h2 className="mb-1 text-lg font-medium font-Poppins text-gray-800">
+                <h2 className="mb-1 text-lg font-medium font-Poppins">
                     Overview
                 </h2>
                 <p className='prose max-w-none font-Poppins text-muted-foreground'>

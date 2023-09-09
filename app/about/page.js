@@ -55,8 +55,8 @@ export default function About() {
 
                 {/* main page */}
                 <div className='flex flex-col gap-10 w-screen h-[50%] mb-[5%]'>
-                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg pt-[1%] pb-[5%] left-[11%] w-[78%] flex flex-col self-center text-center justify-center">
-                        <h1 className='font-bold text-[2vw] pt-5'>The Story of Bearnoulli</h1>
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg pt-[1%] pb-[5%] w-[90%] flex flex-col self-center text-center justify-center">
+                        <h1 className='font-bold font-Poppins text-[3vw] pt-5'>The Story of Bearnoulli</h1>
                         <div className='flex justify-evenly gap-10'>
                             <Image
                             src='/About-page/c-bear.svg'
@@ -91,7 +91,7 @@ export default function About() {
                     </div>
 
 
-                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg left-[11%] w-[78%] flex  self-center font-Poppins">
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg w-[90%] flex  self-center font-Poppins">
                             <Image
                             src='/About-page/mission.svg'
                             className=''
@@ -102,14 +102,16 @@ export default function About() {
                             alt="Background Image"
                             />
                            <div className='absolute flex flex-col font-Poppins text-center pt-10 w-[60vw] left-[25%] max-sm:pt-3'>
-                            <h1 className='text-[2vw] max-sm:text-[2vw]'>Learning Made Bearable</h1>
-                            <p className='text-[1vw] max-sm:text-[1.5vw]'>our mission is to ghjkgdhjakhgjklahgjkHF HDSJKFHSJLKFHLK HDSJKAFHSDJLKFHSJDKHFSJKDHF HFJDKSAHFJK HJKSDHFJKSLA HJKSDAHFJKLAS H JSDAKHFJKLDASHFJSDK HJASKDLFHJSKLAH HJKLASHDJKLF HJKSDAHFJKASL HJSADKHLJK SDHJAKLHFJKL SDHJAKLFHLKJA FJSHDAKHF HJKDSA</p>
+                            <h1 className='text-[2vw] font-bold max-sm:text-[4vw]'>Learning Made Bearable</h1>
+                            <p className='text-[1.7vw] max-sm:text-[1.7vw]'>
+                                Our mission is to make learning complex concepts appart of most engineering curriculums easier. We want to ensure students are assured in the reason they learn certain material and are able to look to the future to where it can applied.
+                            </p>
                            </div>
                     </div>
 
 
-                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg left-[11%] w-[78%] flex flex-col self-center text-center font-Poppins">
-                        <h1 className='text-[2vw] max-sm:text-[4vw] pt-10'>The Creators of Bearable</h1>
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg w-[90%] flex flex-col self-center text-center font-Poppins">
+                        <h1 className='text-[2vw] max-sm:text-[4vw] font-bold pt-10'>The Creators of Bearable</h1>
                         <div className='flex flex-col gap-8'>
                             <div className='flex justify-evenly gap-10 px-14 pt-10'>
                                 <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%]'>
@@ -200,7 +202,7 @@ export default function About() {
                     </div>
 
 
-                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg left-[11%] w-[78%] pt-10 flex flex-col gap-5 self-center text-center font-Poppins">
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg w-[90%] pt-10 flex flex-col gap-5 self-center text-center font-Poppins">
                             <h1 className='text-[3vw]'>Join Our Community!</h1>
                             
                             <Image

@@ -34,12 +34,12 @@ export function LessonLayout({ slug, lessons, course, colour }) {
           <InlineLessonToc lessons={lessons} course={course} />
         </div>
         <article className='flex justifiy-stretch lg:pr-[350px] sm:pr-[60px] md:ml-[70px]'>
-          <div className='max-w-[90%] sm:max-w-[920px] px-10 mt-3'>
+          <div className='max-w-[90%] sm:max-w-[920px] md:px-10 md:mx-0 mx-8 mt-3'>
             <TitleBar title={lesson.title} description={lesson.description} authors={lesson.authors} date={lesson.date}/> 
             <Mdx code={lesson.body.code} />
           </div>
         </article>
-        <button className='fixed group right-8 bottom-[100px] hover:text-[#bb434e] transition-all'>
+        <button className='hidden md:block fixed group right-8 bottom-[100px] hover:text-[#bb434e] transition-all'>
           <a href='#top'>
             <BsFileArrowUpFill size={50}/>
           </a>

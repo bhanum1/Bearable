@@ -86,3 +86,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .katex-display {
+    overflow: auto hidden
+  }
+}
+

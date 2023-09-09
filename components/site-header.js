@@ -65,15 +65,16 @@ export function SiteHeader() {
       </Link>
       
       {siteConfig.mainNav?.length ? (
-        <nav className="flex gap-6">
+        <nav className="flex gap-8 mb-5">
           {siteConfig.mainNav?.map(
             (item, index) =>
               item.href && (
                 <Link
                   key={index}
                   href={item.href}
+                  onClick={changeMenu}
                   className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground hover:text-red-600",
+                    "flex items-center text-2xl font-medium text-muted-foreground hover:text-red-600",
                     item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >
@@ -84,7 +85,7 @@ export function SiteHeader() {
         </nav>
       ) : null}
       
-          <nav className="flex items-center space-x-1">
+          <nav className="flex items-center space-x-16">
             <Link
               href={siteConfig.links.github}
               target="_blank"

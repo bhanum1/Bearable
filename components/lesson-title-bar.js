@@ -23,7 +23,7 @@ export default function TitleBar({ title, description, authors, date}) {
                 </div>
             </CardHeader>
 
-            <CardContent className="mt-6">
+            <CardContent className="mt-6 font-Poppins">
                 <p>{description}</p>
             </CardContent>
         </Card>

@@ -34,7 +34,7 @@ export function LessonLayout({ slug, lessons, course, colour }) {
           <InlineLessonToc lessons={lessons} course={course} />
         </div>
         <article className='flex justifiy-stretch lg:pr-[350px] sm:pr-[60px] md:ml-[70px]'>
-          <div className='max-w-[470px] sm:max-w-[920px] px-10 mt-3'>
+          <div className='max-w-[90%] sm:max-w-[920px] px-10 mt-3'>
             <TitleBar title={lesson.title} description={lesson.description} authors={lesson.authors} date={lesson.date}/> 
             <Mdx code={lesson.body.code} />
           </div>

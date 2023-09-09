@@ -70,7 +70,7 @@ export default function Courses() {
                     
                     {/* Courses Box */}
                     <center>
-                        <div className="bg-card dark:bg-[#283055] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] w-[90%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]">
+                        <div className="bg-card dark:bg-[#2C3850] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] w-[90%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]">
                             <Inner source='matrix-icon' title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
                         </div>
                     </center>
@@ -97,8 +97,7 @@ export default function Courses() {
                         alt="Background Image"
                         />
                     </div>
-                </div>
-                
+                </div> 
             </section>
     );
 };

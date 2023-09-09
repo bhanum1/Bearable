@@ -8,7 +8,7 @@ export default function About() {
         <section className=" min-h-screen relative flex">
             <div className='flex flex-col'>
                 <div className='h-[30vw]'>
-                    <div className="flex absolute left-[30%] text-[8vw] text-[#442725] font-Poppins" style={{transform: 'translateY(70%)'}}>
+                    <div className="flex absolute left-[30%] text-[8vw] text-[#442725] dark:text-white font-Poppins" style={{transform: 'translateY(70%)'}}>
                         About Us
                     </div>
                 
@@ -55,7 +55,7 @@ export default function About() {
 
                 {/* main page */}
                 <div className='flex flex-col gap-10 w-screen h-[50%] mb-[5%]'>
-                    <div className="bg-[#FEFDF3] rounded-lg pt-[1%] pb-[5%] left-[11%] w-[78%] flex flex-col self-center text-center justify-center">
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg pt-[1%] pb-[5%] left-[11%] w-[78%] flex flex-col self-center text-center justify-center">
                         <h1 className='font-bold text-[2vw] pt-5'>The Story of Bearnoulli</h1>
                         <div className='flex justify-evenly gap-10'>
                             <Image
@@ -91,7 +91,7 @@ export default function About() {
                     </div>
 
 
-                    <div className="bg-[#FEFDF3] rounded-lg left-[11%] w-[78%] flex  self-center font-Poppins">
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg left-[11%] w-[78%] flex  self-center font-Poppins">
                             <Image
                             src='/About-page/mission.svg'
                             className=''
@@ -108,7 +108,7 @@ export default function About() {
                     </div>
 
 
-                    <div className="bg-[#FEFDF3] rounded-lg left-[11%] w-[78%] flex flex-col self-center text-center font-Poppins">
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg left-[11%] w-[78%] flex flex-col self-center text-center font-Poppins">
                         <h1 className='text-[2vw] max-sm:text-[4vw] pt-10'>The Creators of Bearable</h1>
                         <div className='flex flex-col gap-8'>
                             <div className='flex justify-evenly gap-10 px-14 pt-10'>
@@ -200,7 +200,7 @@ export default function About() {
                     </div>
 
 
-                    <div className="bg-[#FEFDF3] rounded-lg left-[11%] w-[78%] pt-10 flex flex-col gap-5 self-center text-center font-Poppins">
+                    <div className="bg-[#FEFDF3] dark:bg-[#2C3850] rounded-lg left-[11%] w-[78%] pt-10 flex flex-col gap-5 self-center text-center font-Poppins">
                             <h1 className='text-[3vw]'>Join Our Community!</h1>
                             
                             <Image

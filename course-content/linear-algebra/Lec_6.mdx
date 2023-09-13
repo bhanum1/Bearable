@@ -231,6 +231,59 @@ $$
 $$
 
 So here the solutions were arranged so that each variable is a function of the free variable, which we will now call _t_ (You can call it whatever you want). 
+
+This means the solutions are of the form
+
+$$
+\begin{align*}
+  x_1  & = 3 - 4t\\
+  x_2  & = 2 - 3t\\
+  x_3 & = 0 + t \\
+\end{align*}
+
+\qquad\longrightarrow\qquad
+
+\begin{bmatrix}
+  x_1 \\
+  x_2  \\
+  x_3 \\
+\end{bmatrix}
+
+= 
+
+\begin{bmatrix}
+  3 \\
+  2  \\
+  0 \\
+\end{bmatrix}
+
++
+
+\begin{bmatrix}
+  -4 \\
+  -3  \\
+  1 \\
+\end{bmatrix}
+t
+$$
+
+Now finally, what this means is that all solutions to this matrix (and the associated system of equations) has solutions that can be described as a combination of the vectors 
+$$
+\begin{bmatrix}
+  -4 \\
+  -3  \\
+  1 \\
+\end{bmatrix}
+,
+\begin{bmatrix}
+  3 \\
+  2  \\
+  0 \\
+\end{bmatrix}
+$$
+
+so these are the spanning vectors of the solution space. Thus we take a matrix, that initially described a system with infinitely many solutions, and we did calculations to find __just 2 vectors__ that we can use to describe the entire solution space. That's really powerful! We'll see more applicatons of spanning sets later on, and in the practice problems for this lecture.
+
 ## Basis Introduction
 
 A basis of a subspace is very simple to learn, but difficult to master. We will discus bases much more later, but for now just understand that a basis of a linear space is simply a spanning set that is linearly independent.
@@ -247,9 +300,13 @@ The coefficients $$c_i$$ are known as the coordinates of the vector in basis $$b
 ## Dimension, Image, Kernel, Rank, Nullity
 We have already discussed dimension, but for a quick refresher it simply represents the degree of the space we are operating in, or how many free variables there are.
 
-Now we must talk about the image and kernel of a linear transformation. The image of a linear transformation is simply the entire subspace that the transformation maps to. The dimension of this subspace is known as the _rank_.
+Now we must talk about the image and kernel of a linear transformation. The image of a linear transformation is simply the entire subspace that the transformation maps to. The dimension of this subspace is known as the __rank__. This is essentially the "solution space". 
 
-This is essentially the "solution space". The kernel is quite different however, and represents the entire area of the domain that a linear transformation maps to the zero vector. All linear transformations must have the 0 vector in their kernel by definition. The dimension of the kernel is known as the __nullity__.
+Here is a visual example of the image of a linear transformation:
+
+The kernel is quite different however, and represents the entire area of the domain that a linear transformation maps to the zero vector. All linear transformations must have the 0 vector in their kernel by definition. The dimension of the kernel is known as the __nullity__.
+
+Here is a visual example of the kernel of a linear transformation:
 
 
 
@@ -261,6 +318,6 @@ We live in a 3-dimensional world, but there are many concepts that cannot be des
 
 You can see how problems can very quickly become multidimensional in the real world, and to solve these kinds of problems, we need to be comfortable with working in linear spaces, as we will spend the entire rest of the course understanding and manipulating linear spaces to make solving higher dimension problems easier.
 
-
+Please take your time to understand this, and if you are confused, reach out to the creators of bearable via our community page, as we are happy to help and receive feedback.
 
 ## Practice

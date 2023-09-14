@@ -69,9 +69,9 @@ export default function Courses() {
                     </div>
                     
                     {/* Courses Box */}
-                    <div className="bg-[#FDFEF3] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]"
+                    <div className="bg-[#FDFEF3] rounded-lg px-[12%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]"
                     style={{transform: "translateX(15%)"}}>
-                        <Inner source='matrix-icon' title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
+                        <Inner source='matrix-icon' title="Linear Algebra" path="/courses/linear-algebra" text="Linear algebra is considered one the hardest courses for first year students, mostly because it is so different from other math classes. This Bearable Course was specifically designed to start from the ground up and make sure you understand how, and why, everything in linear algebra works!"></Inner>
                     </div>
 
                     {/* Bottom Svgs */}

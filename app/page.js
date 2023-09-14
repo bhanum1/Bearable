@@ -8,21 +8,19 @@ export default function Home() {
       <section className=" min-h-screen relative"> 
         <div className="absolute overflow-hidden bottom-0 max-sm:bottom-10 w-[100vw]">
             <Image
-              src="/bear1.svg"
+              src="/home-page.svg"
               className="object-cover"
               height={0}
               width={0}
               style = {
                 {width: '100%', height:'auto'}
               }
-            // layout="fill"
-            // objectFit="cover"
               quality={100}
               alt="Background Image"
             />
         </div>
 
-        {/* Your overlay content */}
+
         <div className="absolute inset-0 flex flex-col items-center justify-center"
           style={{ transform: 'translateY(-21.875%)' }}>
           <Image
@@ -36,8 +34,8 @@ export default function Home() {
           <Image
             src="/sun.svg"
             className='sm:hidden'
-            width={0} // specify the width
-            height={0} // specify the height
+            width={0}
+            height={0} 
             style={{width:'20%', height:'auto', transform: 'translateY(20%)'}}
             alt="Image above the content"
           />

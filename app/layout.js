@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
               <div className="flex-1">{children}</div>
             </div>
             <TailwindIndicator />
-            <Footer/>
+            <Footer colour='bg-[#7EAC59]'/>
           </ThemeProvider>
         </body>
       </html>

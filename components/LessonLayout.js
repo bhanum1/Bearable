@@ -4,6 +4,7 @@ import InlineLessonToc from './InlineLessonToc'
 import '@/app/katex.css'
 import { BsFileArrowUpFill } from 'react-icons/bs'
 import { notFound } from 'next/navigation'
+import NextButton from './next-button'
 
 import TitleBar from './lesson-title-bar'
 
@@ -33,7 +34,7 @@ export function LessonLayout({ slug, lessons, course, colour }) {
         <div className='hidden md:block'>
           <InlineLessonToc lessons={lessons} course={course} />
         </div>
-        <article className='flex justifiy-stretch lg:pr-[350px] sm:pr-[60px] md:ml-[70px]'>
+        <article className='flex justifiy-stretch lg:pr-[350px] sm:pr-[60px] md:ml-[70px] pb-10'>
           <div className='max-w-[90%] sm:max-w-[920px] md:px-10 md:mx-0 mx-8 mt-3'>
             <TitleBar title={lesson.title} description={lesson.description} authors={lesson.authors} date={lesson.date}/> 
             <Mdx code={lesson.body.code} />
@@ -47,6 +48,9 @@ export function LessonLayout({ slug, lessons, course, colour }) {
             Scroll to Top
           </span>
         </button>
+        <center>
+          <NextButton course={course} lessons={lessons} lesson={lesson} />
+        </center>
     </div>
   )
 }

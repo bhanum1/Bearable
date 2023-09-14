@@ -32,9 +32,9 @@ export default function InlineLessonToc({ lessons, course }) {
 
       <aside className={ 
         `${isCollapsed ? 'scale-100' : 'scale-0'} 
-            z-50 fixed mt-[40px] left-[45px] w-[400px] p-4 rounded-xl transition-all duration-300 origin-top-left`
+            z-50 fixed mt-[40px] left-[45px] h-[200px] p-4 rounded-xl transition-all duration-300 origin-top-left`
       }>
-          <LessonTOC course={title} lessons={lessons}/>
+          <LessonTOC className="h-[200px]" course={title} lessons={lessons}/>
       </aside>
     </div>
     )

@@ -21,7 +21,7 @@ export default function Courses() {
     const classes = [["absolute right-[-100%] ease-in duration-500", "absolute right-0 ease-in duration-500",  "absolute right-0 ease-in duration-500"],
                      ["absolute left-[-100%] ease-in duration-500", "absolute left-0 ease-in duration-500", "absolute left-0 ease-in duration-500"],
                      ["absolute right-[-100%] bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500"],
-                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-[-0.1%] z-50 ease-in duration-500", "absolute left-0 bottom-[-0.1%] ease-in duration-500"],
+                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-[-1.1%] z-50 ease-in duration-500", "absolute left-0 bottom-[-1.1%] ease-in duration-500"],
                      ["absolute right-[-100%] ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500"],
                      ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins"]]
     
@@ -89,7 +89,7 @@ export default function Courses() {
                         <Image
                         src='/Courses-page/tree-left.svg'
                         className={classes[3][load]}
-                        style={{width: '16%', height: 'auto' }}
+                        style={{width: '20%', height: 'auto' }}
                         width={0}
                         height={0}
                         quality={100}

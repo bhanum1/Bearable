@@ -3,15 +3,11 @@ import Link from 'next/link'
 import {Icons} from '@/components/icons.js'
 import { siteConfig } from "@/config/site"
 
-export default function Footer(props) {
+export default function Footerlessons(props) {
     return(
-        <div className="bottom-0 bg-background bg-[#7EAC59]" id="footer">
-            <div className='absolute bg-[#7EAC59]' style={{width: "100%", height: '33%'}}>
-             
-            </div>
-
-
-            <div className='flex  justify-center' style={{transform: 'translateX(0%)'}}>
+        <div className="bottom-0 bg-background" id="footer">
+           
+            <div className='flex justify-center' style={{transform: 'translateX(0%)'}}>
                 <div className='flex flex-col w-[40%] mb-[8%]' style={{transform: 'translateY(50%) translateX(10%)'}}>
                     <div className='flex gap-[3%]'>
                         <Icons.foot className='w-[12%] h-auto' ></Icons.foot>
@@ -19,7 +15,7 @@ export default function Footer(props) {
                     </div>
                     
                     <div>
-                        <h1 className='font-Poppins  text-[2.5vw]' style={{transform: 'translateY(20%)'}}>Learning Made Bearable</h1>
+                        <h1 className='font-Poppins text-[2.5vw]' style={{transform: 'translateY(20%)'}}>Learning Made Bearable</h1>
                     </div>
                 </div>       
 
@@ -31,9 +27,9 @@ export default function Footer(props) {
                     </div>
 
                     <div className='flex gap-[10%] '> 
-                        <button className='' style={{width: '20%', height: 'auto'}} >
+                        <button className='' style={{width: '10%', height: 'auto'}} >
                             <Image
-                            src="/insta.svg"
+                            src="/sun.svg"
                             className=''
                             style={{width: '100%', height: 'auto'}}
                             width={0}
@@ -43,9 +39,9 @@ export default function Footer(props) {
                             />
                         </button>
 
-                        <button className='' style={{width: '20%', height: 'auto'}} >
+                        <button className='' style={{width: '10%', height: 'auto'}} >
                             <Image
-                            src="/linkedin.svg"
+                            src="/sun.svg"
                             className=''
                             style={{width: '100%', height: 'auto'}}
                             width={0}
@@ -55,9 +51,9 @@ export default function Footer(props) {
                             />
                         </button>
 
-                        <button className='' style={{width: '20%', height: 'auto'}} >
+                        <button className='' style={{width: '10%', height: 'auto'}} >
                             <Image
-                            src="/github.svg"
+                            src="/sun.svg"
                             className=''
                             style={{width: '100%', height: 'auto'}}
                             width={0}
@@ -67,9 +63,9 @@ export default function Footer(props) {
                             />
                         </button>
 
-                        <button className='' style={{width: '20%', height: 'auto'}} >
+                        <button className='' style={{width: '10%', height: 'auto'}} >
                             <Image
-                            src="/discord.svg"
+                            src="/sun.svg"
                             className=''
                             style={{width: '100%', height: 'auto'}}
                             width={0}

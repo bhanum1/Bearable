@@ -157,7 +157,7 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "font-Poppins rounded px-[0.2rem] font-mono text-sm text-[#be185d] bg-inherit" ,
+        "rounded px-[0.2rem] font-mono text-sm text-[#be185d] bg-inherit" ,
         className
       )}
       {...props}

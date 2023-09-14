@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Bearable",
   description:
-    "Enginering learning platform",
+    "First-year engineering tutoring website, used to provide alternative learning resources for confusing subjects.",
   mainNav: [
     {
       title: "Courses",

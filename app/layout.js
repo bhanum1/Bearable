@@ -21,9 +21,15 @@ export const metadata = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
+    favicon: "/favicon.ico",
     icon: "/favicon.ico",
   },
-  image: '/homepage.png'
+  image: '/homepage.png',
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    image: '/homepage.png'
+  }
 }
 
 export default function RootLayout({ children }) {

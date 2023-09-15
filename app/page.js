@@ -41,6 +41,5 @@ export default function Home() {
 
       {/* This is the section after the image */}
     </div>
-
   )
 }

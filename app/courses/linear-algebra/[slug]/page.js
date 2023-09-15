@@ -1,6 +1,10 @@
 import { allLinearAlgebraLessons } from '.contentlayer/generated'
 import { LessonCheck, LessonParams, LessonLayout } from '@/components/LessonLayout'
 
+export function generateImageMetadata() {
+  return
+}
+
 export async function generateStaticParams() { 
   return LessonParams(allLinearAlgebraLessons)
 }
@@ -11,7 +15,6 @@ export function generateMetadata({ params }) {
     title: lesson.title, 
     description: lesson.description,
     author: lesson.authors,
-
   } // try to keep roughly the same as the file name
 }
 

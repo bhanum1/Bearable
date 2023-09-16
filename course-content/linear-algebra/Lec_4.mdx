@@ -218,7 +218,6 @@ An example of an injective function is [$$y = x^3$$](https://www.desmos.com/calc
 
 Injective functions are not necessarily invertible because not all outputs have a corresponding input. Thus the inverse would not be defined at some points. This can be seen with the function [$$ e^{x} $$](https://www.desmos.com/calculator/bzlf5smk5h), which doesn't have any inputs corresponding to the negative y-values as outputs.
 
-(Note you can kind of make injective functions invertible by just redefining the output space to ignore the area the function doesn't map to, but we don't believe this is too important to understand for now.)
 ## Surjective
 
 Surjective functions (also known as "onto" functions) are the second type of function we will discuss. For a surjective function, all inputs are mapped to an output, with no outputs left unmatched to. However, an output can have multiple inputs matching to it. Visually this can be seen as this: __NEED IMAGE__.
@@ -226,6 +225,8 @@ Surjective functions (also known as "onto" functions) are the second type of fun
 An example of a surjective function is [$$ y = x^{3} - x $$](https://www.desmos.com/calculator/5yvibjqwmc), which does not pass the horizontal line test, but does match to all possible real numbers as outputs.
 
 Surjective functions are not necessarily invertible because an output can have multiple inputs mapping to it, which would make the inverse impossible to determine at those points, because you would get 2 answers.
+
+(Note you can kind of make functions surjective by just redefining the output space to ignore the area the function doesn't map to, but we don't believe this is too important to understand for now.)
 
 ## Bijective
 
@@ -347,27 +348,40 @@ To put it briefly, inverses are vital because this gives us yet another tool we 
 
 
 ## Practice
+Find a linear combination of $$ \begin{bmatrix} -1 \\ 2\\ \end{bmatrix} $$
+ and $$ \begin{bmatrix} 1 \\ 1 \\ \end{bmatrix} $$
+that makes $$ \begin{bmatrix} 1 \\ 2 \\ \end{bmatrix} $$ [1/3 4/3]
+
+Is the function $$ e^x $$ linear? How can you prove this? No, by testing the two parts of linearity.
+
+For the following functions, are they injective, surjective, or bijective?
 
 $$
-\textrm{Find a linear combination of }
-
-\begin{bmatrix}
--1 \\
-2\\
-\end{bmatrix}
-
-\textrm{ and }
-
-\begin{bmatrix}
-1 \\
-1 \\
-\end{bmatrix}
-
-\textrm{that makes}
-
-\begin{bmatrix}
-1 \\
-2 \\
-\end{bmatrix}
+y = \frac{1}{x}
 $$
+Injective
+
+$$
+y = -x^3
+$$
+Bijective
+
+$$
+y = ln(x)
+$$
+Bijective
+
+$$
+y = x^3-3x
+$$
+Surjective
+
+$$
+y = e^x
+$$
+Injective
+
+Find the inverse of this matrix:
+
+CHECK IF SWITCHING ROWS IN INVERTING MATRIX matters
 

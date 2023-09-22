@@ -6,7 +6,7 @@ export default function Home() {
     <div> 
       {/* This is the section with your background image */}
       <section className=" min-h-screen relative"> 
-        <div className="absolute bottom-0 max-sm:bottom-10 w-[100vw]">
+        <div className="absolute bottom-0 w-[100vw]">
             <Image
               src="/home-page.svg"
               className="object-cover"
@@ -18,6 +18,19 @@ export default function Home() {
               quality={100}
               alt="Background Image"
             />
+            <Image
+              src="/extended-home.svg"
+              className="object-cover sm:hidden"
+              height={0}
+              width={0}
+              style = {
+                {width: '100%', height:'auto'}
+              }
+              quality={100}
+              alt="Background Image"
+            />
+
+
         </div>
 
 

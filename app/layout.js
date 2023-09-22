@@ -44,7 +44,8 @@ export default function RootLayout({ children }) {
               <div className="flex-1">{children}</div>
             </div>
             <TailwindIndicator />
-            <Footer/>
+            <Footer className='sm:hidden'/>
+            <mobileFooter className='max-sm:hidden'/>
           </ThemeProvider>
         </body>
       </html>

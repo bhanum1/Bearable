@@ -26,8 +26,60 @@ export default function Footerlessons(props) {
                         <Link href='/courses' className='text-[2vw] z-30 '>Courses</Link>
                     </div>
 
-                    <div className='flex gap-[10%] '> 
- <button className='' style={{width: '20%', height: 'auto'}} >
+                    {/* Footer */}
+                    <div className='flex gap-[10%] sm:hidden'> 
+                        <button className='' style={{width: '12%', height: 'auto'}} >
+                            <Image
+                            src="/insta.svg"
+                            className=''
+                            style={{width: '100%', height: 'auto'}}
+                            width={0}
+                            height={0} 
+                            quality={100}
+                            alt="Background Image"
+                            />
+                        </button>
+
+                        <button className='' style={{width: '12%', height: 'auto'}} >
+                            <Image
+                            src="/linkedin.svg"
+                            className=''
+                            style={{width: '100%', height: 'auto'}}
+                            width={0}
+                            height={0} 
+                            quality={100}
+                            alt="Background Image"
+                            />
+                        </button>
+
+                        <button className='' style={{width: '12%', height: 'auto'}} >
+                            <Image
+                            src="/github.svg"
+                            className=''
+                            style={{width: '100%', height: 'auto'}}
+                            width={0}
+                            height={0} 
+                            quality={100}
+                            alt="Background Image"
+                            />
+                        </button>
+
+                        <button className='' style={{width: '12%', height: 'auto'}} >
+                            <Image
+                            src="/discord.svg"
+                            className=''
+                            style={{width: '100%', height: 'auto'}}
+                            width={0}
+                            height={0} 
+                            quality={100}
+                            alt="Background Image"
+                            />
+                        </button>
+                    </div> 
+
+                    {/* Mobile Footer */}
+                    <div className='flex gap-[10%] max-sm:hidden'> 
+                        <button className='' style={{width: '20%', height: 'auto'}} >
                             <Image
                             src="/insta.svg"
                             className=''

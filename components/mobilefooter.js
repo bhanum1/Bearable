@@ -33,11 +33,11 @@ export default function mobileFooter(props) {
 
                 <div className='flex flex-col gap-[20%]' style={{transform: 'translateY(15%)'}} >
                     <div className='flex gap-[10%] '> 
-                        <button className='' style={{width: '20%', height: 'auto'}} >
+                        <button className='' style={{width: '5%', height: 'auto'}} >
                             <Image
                             src="/insta.svg"
                             className=''
-                            style={{width: '100%', height: 'auto'}}
+                            style={{width: '20%', height: 'auto'}}
                             width={0}
                             height={0} 
                             quality={100}

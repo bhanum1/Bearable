@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import Footer from "@/components/Footer"
+import Footerlessons from "@/components/Footerlessons"
+import mobileFooter from "@/components/mobilefooter"
 
 
 //  Metadata
@@ -44,8 +45,7 @@ export default function RootLayout({ children }) {
               <div className="flex-1">{children}</div>
             </div>
             <TailwindIndicator />
-            <Footer className='sm:hidden'/>
-            <mobileFooter className='max-sm:hidden'/>
+            <Footerlessons/>
           </ThemeProvider>
         </body>
       </html>

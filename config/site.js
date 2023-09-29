@@ -11,10 +11,6 @@ export const siteConfig = {
       title: "About",
       href: "/about"
     },
-    {
-      title: "Community",
-      href: "/community"
-    }
   ],
   links: {
     github: "https://github.com/cqjro/Bearable",

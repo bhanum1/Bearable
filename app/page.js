@@ -10,10 +10,10 @@ export default function Home() {
             <Image
               src="/home-page.svg"
               className="object-cover"
-              height={0}
               width={0}
+              height={0}
               style = {
-                {width: '100%', height:'auto'}
+                {width:'100%', height:'auto'}
               }
               quality={100}
               alt="Background Image"
@@ -38,7 +38,6 @@ export default function Home() {
           style={{ transform: 'translateY(-21.875%)' }}>
           <Image
             src="/sun.svg"
-            className='max-sm:hidden'
             width={180} // specify the width
             height={180} // specify the height
             alt="Image above the content"
@@ -52,25 +51,14 @@ export default function Home() {
             style={{width:'20%', height:'auto', transform: 'translateY(20%)'}}
             alt="Image above the content"
           />
-
-        <div className='max-sm:hidden'>
-          <div className='text-center text-4xl pt-12 pb-5 font-Ruda'>
-            <h1>Making First Year of Engineering<br></br>More Bearable</h1>
+          <div className='max-sm:hidden'>
+            <div className='text-center text-4xl pt-12 pb-5 font-Ruda'>
+              <h1>Making First Year of Engineering<br></br>More Bearable</h1>
+            </div>
+            <div className=' text-center text-lg'>
+              <Link href='/courses' className='bg-[#CC4955] text-[white] rounded-md px-5 py-3'>View Courses</Link> 
+            </div>
           </div>
-          <div className=' text-center text-lg'>
-            <Link href='/courses' className='bg-[#CC4955] text-[white] rounded-md px-5 py-3'>View Courses</Link> 
-          </div>
-        </div>
-
-        <div className='sm:hidden' style={{transform:'translateY(8%)'}}>
-          <div className='text-center text-4xl pt-12 pb-5 font-Ruda'>
-            <h1>Making First Year of Engineering<br></br>More Bearable</h1>
-          </div>
-          <div className=' text-center text-lg'>
-            <Link href='/courses' className='bg-[#CC4955] text-[white] rounded-md px-5 py-3'>View Courses</Link> 
-          </div>
-        </div>
-
         </div>
       </section>
 

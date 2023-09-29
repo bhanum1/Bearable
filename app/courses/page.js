@@ -23,7 +23,7 @@ export default function Courses() {
                      ["absolute right-[-100%] bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500"],
                      ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-[-1.1%] z-50 ease-in duration-500", "absolute left-0 bottom-[-1.1%] ease-in duration-500"],
                      ["absolute right-[-100%] ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500"],
-                     ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins"]]
+                     ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins dark:text-white", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500 dark:text-white", "absolute left-[1.4%] text-[10vw] text-[#442725] dark:text-white font-Poppins"]]
     
     return (
             <section className=" min-h-screen ">
@@ -31,7 +31,7 @@ export default function Courses() {
                 <div className="flex flex-col gap-">
 
                     {/* Top */}
-                    <div className={`flex border h-[21vw]`}>
+                    <div className={`flex h-[21vw]`}>
                         <div className={classes[5][load]} style={{transform: 'translateY(20%)'}}>
                             Courses
                         </div>
@@ -69,10 +69,11 @@ export default function Courses() {
                     </div>
                     
                     {/* Courses Box */}
-                    <div className="bg-[#FDFEF3] rounded-lg px-[12%] pt-[5%] pb-[5%] mb-[5%] left-[11%] w-[78%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]"
-                    style={{transform: "translateX(15%)"}}>
-                        <Inner source='matrix-icon' title="Linear Algebra" path="/courses/linear-algebra" text="Linear algebra is considered one the hardest courses for first year students, mostly because it is so different from other math classes. This Bearable Course was specifically designed to start from the ground up and make sure you understand how, and why, everything in linear algebra works!"></Inner>
-                    </div>
+                    <center>
+                        <div className="bg-card dark:bg-[#2C3850] rounded-lg px-[12%] pt-[5%] pb-[5%] mb-[5%] w-[90%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]">
+                            <Inner source='matrix-icon' title="Linear Algebra"  path="/courses/linear-algebra" text="Linear algebra is considered one the hardest courses for first year students, mostly because it is so different from other math classes. This Bearable Course was specifically designed to start from the ground up and make sure you understand how, and why, everything in linear algebra works!"></Inner>
+                        </div>
+                    </center>
 
                     {/* Bottom Svgs */}
                     <div className="flex">
@@ -96,8 +97,7 @@ export default function Courses() {
                         alt="Background Image"
                         />
                     </div>
-                </div>
-                
+                </div> 
             </section>
     );
 };

@@ -5,12 +5,12 @@ import { AuthorCard } from "./author-card"
 
 export default function TitleBar({ title, description, authors, date}) {
     return(
-        <Card className="mb-10 dark:bg-gray-800  border-card-hover">
-            <CardHeader className="border-b border-card-hover pb-1">
-                <CardTitle className="mt-2 scroll-m-20 text-4xl font-bold text-title tracking-tight before:content-none"> 
+        <Card className="mb-10 bg-card  border-card-hover">
+            <CardHeader className="border-b border-card-hover pb-1 font-Poppins">
+                <CardTitle className="mt-2 scroll-m-20 text-4xl font-bold font-Poppins text-title tracking-tight before:content-none"> 
                     {title} 
                 </CardTitle>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center font-Poppins">
                     <div> <strong> Prepared by:</strong> {authors.map( (author, idx) => (
                         <AuthorCard key={idx} author={author} />
                     ))}
@@ -23,7 +23,7 @@ export default function TitleBar({ title, description, authors, date}) {
                 </div>
             </CardHeader>
 
-            <CardContent className="mt-6">
+            <CardContent className="mt-6 font-Poppins">
                 <p>{description}</p>
             </CardContent>
         </Card>

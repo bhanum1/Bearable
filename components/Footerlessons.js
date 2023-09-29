@@ -19,7 +19,7 @@ export default function Footerlessons(props) {
                     </div>
                 </div>       
 
-                <div className='flex flex-col gap-[20%]' style={{transform: 'translateY(15%)'}} >
+                <div className='flex flex-col gap-[20%]' style={{transform: 'translateY(17%)'}} >
                     <div className='flex gap-[20%] w-[50%] '>
                         <Link href='/' className='text-[2vw] z-50'>Home</Link>
                         <Link href='/about' className='text-[2vw] z-40'>About</Link>

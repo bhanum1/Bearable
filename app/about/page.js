@@ -98,7 +98,7 @@ export default function About() {
                                     <Image
                                     src='/About-page/Photo.svg'
                                     className='max-sm:hidden'
-                                    style={{width: '20%', height: 'auto'}}
+                                    style={{width: '18%', height: 'auto'}}
                                     width={0}
                                     height={0} 
                                     quality={100}
@@ -108,7 +108,7 @@ export default function About() {
                                     <Image
                                     src='/About-page/Photo.svg'
                                     className='sm:hidden'
-                                    style={{width: '40%', height: 'auto'}}
+                                    style={{width: '18%', height: 'auto'}}
                                     width={0}
                                     height={0} 
                                     quality={100}

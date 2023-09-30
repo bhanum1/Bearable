@@ -59,29 +59,9 @@ export default function About() {
                         <h1 className='font-bold font-Poppins text-[3vw] pt-5'>The Story of Bearnoulli</h1>
                         <div className='flex justify-evenly gap-10'>
                             <Image
-                            src='/About-page/c-bear.svg'
+                            src='/About-page/comic.svg'
                             className=''
-                            style={{width: '20%', height: 'auto', transfrom: "translateX(100%)"}}
-                            width={0}
-                            height={0} 
-                            quality={100}
-                            alt="Background Image"
-                            />
-
-                            <Image
-                            src='/About-page/c-bearbook.svg'
-                            className=''
-                            style={{width: '25%', height: 'auto' }}
-                            width={0}
-                            height={0} 
-                            quality={100}
-                            alt="Background Image"
-                            />
-
-                            <Image
-                            src='/About-page/c-bearglass.svg'
-                            className=''
-                            style={{width: '40%', height: 'auto' }}
+                            style={{width: '90%', height: 'auto'}}
                             width={0}
                             height={0} 
                             quality={100}
@@ -114,11 +94,11 @@ export default function About() {
                         <h1 className='text-[2vw] max-sm:text-[4vw] font-bold pt-10'>The Creators of Bearable</h1>
                         <div className='flex flex-col gap-8'>
                             <div className='flex justify-evenly gap-10 px-14 pt-10'>
-                                <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%]'>
+                                <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%] pb-[5%] pt-[2%]'>
                                     <Image
-                                    src='/About-page/man.svg'
+                                    src='/About-page/Photo.svg'
                                     className='max-sm:hidden'
-                                    style={{width: '20%', height: 'auto'}}
+                                    style={{width: '18%', height: 'auto'}}
                                     width={0}
                                     height={0} 
                                     quality={100}
@@ -126,9 +106,9 @@ export default function About() {
                                     />
 
                                     <Image
-                                    src='/About-page/man.svg'
+                                    src='/About-page/Photo.svg'
                                     className='sm:hidden'
-                                    style={{width: '40%', height: 'auto'}}
+                                    style={{width: '18%', height: 'auto'}}
                                     width={0}
                                     height={0} 
                                     quality={100}
@@ -136,9 +116,9 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#BC454F] flex justify-center w-[20%] max-sm:w-[30%]'>
+                                <div className='bg-[#BC454F] flex justify-center w-[20%] max-sm:w-[30%] pb-[5%] pt-[1.5%]'>
                                     <Image
-                                    src='/About-page/man-2.svg'
+                                    src='/About-page/Photo.svg'
                                     className=''
                                     style={{width: '18%', height: 'auto'}}
                                     width={0}
@@ -148,9 +128,9 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#57702D] flex justify-center w-[20%] max-sm:w-[30%]'>
+                                <div className='bg-[#57702D] flex justify-center w-[20%] max-sm:w-[30%] pb-[5%] pt-[1.5%]'>
                                     <Image
-                                    src='/About-page/woman.svg'
+                                    src='/About-page/Photo.svg'
                                     className=''
                                     style={{width: '18%', height: 'auto'}}
                                     width={0}
@@ -162,9 +142,9 @@ export default function About() {
                             </div>
 
                             <div className='flex justify-evenly gap-10 px-14 pb-10'>
-                                <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%]'>
+                                <div className='bg-[#5893B6] flex justify-center w-[20%] max-sm:w-[30%] pb-[5%] pt-[1.5%]'>
                                     <Image
-                                    src='/About-page/man-4.svg'
+                                    src='/About-page/Photo.svg'
                                     className=''
                                     style={{width: '20%', height: 'auto'}}
                                     width={0}
@@ -174,9 +154,9 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#BC454F] flex justify-center w-[20%] max-sm:w-[30%]'>
+                                <div className='bg-[#BC454F] flex justify-center w-[20%] max-sm:w-[30%] pb-[5%] pt-[1.5%]'>
                                     <Image
-                                    src='/About-page/man-3.svg'
+                                    src='/About-page/Photo.svg'
                                     className=''
                                     style={{width: '18%', height: 'auto'}}
                                     width={0}
@@ -186,9 +166,9 @@ export default function About() {
                                     />
                                 </div>
 
-                                <div className='bg-[#57702D] flex justify-center w-[20%] max-sm:w-[30%]'>
+                                <div className='bg-[#57702D] flex justify-center w-[20%] max-sm:w-[30%] pb-[5%] pt-[1.5%]'>
                                     <Image
-                                    src='/About-page/peanut.svg'
+                                    src='/About-page/Photo.svg'
                                     className=''
                                     style={{width: '18%', height: 'auto'}}
                                     width={0}

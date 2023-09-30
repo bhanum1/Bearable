@@ -17,7 +17,7 @@ export default function NextButton({course, lessons, lesson}) {
     }
 
     return(
-        <div className="mt-20 relative justify-center items-center self-center gap-10 flex bottom-10 mb-5 bg-card p-8 w-[95%] rounded-md border overflow-hidden">
+        <div className="mt-20 relative justify-center items-center self-center gap-5 md:gap-10 flex bottom-10 mb-5 bg-card p-8 w-[95%] rounded-md border overflow-hidden">
                 <Image
                     src='/Courses-page/long-tree.svg'
                     className='absolute bottom-0 right-0'

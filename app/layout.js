@@ -22,10 +22,15 @@ export const metadata = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
+    favicon: "/favicon.ico",
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
+  image: '/homepage.png',
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    image: '/homepage.png'
+  }
 }
 
 export default function RootLayout({ children }) {

@@ -43,15 +43,15 @@ export default function Home() {
             alt="Image above the content"
           />
 
-          <Image
+          {/* <Image
             src="/sun.svg"
             className='sm:hidden'
             width={0}
             height={0} 
             style={{width:'20%', height:'auto', transform: 'translateY(20%)'}}
             alt="Image above the content"
-          />
-          <div className='max-sm:hidden'>
+          /> */}
+          <div className=''>
             <div className='text-center text-4xl pt-12 pb-5 font-Ruda'>
               <h1>Making First Year of Engineering<br></br>More Bearable</h1>
             </div>

@@ -18,7 +18,7 @@ export default function Inner(props){
             <h1 className="text-[4vw] max-sm:text-[8vw]">{props.title}</h1> 
             <p className="text-[2vw] max-sm:text-[4vw]">{props.text}</p>
             <div className=" inset-0 flex flex-col items-center justify-center text-center text-lg pb-10">
-                <Link href='/courses/linear-algebra' className='bg-[#CC4955] hover:bg-[#a9414a] text-[white] text-[1vw] rounded-md px-[5%] py-[0.3%]'>Start</Link> 
+                <Link href={props.path} className='bg-[#CC4955] hover:bg-[#a9414a] text-[white] text-[1vw] max-sm:text-[2vw] rounded-md px-[5%] py-[0.3%]'>Start</Link> 
             </div>
         </div>
     );

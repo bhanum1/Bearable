@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import Footer from "@/components/Footer"
+import Footerlessons from "@/components/Footerlessons"
+import mobileFooter from "@/components/mobilefooter"
 
 
 //  Metadata
@@ -21,10 +22,15 @@ export const metadata = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
   icons: {
+    favicon: "/favicon.ico",
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
+  image: '/homepage.png',
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    image: '/homepage.png'
+  }
 }
 
 export default function RootLayout({ children }) {
@@ -44,7 +50,7 @@ export default function RootLayout({ children }) {
               <div className="flex-1">{children}</div>
             </div>
             <TailwindIndicator />
-            <Footer/>
+            <Footerlessons/>
           </ThemeProvider>
         </body>
       </html>

@@ -3,12 +3,13 @@ import Image from 'next/image'
 import { RiBookFill } from 'react-icons/ri'
 import { RiBookOpenLine } from 'react-icons/ri'
 import {compareDesc, format, parseISO} from 'date-fns'
+import { cn } from '@/lib/utils'
 
 
 
 export function LessonCard(lesson) {
     return (
-      <li className='shrink-1 group flex items-center justify-between rounded-lg px-2 transition ease-in-out hover:bg-[#ebebe3]  hover:transition-colors dark:hover:bg-gray-700'>
+      <li className='group flex items-center justify-between rounded-lg px-2 transition ease-in-out hover:bg-[#ebebe3]  hover:transition-colors dark:hover:bg-gray-700'>
         <RiBookOpenLine size={25}/>
           <Link href={lesson.url} className='grow py-3 pl-3'>
           {lesson.title}
@@ -17,10 +18,10 @@ export function LessonCard(lesson) {
     )
   }
 
-export function LessonTOC({ lessons, course}){
+export function LessonTOC({ lessons, course }){
     const sorted_lessons = lessons.sort((a, b) => compareDesc(new Date(b.date), new Date(a.date)))
     return(
-        <div className="font-Poppins dark:border-gray-700' border-title bg-card mb-10 rounded-lg shadow dark:bg-gray-800">
+        <div className={cn("font-Poppins dark:border-gray-700' border-title bg-card mb-10 rounded-lg shadow dark:bg-gray-800")}>
             <div className='border-b p-4 pl-8 dark:border-gray-700'>
                 <Link href={`courses/${course.toLowerCase().replace(/ /g, "-")}`} 
                 className='group flex scroll-mt-5 items-center rounded-lg px-2 py-3 no-underline transition ease-in-out hover:bg-card-hover hover:transition-colors dark:hover:bg-gray-700'>
@@ -53,7 +54,7 @@ export default function CourseTOC({ lessons, course, overview }) {
                     <h1 className='mx-auto mt-4 text-center text-3xl font-Poppins font-bold text-title'> {course} </h1>
                 </a>
             </div>
-            <div className='mb-6 px-[20px] sm:px-0'>
+            <div className='mb-6 px-[20px] md:px-0'>
                 <h2 className="mb-1 text-lg font-medium font-Poppins">
                     Overview
                 </h2>
@@ -61,7 +62,7 @@ export default function CourseTOC({ lessons, course, overview }) {
                     {overview}
                 </p>
             </div>
-            <div className='px-[20px] sm:px-0'>
+            <div className='px-[20px] md:px-0'>
                 <LessonTOC course={course} lessons={lessons}/>
             </div>
         </div>

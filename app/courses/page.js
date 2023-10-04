@@ -21,7 +21,7 @@ export default function Courses() {
     const classes = [["absolute right-[-100%] ease-in duration-500", "absolute right-0 ease-in duration-500",  "absolute right-0 ease-in duration-500"],
                      ["absolute left-[-100%] ease-in duration-500", "absolute left-0 ease-in duration-500", "absolute left-0 ease-in duration-500"],
                      ["absolute right-[-100%] bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500", "absolute right-0 bottom-0 ease-in duration-500"],
-                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-[-0.1%] z-50 ease-in duration-500", "absolute left-0 bottom-[-0.1%] ease-in duration-500"],
+                     ["absolute left-[-100%] bottom-0 ease-in duration-500", "absolute left-0 bottom-[-1.1%] z-50 ease-in duration-500", "absolute left-0 bottom-[-1.1%] ease-in duration-500"],
                      ["absolute right-[-100%] ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500", "absolute right-[13.5%] hover:animate-bounce ease-in duration-500"],
                      ["absolute left-[-100%] text-[10vw] text-[#442725] font-Poppins dark:text-white", "absolute left-[1.4%] text-[10vw] text-[#442725] font-Poppins ease-in duration-500 dark:text-white", "absolute left-[1.4%] text-[10vw] text-[#442725] dark:text-white font-Poppins"]]
     
@@ -70,8 +70,8 @@ export default function Courses() {
                     
                     {/* Courses Box */}
                     <center>
-                        <div className="bg-card dark:bg-[#2C3850] rounded-lg px-[20%] pt-[5%] pb-[5%] mb-[5%] w-[90%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]">
-                            <Inner source='matrix-icon' title="Linear Algebra" text="THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA THIS IS LINEAR ALGEBRA "></Inner>
+                        <div className="bg-card dark:bg-[#2C3850] rounded-lg px-[12%] pt-[5%] pb-[5%] mb-[5%] w-[90%] flex flex-col justify-center text-center gap-[10vw] font-Poppins max-sm:px-[3%]">
+                            <Inner source='matrix-icon' title="Linear Algebra"  path="/courses/linear-algebra" text="Linear algebra is considered one the hardest courses for first year students, mostly because it is so different from other math classes. This Bearable Course was specifically designed to start from the ground up and make sure you understand how, and why, everything in linear algebra works!"></Inner>
                         </div>
                     </center>
 
@@ -90,7 +90,7 @@ export default function Courses() {
                         <Image
                         src='/Courses-page/tree-left.svg'
                         className={classes[3][load]}
-                        style={{width: '16%', height: 'auto' }}
+                        style={{width: '20%', height: 'auto' }}
                         width={0}
                         height={0}
                         quality={100}
